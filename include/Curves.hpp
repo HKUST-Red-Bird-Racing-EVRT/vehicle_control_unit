@@ -56,16 +56,16 @@ constexpr TablePoint<uint16_t, int16_t> BRAKE_TABLE[5] = {
  * @brief APPS_3V3 mapping table, maps 3V3 readings to 5V readings
  */
 constexpr TablePoint<uint16_t, uint16_t> APPS_3V3_SCALE_TABLE[3] = {
-    {150, 307},
-    {270, 450},
-    {540, 783}};
+    {189, 325},
+    {327, 506},
+    {530, 775}};
 
 /**
  * @brief APPS_5V to percent mapping table, maps 5V readings to percent throttle (0-60000) 
  */
 constexpr TablePoint<uint16_t, uint16_t> APPS_5V_PERCENT_TABLE[2] = {
-    {325, 0},
-    {621, 60000}};
+    {370, 0},
+    {740, 60000}};
 
 // === calculated tables
 /**

@@ -190,19 +190,20 @@ constexpr int16_t Pedal::pedalTorqueMapping(const uint16_t pedal, const uint16_t
             car.pedal.status.bits.screenshot = true;
             // to ensure BSPD can be tested, skip regen if both throttle and brake pressed
         }
-        else if (flip_dir)
+        else if (!flip_dir)
         {
             if (motor_rpm < PedalConstants::MIN_REGEN_RPM_VAL)
                 return 0;
             else
-                return -BRAKE_MAP.interp(brake);
+
+                return BRAKE_MAP.interp(brake);
         }
         else
         {
             if (motor_rpm > -PedalConstants::MIN_REGEN_RPM_VAL)
                 return 0;
             else
-                return BRAKE_MAP.interp(brake);
+                return -BRAKE_MAP.interp(brake);
         }
     }
 
