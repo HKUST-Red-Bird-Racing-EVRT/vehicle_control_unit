@@ -27,8 +27,6 @@
 #endif
 
 #define DEBUG_THROTTLE (1 && DEBUG)
-#define DEBUG_THROTTLE_IN (1 && DEBUG_THROTTLE)
-#define DEBUG_THROTTLE_OUT (1 && DEBUG_THROTTLE)
 #define DEBUG_THROTTLE_FAULT (1 && DEBUG_THROTTLE)
 #define DEBUG_BRAKE (1 && DEBUG)
 #define DEBUG_BRAKE_IN (1 && DEBUG_BRAKE)
@@ -37,7 +35,6 @@
 #define DEBUG_STATUS 1 // Serial only
 #define DEBUG_STATUS_CAR (1 && DEBUG_STATUS)
 #define DEBUG_STATUS_BRAKE (1 && DEBUG_STATUS)
-#define DEBUG_HALL_SENSOR (1 && DEBUG)
 
 // ===== Simple Serial-Only Debug Functions =====
 

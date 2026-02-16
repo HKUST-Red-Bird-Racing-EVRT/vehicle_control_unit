@@ -112,12 +112,17 @@ void setup()
     DBGLN_GENERAL("Debug serial initialized");
 #endif
 
+    // init MCP2515 CAN controllers
     for (uint8_t i = 0; i < NUM_MCP; ++i)
     {
         MCPS[i].reset();
         MCPS[i].setBitrate(CAN_RATE, MCP2515_CRYSTAL_FREQ);
         MCPS[i].setNormalMode();
     }
+
+#if DEBUG_SERIAL
+    DBGLN_GENERAL("MCP2515 CAN controllers initialized");
+#endif
 
     // init GPIO pins (MCP2515 CS pins initialized in constructor))
     for (uint8_t i = 0; i < INPUT_COUNT; ++i)
@@ -130,6 +135,10 @@ void setup()
         digitalWrite(pins_out[i], LOW);
     }
 
+#if DEBUG_SERIAL
+    DBGLN_GENERAL("GPIO pins initialized");
+#endif
+
 #if DEBUG_CAN
     Debug_CAN::initialize(&mcp2515_DL); // Currently using motor CAN for debug messages, should change to other
     DBGLN_GENERAL("Debug CAN initialized");
@@ -140,6 +149,11 @@ void setup()
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryMotor, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryBms, 10);
     DBGLN_GENERAL("Setup complete, entering main loop");
+
+#if DEBUG_SERIAL
+    DBGLN_GENERAL("Initial Car Status: INIT");
+#endif
+
 }
 
 /**
@@ -156,7 +170,7 @@ void loop()
     digitalWrite(BRAKE_LIGHT, brake_pressed ? HIGH : LOW);
     scheduler.update(*micros);
 
-    car.pedal.hall_sensor = analogRead(HALL_SENSOR);
+
 
     if (car.pedal.status.bits.force_stop)
     {
