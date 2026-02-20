@@ -19,6 +19,7 @@
 #include "Curves.hpp"
 #include "Telemetry.hpp"
 #include "Debug.hpp"
+#include "FlashStorage.hpp"
 
 // ignore -Wpedantic warnings for mcp2515.h
 #pragma GCC diagnostic push

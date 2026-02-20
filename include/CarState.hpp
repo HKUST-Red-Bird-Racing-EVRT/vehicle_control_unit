@@ -23,8 +23,8 @@ constexpr canid_t TELEMETRY_BMS_MSG = 0x710;   /**< Telemetry: Car state message
  */
 struct TelemetryFramePedal
 {
-    uint16_t apps_5v;  /**< ADC reading for 5V APPS */
-    uint16_t apps_3v3; /**< ADC reading for 3.3V APPS */
+    uint16_t apps_5v;     /**< ADC reading for 5V APPS */
+    uint16_t apps_3v3;    /**< ADC reading for 3.3V APPS */
     uint16_t brake;       /**< ADC reading for brake pedal */
     uint16_t hall_sensor; /**< ADC reading for hall sensor */
 
@@ -32,15 +32,15 @@ struct TelemetryFramePedal
     union StateByteStatus
     {
         uint8_t byte; /**< Byte representation of the status bits */
-        
+
         /** @brief Bitfield representation of the status bits */
         struct Bits
         {
             CarStatus car_status : 2; /**< Current car status, produces compiler warning before GCC 9.3 due to bug */
-            bool state_unknown : 1;   /**< Unknown car state */
+            bool sd_ready : 1;        /**< SD card ready */
             bool hv_ready : 1;        /**< High voltage ready */
             bool bms_no_msg : 1;      /**< BMS read no message */
-            bool motor_no_read : 1;    /**< MCU read no message */
+            bool motor_no_read : 1;   /**< MCU read no message */
             bool screenshot : 1;      /**< Screenshot, throttle + brake > threshold */
             bool force_stop : 1;      /**< Fault forced car to stop */
         } bits;
@@ -95,7 +95,7 @@ struct TelemetryFramePedal
  */
 struct TelemetryFrameMotor
 {
-    int16_t torque_val;  /**< Torque value sent to motor controller*/
+    int16_t torque_val;   /**< Torque value sent to motor controller*/
     uint16_t motor_rpm;   /**< Motor RPM */
     uint16_t motor_error; /**< Motor status byte */
     uint16_t motor_warn;  /**< Motor error/warning byte */
