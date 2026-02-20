@@ -227,12 +227,17 @@ void loop()
         }
         break;
 
+    /*
+    since we are switching on only 2 bits, and we use all 4 combinations,
+    it's physically impossible to reach a default case even with memory corruption, so no need for one
+
     default:
         // unreachable, reset to INIT
         car.pedal.status.bits.state_unknown = true;
         car.pedal.status.bits.car_status = CarStatus::Init;
         car.status_millis = car.millis;
         break;
+    */
     }
 
     // DRIVE mode has already returned, if reached here, then means car isn't in DRIVE
