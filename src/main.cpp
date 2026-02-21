@@ -44,7 +44,7 @@ MCP2515 mcp2515_motor(CS_CAN_MOTOR); // motor CAN
 MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
 MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
-//#define mcp2515_motor mcp2515_DL
+// #define mcp2515_motor mcp2515_DL
 #define mcp2515_BMS mcp2515_motor
 #define mcp2515_DL mcp2515_motor
 
@@ -75,7 +75,21 @@ Pedal pedal(mcp2515_motor, car, car.pedal.apps_5v);
 BMS bms(mcp2515_BMS, car);
 Telemetry telem(mcp2515_DL, car);
 
-void schedulerMotorRead(){
+void schedulerMotorInit()
+{
+    pedal.initMotor();
+}
+unsigned long mockMicros()
+{
+    digitalWrite(BUZZER, HIGH);
+    static uint32_t fake_micros = 0;
+    fake_micros += 1000000; // increment by 1000 microseconds (1 ms) each call
+    digitalWrite(BUZZER, LOW);
+    return fake_micros;
+}
+
+void schedulerMotorRead()
+{
     pedal.readMotor();
 }
 void schedulerPedalSend()
@@ -138,6 +152,8 @@ void setup()
     DBGLN_GENERAL("Debug CAN initialized");
 #endif
 
+    pedal.initMotor();
+
     scheduler.addTask(McpIndex::Motor, schedulerMotorRead, 1);
     scheduler.addTask(McpIndex::Motor, schedulerPedalSend, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryPedal, 1);
@@ -171,12 +187,10 @@ void loop()
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
 
-
-
-    digitalWrite(OUT_4, car.pedal.status.bits.force_stop ? HIGH : LOW); // debug pin for force stop
+    digitalWrite(OUT_4, car.pedal.status.bits.force_stop ? HIGH : LOW);     // debug pin for force stop
     digitalWrite(OUT_5, car.pedal.faults.bits.fault_exceeded ? HIGH : LOW); // debug pin for fault exceeded
-    digitalWrite(OUT_6, car.motor.motor_error ? HIGH : LOW); // debug pin for motor error
-    digitalWrite(OUT_7, car.motor.motor_error & 0x0020 ? HIGH : LOW); // debug pin for Vout Sat limit
+    digitalWrite(OUT_6, car.motor.motor_error ? HIGH : LOW);                // debug pin for motor error
+    digitalWrite(OUT_7, car.motor.motor_error & 0x0020 ? HIGH : LOW);       // debug pin for Vout Sat limit
 
     digitalWrite(BUZZER, car.motor.torque_val < 0 ? HIGH : LOW); // if fault active, turn on buzzer, else off. Note that this overrides the buzzer for STARTIN state, but since a pedal fault is more critical than waiting for BMS HV ready, it's better to prioritize the pedal fault indication
 

@@ -14,7 +14,7 @@
 #include "Enums.hpp"
 
 // === Debug Flags ===
-#define DEBUG 1                  // if 0, all debug messages are ignored
+#define DEBUG 0                  // if 0, all debug messages are ignored
 #define DEBUG_SERIAL (1 && DEBUG) // if 0, all serial debug messages are ignored
 #define DEBUG_CAN (1 && DEBUG)    // if 0, all CAN debug messages are ignored
 

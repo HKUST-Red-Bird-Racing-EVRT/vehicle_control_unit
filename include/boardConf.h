@@ -22,7 +22,7 @@
 #define BOARDCONF_H
 
 // select the board configuration to use
-#define USE_VCU_V3_2
+#define USE_3CH_CAN
 
 // VCU v3.2
 

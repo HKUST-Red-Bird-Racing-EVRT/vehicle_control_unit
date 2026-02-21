@@ -26,7 +26,7 @@
  * @brief Constructor for the Pedal class.
  * Initializes the pedal state. fault is set to true initially,
  * so you must send update within 100ms of starting the car to clear it.
- * Sends request to motor controller for cyclic RPM and error reads.
+ * Call the initMotor function to set up the motor CAN filters and cyclic reads after constructing the Pedal object and the MCP2515 object it references.
  * @param motor_can_ Reference to the MCP2515 instance for motor CAN communication.
  * @param car_ Reference to the CarState structure.
  * @param pedal_final_ Reference to the pedal used as the final pedal value. Although not recommended, you can set another uint16 outside Pedal to be something like 0.3 APPS_1 + 0.7 APPS_2, then reference that here. If in future, this become a sustained need, should consider adding a function pointer to find the final pedal value to let Pedal class call it itself.
@@ -38,14 +38,41 @@ Pedal::Pedal(MCP2515 &motor_can_, CarState &car_, uint16_t &pedal_final_)
       fault_start_millis(0),
       last_motor_read_millis(0)
 {
-    // ask MCU to send motor rpm and error/warn signals
-    while (sendCyclicRead(SPEED_IST, RPM_PERIOD) != MCP2515::ERROR_OK)
+}
+
+/**
+ * @brief Initializes the motor CAN communication by setting up cyclic reads for motor data and configuring CAN filters.
+ * This should be run before using any other Pedal functions to ensure motor data is being read correctly.
+ */
+void Pedal::initMotor()
+{
+    motor_can.setConfigMode();
+    while (motor_can.setFilterMask(MCP2515::MASK0, false, 0x7FF) != MCP2515::ERROR_OK)
         ;
-    while (sendCyclicRead(WARN_ERR, ERR_PERIOD) != MCP2515::ERROR_OK)
-        ;
-    // set MCU CAN filter
+    //  set MCU CAN filter
     while (motor_can.setFilter(MCP2515::RXF0, false, MOTOR_READ) != MCP2515::ERROR_OK)
         ;
+    motor_can.setNormalMode();
+
+    bool read_speed = false;
+    bool read_error = false;
+    // ask MCU to send motor rpm and error/warn signals
+    while (!read_speed || !read_error)
+    {
+        if (!read_speed)
+        {
+            while (sendCyclicRead(SPEED_IST, RPM_PERIOD) != MCP2515::ERROR_OK)
+                ;
+            read_speed = checkCyclicRead(SPEED_IST);
+        }
+        if (!read_error)
+        {
+            while (sendCyclicRead(WARN_ERR, ERR_PERIOD) != MCP2515::ERROR_OK)
+                ;
+            read_error = checkCyclicRead(WARN_ERR);
+        }
+    }
+    return;
 }
 
 /**
@@ -132,7 +159,7 @@ void Pedal::sendFrame()
     car.pedal.apps_3v3 = pedal2_filter.getFiltered();
     car.pedal.brake = brake_filter.getFiltered();
 
-    if (false &&  car.pedal.status.bits.force_stop)
+    if (false && car.pedal.status.bits.force_stop)
     {
         DBGLN_THROTTLE("Stopping motor: pedal fault");
         motor_can.sendMessage(&stop_frame);
@@ -243,11 +270,10 @@ bool Pedal::checkPedalFault()
  * @brief Sends a cyclic read request to the motor controller for speed (rpm).
  * @param reg_id Register ID to read from the motor controller.
  * @param read_period Period of reading motor data in ms.
- * @return MCP2515::ERROR indicating success or failure of sending the message.
  */
-MCP2515::ERROR Pedal::sendCyclicRead(uint8_t reg_id, uint8_t read_period)
+MCP2515::ERROR Pedal::sendCyclicRead(const uint8_t reg_id, const uint8_t read_period)
 {
-    can_frame cyclic_request = {
+    const can_frame cyclic_request = {
         MOTOR_SEND, /**< can_id */
         3,          /**< can_dlc */
         REGID_READ, /**< data, register ID */
@@ -255,6 +281,19 @@ MCP2515::ERROR Pedal::sendCyclicRead(uint8_t reg_id, uint8_t read_period)
         read_period /**< data, read period in ms */
     };
     return motor_can.sendMessage(&cyclic_request);
+}
+
+bool Pedal::checkCyclicRead(const uint8_t reg_id)
+{
+    can_frame rx_frame;
+    if (motor_can.readMessage(&rx_frame) == MCP2515::ERROR_OK &&
+        rx_frame.can_id == MOTOR_READ &&
+        rx_frame.can_dlc > 3 &&
+        rx_frame.data[0] == reg_id)
+    {
+        return true;
+    }
+    return false;
 }
 
 /**
