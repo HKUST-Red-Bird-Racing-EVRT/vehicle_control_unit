@@ -52,7 +52,6 @@ void BMS::checkHv()
     car.pedal.status.bits.hv_ready = false;
     if (bms_can.readMessage(&rx_bms_msg) == MCP2515::ERROR_NOMSG)
     {
-        DBG_BMS_STATUS(BmsStatus::NoMsg);
         car.pedal.status.bits.bms_no_msg = true;
         return;
     }
@@ -61,7 +60,6 @@ void BMS::checkHv()
     // Check if the BMS is in standby state (0x3 in upper 4 bits)
     if (rx_bms_msg.can_id != BMS_INFO_EXT)
     {
-        DBG_BMS_STATUS(BmsStatus::WrongId);
         car.pedal.status.bits.bms_wrong_id = true;
         return;
     } // Not a BMS info frame, retry
@@ -70,23 +68,19 @@ void BMS::checkHv()
     switch (rx_bms_msg.data[6] & 0xF0)
     {
     case 0x30: // Standby state
-        DBG_BMS_STATUS(BmsStatus::Waiting);
         bms_can.sendMessage(&start_hv_msg);
         DBGLN_GENERAL("BMS in standby state, sent start HV cmd");
         // sent start HV cmd, wait for BMS to change state
         return;
     case 0x40: // Precharge state
-        DBG_BMS_STATUS(BmsStatus::Starting);
         bms_can.sendMessage(&start_hv_msg);
         DBGLN_GENERAL("BMS in precharge state, HV starting");
         return; // BMS is in precharge state, wait
     case 0x50:  // Run state
-        DBG_BMS_STATUS(BmsStatus::Started);
         DBGLN_GENERAL("BMS in run state, HV started");
         car.pedal.status.bits.hv_ready = true; // BMS is in run state
         return;
     default:
-        DBG_BMS_STATUS(BmsStatus::Unused);
         DBGLN_GENERAL("BMS in unknown state, retrying...");
         return; // Unknown state, retry
     }

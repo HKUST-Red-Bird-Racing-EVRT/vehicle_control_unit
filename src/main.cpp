@@ -148,7 +148,6 @@ void setup()
  */
 void loop()
 {
-    // DBG_HALL_SENSOR(analogRead(HALL_SENSOR));
     car.millis = millis();
     pedal.update(analogRead(APPS_5V), analogRead(APPS_3V3), analogRead(BRAKE_IN));
 
@@ -175,7 +174,6 @@ void loop()
 
     // do not return here if not in DRIVE mode, else can't detect pedal being on while starting
     case CarStatus::Init:
-        DBGLN_THROTTLE("Stopping motor: INIT.");
 
         if (digitalRead(DRIVE_MODE_BTN) == BUTTON_ACTIVE && brake_pressed)
         {
@@ -187,7 +185,6 @@ void loop()
         break;
 
     case CarStatus::Startin:
-        DBGLN_THROTTLE("Stopping motor: STARTIN.");
 
         if (digitalRead(DRIVE_MODE_BTN) != BUTTON_ACTIVE || !brake_pressed)
         {
