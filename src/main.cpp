@@ -118,6 +118,9 @@ void setup()
         MCPS[i].setBitrate(CAN_RATE, MCP2515_CRYSTAL_FREQ);
         MCPS[i].setNormalMode();
     }
+#if DEBUG_SERIAL
+    DBGLN_GENERAL("MCP2515 CAN initialized");
+#endif
 
     // init GPIO pins (MCP2515 CS pins initialized in constructor))
     for (uint8_t i = 0; i < INPUT_COUNT; ++i)
@@ -129,6 +132,9 @@ void setup()
         pinMode(pins_out[i], OUTPUT);
         digitalWrite(pins_out[i], LOW);
     }
+#if DEBUG_SERIAL
+    DBGLN_GENERAL("input and output pins initialized");
+#endif
 
 #if DEBUG_CAN
     Debug_CAN::initialize(&mcp2515_DL); // Currently using motor CAN for debug messages, should change to other
