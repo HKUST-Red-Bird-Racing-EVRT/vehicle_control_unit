@@ -36,43 +36,54 @@ Pedal::Pedal(MCP2515 &motor_can_, CarState &car_, uint16_t &pedal_final_)
       car(car_),
       motor_can(motor_can_),
       fault_start_millis(0),
-      last_motor_read_millis(0)
+      last_motor_read_millis(0),
+      got_speed(false),
+      got_error(false)
 {
 }
 
 /**
- * @brief Initializes the motor CAN communication by setting up cyclic reads for motor data and configuring CAN filters.
- * This should be run before using any other Pedal functions to ensure motor data is being read correctly.
+ * @brief Initializes the CAN filters for reading motor data.
+ * Call after constructing the Pedal object and the MCP2515 object it references to ensure motor data is being read correctly.
+ * This function will block until the filter is set correctly on the MCP2515. If it never succeed, the program will be stuck here.
+ * Consider that when we can't even set the filter on the MCP2515, we probably can't communicate with the motor controller at all,
+ * so being stuck here is acceptable since the car won't be drivable without motor communication anyway.
  */
-void Pedal::initMotor()
+void Pedal::initFilter()
 {
+    //  set MCU CAN filter
     motor_can.setConfigMode();
     while (motor_can.setFilterMask(MCP2515::MASK0, false, 0x7FF) != MCP2515::ERROR_OK)
         ;
-    //  set MCU CAN filter
     while (motor_can.setFilter(MCP2515::RXF0, false, MOTOR_READ) != MCP2515::ERROR_OK)
         ;
     motor_can.setNormalMode();
+}
 
-    bool read_speed = false;
-    bool read_error = false;
-    // ask MCU to send motor rpm and error/warn signals
-    while (!read_speed || !read_error)
+/**
+ * @brief Initializes the motor CAN communication by setting up cyclic reads for motor data and configuring CAN filters.
+ * After the constructor of the Pedal class and the MCP2515 object it references are created,
+ * first call initFilter to set up the filters,
+ * then call this function to start the cyclic reads and ensure that motor data is being read correctly.
+ * 
+ * @return true if both motor speed and error data are being successfully read, false otherwise, can be used for looping
+ * @see initFilter
+ */
+bool Pedal::initMotor()
+{
+    if (!got_speed)
     {
-        if (!read_speed)
-        {
-            while (sendCyclicRead(SPEED_IST, RPM_PERIOD) != MCP2515::ERROR_OK)
-                ;
-            read_speed = checkCyclicRead(SPEED_IST);
-        }
-        if (!read_error)
-        {
-            while (sendCyclicRead(WARN_ERR, ERR_PERIOD) != MCP2515::ERROR_OK)
-                ;
-            read_error = checkCyclicRead(WARN_ERR);
-        }
+        while (sendCyclicRead(SPEED_IST, RPM_PERIOD) != MCP2515::ERROR_OK)
+            ;
+        got_speed = checkCyclicRead(SPEED_IST);
     }
-    return;
+    if (!got_error)
+    {
+        while (sendCyclicRead(WARN_ERR, ERR_PERIOD) != MCP2515::ERROR_OK)
+            ;
+        got_error = checkCyclicRead(WARN_ERR);
+    }
+    return got_speed && got_error;
 }
 
 /**
