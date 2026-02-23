@@ -60,7 +60,6 @@ void BMS::checkHv()
     // Check if the BMS is in standby state (0x3 in upper 4 bits)
     if (rx_bms_msg.can_id != BMS_INFO_EXT)
     {
-        DBG_BMS_STATUS(BmsStatus::WrongId);
         car.pedal.status.bits.bms_wrong_id = true;
         return;
     } // Not a BMS info frame, retry

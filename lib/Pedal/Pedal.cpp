@@ -88,19 +88,15 @@ void Pedal::update(uint16_t pedal_1, uint16_t pedal_2, uint16_t brake)
             {
                 car.pedal.faults.bits.fault_exceeded = true;
                 car.pedal.status.bits.force_stop = true; // critical fault, force stop; since early return, need set here
-                DBG_THROTTLE_FAULT(PedalFault::DiffExceed100ms);
+                DBGLN_GENERAL("FAULT: Pedal difference exceeded 100ms");
                 return;
-            }
-            else
-            {
-                DBG_THROTTLE_FAULT(PedalFault::DiffContinuing); // will be optimized out if the debug macro is off
             }
         }
         else
         {
             // new fault
             fault_start_millis = car.millis;
-            DBG_THROTTLE_FAULT(PedalFault::DiffStart);
+            DBGLN_GENERAL("FAULT: Pedal difference detected");
         }
         car.pedal.faults.bits.fault_active = true;
     }
@@ -109,7 +105,7 @@ void Pedal::update(uint16_t pedal_1, uint16_t pedal_2, uint16_t brake)
         // no fault
         if (car.pedal.faults.bits.fault_active)
         {
-            DBG_THROTTLE_FAULT(PedalFault::DiffResolved);
+            DBGLN_GENERAL("FAULT: Pedal difference resolved");
         }
         car.pedal.faults.bits.fault_active = false;
     }
@@ -134,27 +130,12 @@ void Pedal::sendFrame()
 
     if (car.pedal.status.bits.force_stop)
     {
-        DBGLN_THROTTLE("Stopping motor: pedal fault");
+        DBGLN_GENERAL("Stopping motor: force_stop active");
         motor_can.sendMessage(&stop_frame);
         return;
     }
     if (car.pedal.status.bits.car_status != CarStatus::Drive)
     {
-        switch (car.pedal.status.bits.car_status)
-        {
-        case CarStatus::Init:
-            DBGLN_THROTTLE("Stopping motor: in INIT.");
-            break;
-        case CarStatus::Startin:
-            DBGLN_THROTTLE("Stopping motor: in STARTIN.");
-            break;
-        case CarStatus::Bussin:
-            DBGLN_THROTTLE("Stopping motor: in BUSSIN.");
-            break;
-        default:
-            DBGLN_THROTTLE("Stopping motor: in UNKNOWN STATE.");
-            break;
-        }
         motor_can.sendMessage(&stop_frame);
         return;
     }
@@ -228,7 +209,6 @@ bool Pedal::checkPedalFault()
     // if more than 10% difference between the two pedals, consider it a fault
     if (delta > MAX_DELTA || delta < -MAX_DELTA)
     {
-        DBG_THROTTLE_FAULT(PedalFault::DiffContinuing, delta);
         return true;
     }
     return false;
@@ -280,7 +260,7 @@ void Pedal::readMotor()
     if (car.millis - last_motor_read_millis > MAX_MOTOR_READ_MILLIS)
     {
         car.pedal.status.bits.motor_no_read = true;
-        DBG_THROTTLE("No motor read for over 100 ms, disabling regen");
+        DBGLN_GENERAL("No motor read for over 100 ms, disabling regen");
     }
     return;
 }
