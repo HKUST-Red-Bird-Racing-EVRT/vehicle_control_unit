@@ -10,7 +10,7 @@
  */
 
 #include <Arduino.h>
-#include "BoardConf.h"
+#include "BoardConfig.h"
 #include "Pedal.hpp"
 #include "BMS.hpp"
 #include "Enums.hpp"
