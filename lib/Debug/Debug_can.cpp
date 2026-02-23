@@ -31,6 +31,48 @@ void Debug_CAN::initialize(MCP2515 *can)
 }
 
 /**
+ * @brief Sends a debug throttle fault message over CAN with a uint16_t value.
+ * 
+ * @param fault_status The status of the throttle fault as defined in PedalFault enum.
+ * @param value uint16_t value associated with the fault (e.g., pedal voltage).
+ */
+void Debug_CAN::throttle_fault(PedalFault fault_status, uint16_t value)
+{
+    if (!can_interface)
+        return;
+
+    can_frame tx_msg;
+    tx_msg.can_id = THROTTLE_FAULT_MSG;
+    tx_msg.can_dlc = 3;
+
+    tx_msg.data[0] = static_cast<uint8_t>(fault_status); // Convert enum to uint8_t
+
+    tx_msg.data[1] = value & 0xFF;
+    tx_msg.data[2] = (value >> 8) & 0xFF; // Upper byte
+
+    can_interface->sendMessage(&tx_msg);
+}
+
+/**
+ * @brief Sends a debug throttle fault message over CAN without a value.
+ * 
+ * @param fault_status The status of the throttle fault as defined in PedalFault enum.
+ */
+void Debug_CAN::throttle_fault(PedalFault fault_status)
+{
+    if (!can_interface)
+        return;
+
+    can_frame tx_msg;
+    tx_msg.can_id = THROTTLE_FAULT_MSG;
+    tx_msg.can_dlc = 1;
+
+    tx_msg.data[0] = static_cast<uint8_t>(fault_status); // Convert enum to uint8_t
+
+    can_interface->sendMessage(&tx_msg);
+}
+
+/**
  * @brief Sends arbitrary debug data via CAN with specified message ID and data bytes.
  * 
  * @param id CAN message ID
