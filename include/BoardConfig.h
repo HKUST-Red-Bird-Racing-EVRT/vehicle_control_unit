@@ -1,5 +1,5 @@
 /**
- * @file BoardConf.h
+ * @file BoardConfig.h
  * @author Planeson, Red Bird Racing
  * @date 2026-01-15
  * @version 2.0
@@ -18,8 +18,8 @@
  * @note Only one option should be uncommented at a time.
  */
 
-#ifndef BOARDCONF_H
-#define BOARDCONF_H
+#ifndef BOARDCONFIG_H
+#define BOARDCONFIG_H
 
 // select the board configuration to use
 #define USE_3CH_CAN
@@ -204,4 +204,4 @@
 
 #define CAN_RATE CAN_500KBPS
 
-#endif // BOARDCONF_H
+#endif // BOARDCONFIG_H
