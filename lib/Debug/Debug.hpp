@@ -143,20 +143,4 @@ inline void DBG_THROTTLE_FAULT(PedalFault fault_status)
 #endif
 }
 
-/**
- * @brief Sends BMS debug info via CAN or serial (if enabled).
- * @param BMS_status The BMS status enum.
- */
-inline void DBG_BMS_STATUS(BmsStatus BMS_status)
-{
-#if DEBUG_BRAKE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
-#if DEBUG_SERIAL
-    Debug_Serial::status_bms(BMS_status);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::status_bms(BMS_status);
-#endif
-#endif
-}
-
 #endif // DEBUG_HPP

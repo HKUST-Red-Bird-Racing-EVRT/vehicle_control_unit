@@ -109,7 +109,8 @@ void setup()
 {
 #if DEBUG_SERIAL
     Debug_Serial::initialize();
-    DBGLN_GENERAL("Debug serial initialized");
+    Debug_Serial::println("[setup] serial ready");
+    Debug_Serial::println("[setup] initializing MCP2515 interfaces");
 #endif
 
     for (uint8_t i = 0; i < NUM_MCP; ++i)
@@ -118,6 +119,10 @@ void setup()
         MCPS[i].setBitrate(CAN_RATE, MCP2515_CRYSTAL_FREQ);
         MCPS[i].setNormalMode();
     }
+#if DEBUG_SERIAL
+    Debug_Serial::println("[setup] MCP2515 initialization complete");
+    Debug_Serial::println("[setup] initializing GPIO");
+#endif
 
     // init GPIO pins (MCP2515 CS pins initialized in constructor))
     for (uint8_t i = 0; i < INPUT_COUNT; ++i)
@@ -129,6 +134,10 @@ void setup()
         pinMode(pins_out[i], OUTPUT);
         digitalWrite(pins_out[i], LOW);
     }
+#if DEBUG_SERIAL
+    Debug_Serial::println("[setup] GPIO initialization complete");
+    Debug_Serial::println("[setup] initializing debug CAN");
+#endif
 
 #if DEBUG_CAN
     Debug_CAN::initialize(&mcp2515_DL); // Currently using motor CAN for debug messages, should change to other
@@ -139,7 +148,10 @@ void setup()
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryPedal, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryMotor, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryBms, 10);
-    DBGLN_GENERAL("Setup complete, entering main loop");
+#if DEBUG_SERIAL
+    Debug_Serial::println("[setup] scheduler tasks added");
+    Debug_Serial::println("[setup] complete, entering loop");
+#endif
 }
 
 /**
