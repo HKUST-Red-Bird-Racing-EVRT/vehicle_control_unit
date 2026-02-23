@@ -1,7 +1,7 @@
 <map id="vehicle_control_unit/src/main.cpp" name="vehicle_control_unit/src/main.cpp">
 <area shape="rect" id="node1" title="Main VCU program entry point." alt="" coords="732,5,885,45"/>
 <area shape="rect" id="node2" title=" " alt="" coords="449,313,533,339"/>
-<area shape="rect" id="node3" title=" " alt="" coords="1447,93,1549,119"/>
+<area shape="rect" id="node3" href="$BoardConfig_8h.html" title="Board configuration for the VCU (Vehicle Control Unit)" alt="" coords="1448,93,1561,119"/>
 <area shape="rect" id="node4" href="$Pedal_8hpp.html" title="Declaration of the Pedal class for handling throttle and brake pedal inputs." alt="" coords="307,167,393,192"/>
 <area shape="rect" id="node6" href="$CarState_8hpp.html" title="Definition of the CarState structure representing the state of the car." alt="" coords="781,240,887,265"/>
 <area shape="rect" id="node7" href="$Enums_8hpp.html" title="Enumeration definitions for the VCU." alt="" coords="701,313,796,339"/>

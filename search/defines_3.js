@@ -15,5 +15,5 @@ var searchData=
   ['debug_5fthrottle_5ffault_12',['DEBUG_THROTTLE_FAULT',['../Debug_8hpp.html#a6d43d7188ea0eeea1c490073fad87559',1,'Debug.hpp']]],
   ['debug_5fthrottle_5fin_13',['DEBUG_THROTTLE_IN',['../Debug_8hpp.html#a10f2e3a2f2edf4c999933494557a2cf9',1,'Debug.hpp']]],
   ['debug_5fthrottle_5fout_14',['DEBUG_THROTTLE_OUT',['../Debug_8hpp.html#ad0c4dd35d30dbc1881a09d5c339d09a3',1,'Debug.hpp']]],
-  ['drive_5fmode_5fbtn_15',['DRIVE_MODE_BTN',['../boardConf_8h.html#ab171ccb460b2510d13ceacfacb33a426',1,'boardConf.h']]]
+  ['drive_5fmode_5fbtn_15',['DRIVE_MODE_BTN',['../BoardConfig_8h.html#ab171ccb460b2510d13ceacfacb33a426',1,'BoardConfig.h']]]
 ];

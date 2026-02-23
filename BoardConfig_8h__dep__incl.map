@@ -1,0 +1,4 @@
+<map id="vehicle_control_unit/include/BoardConfig.h" name="vehicle_control_unit/include/BoardConfig.h">
+<area shape="rect" id="node1" title="Board configuration for the VCU (Vehicle Control Unit)" alt="" coords="5,5,173,45"/>
+<area shape="rect" id="node2" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="13,93,166,133"/>
+</map>

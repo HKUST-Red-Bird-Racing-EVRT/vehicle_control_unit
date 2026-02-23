@@ -6,7 +6,7 @@ var searchData=
   ['max_5ftorque_5fval_3',['MAX_TORQUE_VAL',['../namespacePedalConstants.html#ac07d4fd37acc735345f8a99d2d463213',1,'PedalConstants']]],
   ['mcp2515_4',['mcp2515',['../classTelemetry.html#ade142dcc49cf5242a92cc82cc0845bb1',1,'Telemetry']]],
   ['mcp2515_5fbms_5',['mcp2515_BMS',['../main_8cpp.html#a682e31b8dba40df5e2e5e291dd4ec33b',1,'mcp2515_BMS():&#160;main.cpp'],['../main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779',1,'mcp2515_BMS(CS_CAN_BMS):&#160;main.cpp']]],
-  ['mcp2515_5fcrystal_5ffreq_6',['MCP2515_CRYSTAL_FREQ',['../boardConf_8h.html#a707e24d4b34174643260e39c3abedb45',1,'boardConf.h']]],
+  ['mcp2515_5fcrystal_5ffreq_6',['MCP2515_CRYSTAL_FREQ',['../BoardConfig_8h.html#a707e24d4b34174643260e39c3abedb45',1,'BoardConfig.h']]],
   ['mcp2515_5fdl_7',['mcp2515_DL',['../main_8cpp.html#a95581c94a7dc4a68f61fa24f06cc90d1',1,'main.cpp']]],
   ['mcp2515_5fmotor_8',['mcp2515_motor',['../main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5',1,'mcp2515_motor(CS_CAN_MOTOR):&#160;main.cpp'],['../main_8cpp.html#a781fd80765f85ec1d4f8250b59e9850e',1,'mcp2515_motor():&#160;main.cpp']]],
   ['mcpindex_9',['McpIndex',['../Enums_8hpp.html#a098a5b38d959b3584152e8c220708721',1,'Enums.hpp']]],

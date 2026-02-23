@@ -36,5 +36,5 @@ var searchData=
   ['diffresolved_33',['DiffResolved',['../Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210fa6bb29587fdfabd5ff1eb0796ae552a69',1,'Enums.hpp']]],
   ['diffstart_34',['DiffStart',['../Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210fa2588fd08af2e55b4efb12fafff1ce6d0',1,'Enums.hpp']]],
   ['drive_35',['Drive',['../Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4beaf2c6151d6c0d99f3666129b97e2100f5',1,'Enums.hpp']]],
-  ['drive_5fmode_5fbtn_36',['DRIVE_MODE_BTN',['../boardConf_8h.html#ab171ccb460b2510d13ceacfacb33a426',1,'boardConf.h']]]
+  ['drive_5fmode_5fbtn_36',['DRIVE_MODE_BTN',['../BoardConfig_8h.html#ab171ccb460b2510d13ceacfacb33a426',1,'BoardConfig.h']]]
 ];

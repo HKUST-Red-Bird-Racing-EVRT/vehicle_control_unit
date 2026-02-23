@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1165;
+var viewWidth = 1175;
 var viewHeight = 313;
 var sectionId = 'dynsection-0';
 </script>
@@ -82,17 +82,17 @@ var sectionId = 'dynsection-0';
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="1157.49,-239 1081.49,-239 1081.49,-220 1157.49,-220 1157.49,-239"/>
-<text text-anchor="middle" x="1119.49" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">BoardConf.h</text>
+<g id="a_node3"><a xlink:href="BoardConfig_8h.html" target="_top" xlink:title="Board configuration for the VCU (Vehicle Control Unit)">
+<polygon fill="white" stroke="#666666" points="1166.99,-239 1081.99,-239 1081.99,-220 1166.99,-220 1166.99,-239"/>
+<text text-anchor="middle" x="1124.49" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">BoardConfig.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="#63b8ff" d="M660.24,-283.82C748.28,-275.69 921.25,-258.8 1067.49,-239 1068.76,-238.83 1070.06,-238.65 1071.36,-238.46"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1072.09,-241.89 1081.47,-236.96 1071.06,-234.97 1072.09,-241.89"/>
+<path fill="none" stroke="#63b8ff" d="M660.21,-283.56C748.2,-275.09 921.12,-257.78 1067.49,-239 1068.95,-238.81 1070.42,-238.62 1071.92,-238.42"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1072.45,-241.88 1081.87,-237.05 1071.49,-234.95 1072.45,-241.88"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">

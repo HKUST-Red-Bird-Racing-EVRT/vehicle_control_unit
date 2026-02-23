@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Red Bird Racing VCU: vehicle_control_unit/include/boardConf.h Source File</title>
+<title>Red Bird Racing VCU: vehicle_control_unit/include/BoardConfig.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('boardConf_8h_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('BoardConfig_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,14 +95,14 @@ $(document).ready(function(){initNavTree('boardConf_8h_source.html',''); initRes
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">boardConf.h</div></div>
+  <div class="headertitle"><div class="title">BoardConfig.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="boardConf_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file BoardConf.h</span></div>
+<a href="BoardConfig_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file BoardConfig.h</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @author Planeson, Red Bird Racing</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @date 2026-01-15</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @version 2.0</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @version 2.0.1</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @brief Board configuration for the VCU (Vehicle Control Unit)</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * @details This file defines the board configuration and pin mappings for different versions of the VCU and for Arduino Uno.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * Define the appropriate macro to select the desired board configuration.</span></div>
@@ -118,45 +118,45 @@ $(document).ready(function(){initNavTree('boardConf_8h_source.html',''); initRes
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * @note Only one option should be uncommented at a time.</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifndef BOARDCONF_H</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define BOARDCONF_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifndef BOARDCONFIG_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define BOARDCONFIG_H</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// select the board configuration to use</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="boardConf_8h.html#ab5f01e60435bf450fa7ba7072cd25e9d">   25</a></span><span class="preprocessor">#define USE_VCU_V3_2</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#ab5f01e60435bf450fa7ba7072cd25e9d">   25</a></span><span class="preprocessor">#define USE_VCU_V3_2</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// VCU v3.2</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#ifdef USE_VCU_V3_2</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">// === CAN bus pins ===</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a65b24582a92e368f91aca95b4dbe5847">   31</a></span><span class="preprocessor">#define CS_CAN_MOTOR PIN_PD1 </span><span class="comment">// CAN 1</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="boardConf_8h.html#ab476064511df004d8a67875afbd3521b">   32</a></span><span class="preprocessor">#define CS_CAN_BMS PIN_PB2   </span><span class="comment">// CAN 3</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a661f70456357c09fff639665b5e89852">   33</a></span><span class="preprocessor">#define CS_CAN_DL PIN_PB1    </span><span class="comment">// CAN 2</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a65b24582a92e368f91aca95b4dbe5847">   31</a></span><span class="preprocessor">#define CS_CAN_MOTOR PIN_PD1 </span><span class="comment">// CAN 1</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#ab476064511df004d8a67875afbd3521b">   32</a></span><span class="preprocessor">#define CS_CAN_BMS PIN_PB2   </span><span class="comment">// CAN 3</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a661f70456357c09fff639665b5e89852">   33</a></span><span class="preprocessor">#define CS_CAN_DL PIN_PB1    </span><span class="comment">// CAN 2</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// === APPS and Brake pins ===</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a2cb80d9d4c245ea31cae786f290596c8">   36</a></span><span class="preprocessor">#define APPS_5V PIN_A6</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a5062bcc46bcd21e5984aa1bc3e932c96">   37</a></span><span class="preprocessor">#define APPS_3V3 PIN_A7</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a5526cea8555b601f99b6233f35faea83">   38</a></span><span class="preprocessor">#define BRAKE_IN PIN_PC0</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a6ff4d2630652deeecb75723f5a3fb068">   39</a></span><span class="preprocessor">#define HALL_SENSOR PIN_PC1</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a2cb80d9d4c245ea31cae786f290596c8">   36</a></span><span class="preprocessor">#define APPS_5V PIN_A6</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a5062bcc46bcd21e5984aa1bc3e932c96">   37</a></span><span class="preprocessor">#define APPS_3V3 PIN_A7</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a5526cea8555b601f99b6233f35faea83">   38</a></span><span class="preprocessor">#define BRAKE_IN PIN_PC0</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a6ff4d2630652deeecb75723f5a3fb068">   39</a></span><span class="preprocessor">#define HALL_SENSOR PIN_PC1</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// VCU brake light</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a42b87c6c088f09e708c88a78bdcbd163">   42</a></span><span class="preprocessor">#define BRAKE_LIGHT PIN_PD5 </span><span class="comment">// P=Out1</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a42b87c6c088f09e708c88a78bdcbd163">   42</a></span><span class="preprocessor">#define BRAKE_LIGHT PIN_PD5 </span><span class="comment">// P=Out1</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// === Drive mode ===</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="boardConf_8h.html#abfa15a856e2d40258527d676c5023292">   45</a></span><span class="preprocessor">#define FRG PIN_PD7 </span><span class="comment">// P=Out3</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="boardConf_8h.html#ab171ccb460b2510d13ceacfacb33a426">   46</a></span><span class="preprocessor">#define DRIVE_MODE_BTN PIN_PC5 </span><span class="comment">// IGN_5V</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#abfa15a856e2d40258527d676c5023292">   45</a></span><span class="preprocessor">#define FRG PIN_PD7 </span><span class="comment">// P=Out3</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#ab171ccb460b2510d13ceacfacb33a426">   46</a></span><span class="preprocessor">#define DRIVE_MODE_BTN PIN_PC5 </span><span class="comment">// IGN_5V</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// === Buzzer for car status ===</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a145103118f6d9d1129aa4509cf214a13">   50</a></span><span class="preprocessor">#define BUZZER PIN_PD6 </span><span class="comment">// P=Out2</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a145103118f6d9d1129aa4509cf214a13">   50</a></span><span class="preprocessor">#define BUZZER PIN_PD6 </span><span class="comment">// P=Out2</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">// === BMS HV start failed LED ===</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a1e737aebda49004244d2184945475905">   53</a></span><span class="preprocessor">#define BMS_FAILED_LED PIN_PD7 </span><span class="comment">// P=Out2</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a1e737aebda49004244d2184945475905">   53</a></span><span class="preprocessor">#define BMS_FAILED_LED PIN_PD7 </span><span class="comment">// P=Out2</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// === Button active state ===</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="boardConf_8h.html#af04e20a7e5b6153ffe850b26e1fe097a">   56</a></span><span class="preprocessor">#define BUTTON_ACTIVE HIGH</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#af04e20a7e5b6153ffe850b26e1fe097a">   56</a></span><span class="preprocessor">#define BUTTON_ACTIVE HIGH</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// === MCP2515 crystal frequency ===</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a707e24d4b34174643260e39c3abedb45">   59</a></span><span class="preprocessor">#define MCP2515_CRYSTAL_FREQ MCP_20MHZ</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a707e24d4b34174643260e39c3abedb45">   59</a></span><span class="preprocessor">#define MCP2515_CRYSTAL_FREQ MCP_20MHZ</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif </span><span class="comment">// USE_VCU_V3_2</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">// VCU v3</span></div>
@@ -294,15 +294,15 @@ $(document).ready(function(){initNavTree('boardConf_8h_source.html',''); initRes
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="preprocessor">#endif </span><span class="comment">// USE_ARDUINO_PINS</span></div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="boardConf_8h.html#a5f87fe9497f62d1f0b865190cecf2c0d">  197</a></span><span class="preprocessor">#define CAN_RATE CAN_500KBPS</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="BoardConfig_8h.html#a5f87fe9497f62d1f0b865190cecf2c0d">  197</a></span><span class="preprocessor">#define CAN_RATE CAN_500KBPS</span></div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">#endif </span><span class="comment">// BOARDCONF_H</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">#endif </span><span class="comment">// BOARDCONFIG_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_912669a89c5ad31930a81ceabf9e60c2.html">vehicle_control_unit</a></li><li class="navelem"><a class="el" href="dir_4534eaa201cb28a3db60a9c0c8fd114c.html">include</a></li><li class="navelem"><a class="el" href="boardConf_8h.html">boardConf.h</a></li>
+    <li class="navelem"><a class="el" href="dir_912669a89c5ad31930a81ceabf9e60c2.html">vehicle_control_unit</a></li><li class="navelem"><a class="el" href="dir_4534eaa201cb28a3db60a9c0c8fd114c.html">include</a></li><li class="navelem"><a class="el" href="BoardConfig_8h.html">BoardConfig.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>
