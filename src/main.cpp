@@ -118,6 +118,9 @@ void setup()
         MCPS[i].setBitrate(CAN_RATE, MCP2515_CRYSTAL_FREQ);
         MCPS[i].setNormalMode();
     }
+#if DEBUG_SERIAL
+    DBGLN_GENERAL("MCP2515 CAN initialized");
+#endif
 
     // init GPIO pins (MCP2515 CS pins initialized in constructor))
     for (uint8_t i = 0; i < INPUT_COUNT; ++i)
@@ -129,6 +132,9 @@ void setup()
         pinMode(pins_out[i], OUTPUT);
         digitalWrite(pins_out[i], LOW);
     }
+#if DEBUG_SERIAL
+    DBGLN_GENERAL("input and output pins initialized");
+#endif
 
 #if DEBUG_CAN
     Debug_CAN::initialize(&mcp2515_DL); // Currently using motor CAN for debug messages, should change to other
@@ -148,7 +154,6 @@ void setup()
  */
 void loop()
 {
-    // DBG_HALL_SENSOR(analogRead(HALL_SENSOR));
     car.millis = millis();
     pedal.update(analogRead(APPS_5V), analogRead(APPS_3V3), analogRead(BRAKE_IN));
 
@@ -175,7 +180,6 @@ void loop()
 
     // do not return here if not in DRIVE mode, else can't detect pedal being on while starting
     case CarStatus::Init:
-        DBGLN_THROTTLE("Stopping motor: INIT.");
 
         if (digitalRead(DRIVE_MODE_BTN) == BUTTON_ACTIVE && brake_pressed)
         {
@@ -187,7 +191,6 @@ void loop()
         break;
 
     case CarStatus::Startin:
-        DBGLN_THROTTLE("Stopping motor: STARTIN.");
 
         if (digitalRead(DRIVE_MODE_BTN) != BUTTON_ACTIVE || !brake_pressed)
         {
