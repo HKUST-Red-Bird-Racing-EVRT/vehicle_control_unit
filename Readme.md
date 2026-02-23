@@ -19,7 +19,7 @@ This repository contains the embedded firmware for the VCU, responsible for peda
 
 ## Getting Started
 1. **Configure Car Constants:**
-    - Edit `BoardConf.h` to choose the correct pin-mappings for a particular board.
+    - Edit `BoardConfig.h` to choose the correct pin-mappings for a particular board.
     - Edit `Pedal.hpp` to edit Drivetrain and reverse parameters.
 2. **Configure Pedal Input Constants:**
 	- Edit `Curves.hpp` to set appropriate min/max values, as well as the torque curve.
