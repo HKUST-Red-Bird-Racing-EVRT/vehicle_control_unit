@@ -25,7 +25,7 @@
 
 // Constants
 
-constexpr bool REGEN_ENABLED = false; /**< Boolean toggle for regenerative braking; false disables reverse torque. */
+constexpr bool REGEN_ENABLED = true; /**< Boolean toggle for regenerative braking; false disables reverse torque. */
 
 constexpr bool FLIP_MOTOR_DIR = false; /**< Boolean toggle to flip motor direction; true inverts torque commands. */
 
@@ -70,6 +70,8 @@ public:
     Pedal(MCP2515 &motor_can_, CarState &car, uint16_t &pedal_final_);
     void update(uint16_t pedal_1, uint16_t pedal_2, uint16_t brake);
     void sendFrame();
+    void initFilter();
+    bool initMotor();
     void readMotor();
     uint16_t &pedal_final; /**< Final pedal value is taken directly from apps_5v, see initializer */
 
@@ -78,6 +80,9 @@ private:
     MCP2515 &motor_can;              /**< Reference to MCP2515 for sending CAN messages */
     uint32_t fault_start_millis;     /**< Timestamp for when a fault started */
     uint32_t last_motor_read_millis; /**< Timestamp for the last motor data read */
+
+    bool got_speed; /**< Flag indicating if motor speed data has been successfully read */
+    bool got_error; /**< Flag indicating if motor error data has been successfully read */
 
     /**
      * @brief CAN frame to stop the motor
@@ -106,7 +111,7 @@ private:
 
     static constexpr LinearInterp<uint16_t, int16_t, int32_t, 5> THROTTLE_MAP{THROTTLE_TABLE};               /**< Interpolation map for throttle torque */
     static constexpr LinearInterp<uint16_t, int16_t, int32_t, 5> BRAKE_MAP{BRAKE_TABLE};                     /**< Interpolation map for brake torque */
-    static constexpr LinearInterp<uint16_t, uint16_t, uint32_t, 2> APPS_3V3_SCALE_MAP{APPS_3V3_SCALE_TABLE}; /**< Interpolation map for APPS_3V3->APPS_5V */
+    static constexpr LinearInterp<uint16_t, uint16_t, uint32_t, 3> APPS_3V3_SCALE_MAP{APPS_3V3_SCALE_TABLE}; /**< Interpolation map for APPS_3V3->APPS_5V */
 
     static constexpr canid_t MOTOR_SEND = 0x201; /**< Motor send CAN ID */
     static constexpr canid_t MOTOR_READ = 0x181; /**< Motor read CAN ID */
@@ -123,6 +128,7 @@ private:
     constexpr int16_t pedalTorqueMapping(const uint16_t pedal, const uint16_t brake, const int16_t motor_rpm, const bool flip_dir);
 
     MCP2515::ERROR sendCyclicRead(uint8_t reg_id, uint8_t read_period);
+    bool checkCyclicRead(uint8_t reg_id);
 };
 
 #endif // PEDAL_HPP

@@ -22,15 +22,21 @@
 #define BOARDCONFIG_H
 
 // select the board configuration to use
-#define USE_VCU_V3_2
+#define USE_3CH_CAN
 
 // VCU v3.2
 
 #ifdef USE_VCU_V3_2
+
+#define OUT_4 PIN_PB0
+#define OUT_5 PIN_PC2
+#define OUT_6 PIN_PC3
+#define OUT_7 PIN_PC4
+
 // === CAN bus pins ===
-#define CS_CAN_MOTOR PIN_PD1 // CAN 1
-#define CS_CAN_BMS PIN_PB2   // CAN 3
-#define CS_CAN_DL PIN_PB1    // CAN 2
+#define CS_CAN_DL PIN_PD1 // CAN 3
+#define CS_CAN_BMS PIN_PB2   // CAN 2
+#define CS_CAN_MOTOR PIN_PB1    // CAN 1
 
 // === APPS and Brake pins ===
 #define APPS_5V PIN_A6
@@ -42,15 +48,11 @@
 #define BRAKE_LIGHT PIN_PD5 // P=Out1
 
 // === Drive mode ===
-#define FRG PIN_PD7 // P=Out3
+#define FRG PIN_PD7            // P=Out3
 #define DRIVE_MODE_BTN PIN_PC5 // IGN_5V
-
 
 // === Buzzer for car status ===
 #define BUZZER PIN_PD6 // P=Out2
-
-// === BMS HV start failed LED ===
-#define BMS_FAILED_LED PIN_PD7 // P=Out2
 
 // === Button active state ===
 #define BUTTON_ACTIVE HIGH
@@ -96,6 +98,12 @@
 // 3 channel CAN dev board
 
 #ifdef USE_3CH_CAN
+
+#define OUT_4 PIN_PD4
+#define OUT_5 PIN_PD5
+#define OUT_6 PIN_PD6
+#define OUT_7 PIN_PD7
+
 // === CAN bus pins ===
 #define CS_CAN_MOTOR PIN_PB2
 #define CS_CAN_BMS PIN_PB1
@@ -111,7 +119,7 @@
 #define BRAKE_LIGHT PIN_PD2
 
 // === Drive mode ===
-#define FRG PIN_PD3  // = drive mode LED, soft relay
+#define FRG PIN_PD3 // = drive mode LED, soft relay
 #define DRIVE_MODE_BTN PIN_PC4
 
 // === Buzzer for car status ===
