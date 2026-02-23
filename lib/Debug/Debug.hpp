@@ -27,17 +27,8 @@
 #endif
 
 #define DEBUG_THROTTLE (1 && DEBUG)
-#define DEBUG_THROTTLE_IN (1 && DEBUG_THROTTLE)
-#define DEBUG_THROTTLE_OUT (1 && DEBUG_THROTTLE)
 #define DEBUG_THROTTLE_FAULT (1 && DEBUG_THROTTLE)
-#define DEBUG_BRAKE (1 && DEBUG)
-#define DEBUG_BRAKE_IN (1 && DEBUG_BRAKE)
-#define DEBUG_BRAKE_FAULT (1 && DEBUG_BRAKE)
 #define DEBUG_GENERAL 1
-#define DEBUG_STATUS 1 // Serial only
-#define DEBUG_STATUS_CAR (1 && DEBUG_STATUS)
-#define DEBUG_STATUS_BRAKE (1 && DEBUG_STATUS)
-#define DEBUG_HALL_SENSOR (1 && DEBUG)
 
 // ===== Simple Serial-Only Debug Functions =====
 
@@ -90,30 +81,6 @@ inline void DBGLN_GENERAL(const char *x)
 }
 
 /**
- * @brief Prints a status message to the serial console.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBG_STATUS(const char *x)
-{
-#if DEBUG_STATUS && DEBUG_SERIAL
-    Debug_Serial::print(x);
-#endif
-}
-
-/**
- * @brief Prints a line to the serial console for status debug.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBGLN_STATUS(const char *x)
-{
-#if DEBUG_STATUS && DEBUG_SERIAL
-    Debug_Serial::println(x);
-#endif
-}
-
-/**
  * @brief Sends throttle fault debug info via CAN or serial (if enabled).
  * Overloads for fault status with or without value.
  * @param fault_status The fault status enum.
@@ -143,20 +110,12 @@ inline void DBG_THROTTLE_FAULT(PedalFault fault_status)
 #endif
 }
 
-/**
- * @brief Sends BMS debug info via CAN or serial (if enabled).
- * @param BMS_status The BMS status enum.
- */
-inline void DBG_BMS_STATUS(BmsStatus BMS_status)
-{
-#if DEBUG_BRAKE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
-#if DEBUG_SERIAL
-    Debug_Serial::status_bms(BMS_status);
-#endif
+// General purpose debug CAN message – as requested
 #if DEBUG_CAN
-    Debug_CAN::status_bms(BMS_status);
+#define DBG_GENERAL_CAN(id, d0,d1,d2,d3,d4,d5,d6,d7) \
+    Debug_CAN::general((id), (d0),(d1),(d2),(d3),(d4),(d5),(d6),(d7))
+#else
+#define DBG_GENERAL_CAN(id, ...)  ((void)0)
 #endif
-#endif
-}
 
 #endif // DEBUG_HPP
