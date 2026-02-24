@@ -32,34 +32,9 @@
 #include <Debug_can.hpp>
 #endif
 
-#define DEBUG_THROTTLE_FAULT (1 && DEBUG)
 #define DEBUG_GENERAL 1
 
 // ===== Debug Macros for Serial Output =====
-
-/**
- * @brief Prints a throttle debug message to the serial console.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBG_THROTTLE(const char *x)
-{
-#if DEBUG_THROTTLE_FAULT && DEBUG_SERIAL
-    Debug_Serial::print(x);
-#endif
-}
-
-/**
- * @brief Prints a line to the serial console for throttle debug.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBGLN_THROTTLE(const char *x)
-{
-#if DEBUG_THROTTLE_FAULT && DEBUG_SERIAL
-    Debug_Serial::println(x);
-#endif
-}
 
 /**
  * @brief Prints a general debug message to the serial console.
@@ -85,40 +60,6 @@ inline void DBGLN_GENERAL(const char *x)
 #endif
 }
 
-/**
- * @brief Sends throttle fault debug info via CAN or serial (if enabled).
- * Overloads for fault status with or without value.
- * @param fault_status The fault status enum.
- * @param value Optional uint16_t value for fault.
- */
-inline void DBG_THROTTLE_FAULT(PedalFault fault_status, uint16_t value)
-{
-#if DEBUG_THROTTLE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
-#if DEBUG_SERIAL
-    Debug_Serial::throttle_fault(fault_status, value);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::throttle_fault(fault_status, value);
-#endif
-#endif
-}
-
-/**
- * @brief Sends throttle fault debug info via CAN or serial (if enabled).
- * Overload for fault status without value.
- * @param fault_status The fault status enum.
- */
-inline void DBG_THROTTLE_FAULT(PedalFault fault_status)
-{
-#if DEBUG_THROTTLE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
-#if DEBUG_SERIAL
-    Debug_Serial::throttle_fault(fault_status);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::throttle_fault(fault_status);
-#endif
-#endif
-}
 
 /**
  * @brief Sends arbitrary debug data via CAN with specified message ID and data bytes.
