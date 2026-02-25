@@ -156,4 +156,25 @@ inline void DBG_BMS_STATUS(BmsStatus BMS_status)
 #endif
 }
 
+/**
+ * @brief Sends a generic 8-byte message over CAN for ad-hoc debugging.
+ * * Allows quick injection of arbitrary data onto the CAN bus during testing. 
+ * Any trailing data bytes not explicitly provided will automatically default to 0x00.
+ * * @param id The CAN ID to transmit the message on.
+ * @param d0 Data byte 0 (defaults to 0x00).
+ * @param d1 Data byte 1 (defaults to 0x00).
+ * @param d2 Data byte 2 (defaults to 0x00).
+ * @param d3 Data byte 3 (defaults to 0x00).
+ * @param d4 Data byte 4 (defaults to 0x00).
+ * @param d5 Data byte 5 (defaults to 0x00).
+ * @param d6 Data byte 6 (defaults to 0x00).
+ * @param d7 Data byte 7 (defaults to 0x00).
+ * @note CAN exclusive
+ */
+inline void DBG_GENERAL_CAN(canid_t id, uint8_t d0 = 0x00, uint8_t d1 = 0x00, uint8_t d2 = 0x00, uint8_t d3 = 0x00, uint8_t d4 = 0x00, uint8_t d5 = 0x00, uint8_t d6 = 0x00, uint8_t d7 = 0x00)
+{
+#if DEBUG_CAN
+    Debug_CAN::general(id, d0, d1, d2, d3, d4, d5, d6, d7);
+#endif
+}
 #endif // DEBUG_HPP

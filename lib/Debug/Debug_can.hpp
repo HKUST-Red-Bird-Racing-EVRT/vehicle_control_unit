@@ -33,6 +33,7 @@ namespace Debug_CAN
 
     void status_brake(uint16_t brake_voltage);
     void status_bms(BmsStatus BMS_status);
+    void general(canid_t id, uint8_t d0 = 0x00, uint8_t d1 = 0x00, uint8_t d2 = 0x00, uint8_t d3 = 0x00, uint8_t d4 = 0x00, uint8_t d5 = 0x00, uint8_t d6 = 0x00, uint8_t d7 = 0x00);
 
 
     constexpr canid_t THROTTLE_IN_MSG = 0x690;        /**< Debug: throttle input message */
