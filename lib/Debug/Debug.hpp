@@ -2,8 +2,8 @@
  * @file Debug.hpp
  * @author Planeson, Red Bird Racing
  * @brief Debugging macros and functions for serial and CAN output
- * @version 1.1
- * @date 2026-01-15
+ * @version 1.2
+ * @date 2026-02-17
  * @see Debug_serial, Debug_can
  * @dir Debug @brief The Debug library contains debugging macros and functions for serial and CAN output, allowing for easy toggling of debug messages and separation of concerns between different types of debug information.
  */
@@ -12,6 +12,12 @@
 #define DEBUG_HPP
 
 #include "Enums.hpp"
+
+// ignore -Wpedantic warnings for mcp2515.h
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpedantic"
+#include <mcp2515.h>
+#pragma GCC diagnostic pop
 
 // === Debug Flags ===
 #define DEBUG 1                  // if 0, all debug messages are ignored
@@ -26,44 +32,9 @@
 #include <Debug_can.hpp>
 #endif
 
-#define DEBUG_THROTTLE (1 && DEBUG)
-#define DEBUG_THROTTLE_IN (1 && DEBUG_THROTTLE)
-#define DEBUG_THROTTLE_OUT (1 && DEBUG_THROTTLE)
-#define DEBUG_THROTTLE_FAULT (1 && DEBUG_THROTTLE)
-#define DEBUG_BRAKE (1 && DEBUG)
-#define DEBUG_BRAKE_IN (1 && DEBUG_BRAKE)
-#define DEBUG_BRAKE_FAULT (1 && DEBUG_BRAKE)
 #define DEBUG_GENERAL 1
-#define DEBUG_STATUS 1 // Serial only
-#define DEBUG_STATUS_CAR (1 && DEBUG_STATUS)
-#define DEBUG_STATUS_BRAKE (1 && DEBUG_STATUS)
-#define DEBUG_HALL_SENSOR (1 && DEBUG)
 
-// ===== Simple Serial-Only Debug Functions =====
-
-/**
- * @brief Prints a throttle debug message to the serial console.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBG_THROTTLE(const char *x)
-{
-#if DEBUG_THROTTLE && DEBUG_SERIAL
-    Debug_Serial::print(x);
-#endif
-}
-
-/**
- * @brief Prints a line to the serial console for throttle debug.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBGLN_THROTTLE(const char *x)
-{
-#if DEBUG_THROTTLE && DEBUG_SERIAL
-    Debug_Serial::println(x);
-#endif
-}
+// ===== Debug Macros for Serial Output =====
 
 /**
  * @brief Prints a general debug message to the serial console.
@@ -89,73 +60,31 @@ inline void DBGLN_GENERAL(const char *x)
 #endif
 }
 
-/**
- * @brief Prints a status message to the serial console.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBG_STATUS(const char *x)
-{
-#if DEBUG_STATUS && DEBUG_SERIAL
-    Debug_Serial::print(x);
-#endif
-}
+
 
 /**
- * @brief Prints a line to the serial console for status debug.
- * @param x The message to print.
- * @note Serial exclusive
+ * @brief Sends arbitrary debug data via CAN with specified message ID and data bytes.
+ * @param id CAN message ID
+ * @param data0 Byte 0 of CAN data (default 0x00)
+ * @param data1 Byte 1 of CAN data (default 0x00)
+ * @param data2 Byte 2 of CAN data (default 0x00)
+ * @param data3 Byte 3 of CAN data (default 0x00)
+ * @param data4 Byte 4 of CAN data (default 0x00)
+ * @param data5 Byte 5 of CAN data (default 0x00)
+ * @param data6 Byte 6 of CAN data (default 0x00)
+ * @param data7 Byte 7 of CAN data (default 0x00)
+ * @note CAN exclusive
  */
-inline void DBGLN_STATUS(const char *x)
+inline void DBG_GENERAL_CAN(canid_t id, uint8_t data0 = 0x00, uint8_t data1 = 0x00,
+                            uint8_t data2 = 0x00, 
+                            uint8_t data3 = 0x00, 
+                            uint8_t data4 = 0x00,
+                            uint8_t data5 = 0x00, 
+                            uint8_t data6 = 0x00, 
+                            uint8_t data7 = 0x00)
 {
-#if DEBUG_STATUS && DEBUG_SERIAL
-    Debug_Serial::println(x);
-#endif
-}
-
-/**
- * @brief Sends throttle fault debug info via CAN or serial (if enabled).
- * Overloads for fault status with or without value.
- * @param fault_status The fault status enum.
- * @param value Optional float value for fault.
- */
-inline void DBG_THROTTLE_FAULT(PedalFault fault_status, uint16_t value)
-{
-#if DEBUG_THROTTLE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
-#if DEBUG_SERIAL
-    Debug_Serial::throttle_fault(fault_status, value);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::throttle_fault(fault_status, value);
-#endif
-#endif
-}
-
-inline void DBG_THROTTLE_FAULT(PedalFault fault_status)
-{
-#if DEBUG_THROTTLE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
-#if DEBUG_SERIAL
-    Debug_Serial::throttle_fault(fault_status);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::throttle_fault(fault_status);
-#endif
-#endif
-}
-
-/**
- * @brief Sends BMS debug info via CAN or serial (if enabled).
- * @param BMS_status The BMS status enum.
- */
-inline void DBG_BMS_STATUS(BmsStatus BMS_status)
-{
-#if DEBUG_BRAKE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
-#if DEBUG_SERIAL
-    Debug_Serial::status_bms(BMS_status);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::status_bms(BMS_status);
-#endif
+#if DEBUG && DEBUG_CAN
+    Debug_CAN::send_message(id, data0, data1, data2, data3, data4, data5, data6, data7);
 #endif
 }
 
