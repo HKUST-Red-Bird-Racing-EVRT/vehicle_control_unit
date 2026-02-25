@@ -2,7 +2,7 @@
  * @file Debug_can.hpp
  * @author Planeson, Chiho, Red Bird Racing
  * @brief Declaration of the Debug_CAN namespace for CAN debugging functions
- * @version 1.2
+ * @version 2.0
  * @date 2026-02-25
  * @see Debug_can.cpp
  */

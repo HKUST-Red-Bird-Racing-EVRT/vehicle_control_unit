@@ -2,7 +2,7 @@
  * @file Debug_serial.cpp
  * @author Planeson, Chiho, Red Bird Racing
  * @brief Implementation of the Debug_Serial namespace for serial debugging functions
- * @version 1.2
+ * @version 2.0
  * @date 2026-02-25
  * @see Debug_serial.hpp
  */

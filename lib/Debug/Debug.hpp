@@ -2,7 +2,7 @@
  * @file Debug.hpp
  * @author Planeson, Chiho, Red Bird Racing
  * @brief Debugging macros and functions for serial and CAN output
- * @version 1.2
+ * @version 2.0
  * @date 2026-02-25
  * @see Debug_serial, Debug_can
  * @dir Debug @brief The Debug library contains debugging macros and functions for serial and CAN output, allowing for easy toggling of debug messages and separation of concerns between different types of debug information.
