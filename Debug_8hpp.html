@@ -105,12 +105,13 @@ $(document).ready(function(){initNavTree('Debug_8hpp.html',''); initResizable();
 <p>Debugging macros and functions for serial and CAN output.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Enums_8hpp_source.html">Enums.hpp</a>&quot;</code><br />
+<code>#include &lt;mcp2515.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="Debug__serial_8hpp_source.html">Debug_serial.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Debug.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp__incl.svg" width="350" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp__incl.svg" width="388" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -130,65 +131,26 @@ Macros</h2></td></tr>
 <tr class="separator:a61e127df60d55ea4c8bd6b8ec1f88367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9d6794979a4ec6135cc3e425777b993"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#ac9d6794979a4ec6135cc3e425777b993">DEBUG_CAN</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>)</td></tr>
 <tr class="separator:ac9d6794979a4ec6135cc3e425777b993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a161269174793744d640c3a37ee8c97d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a161269174793744d640c3a37ee8c97d1">DEBUG_THROTTLE</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>)</td></tr>
-<tr class="separator:a161269174793744d640c3a37ee8c97d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10f2e3a2f2edf4c999933494557a2cf9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a10f2e3a2f2edf4c999933494557a2cf9">DEBUG_THROTTLE_IN</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a161269174793744d640c3a37ee8c97d1">DEBUG_THROTTLE</a>)</td></tr>
-<tr class="separator:a10f2e3a2f2edf4c999933494557a2cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0c4dd35d30dbc1881a09d5c339d09a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#ad0c4dd35d30dbc1881a09d5c339d09a3">DEBUG_THROTTLE_OUT</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a161269174793744d640c3a37ee8c97d1">DEBUG_THROTTLE</a>)</td></tr>
-<tr class="separator:ad0c4dd35d30dbc1881a09d5c339d09a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d43d7188ea0eeea1c490073fad87559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a6d43d7188ea0eeea1c490073fad87559">DEBUG_THROTTLE_FAULT</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a161269174793744d640c3a37ee8c97d1">DEBUG_THROTTLE</a>)</td></tr>
-<tr class="separator:a6d43d7188ea0eeea1c490073fad87559"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e6cc793a9f4137bb348c93184e66fc9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a8e6cc793a9f4137bb348c93184e66fc9">DEBUG_BRAKE</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>)</td></tr>
-<tr class="separator:a8e6cc793a9f4137bb348c93184e66fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23581d444df2c63fda1b62e21cf6c5d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a23581d444df2c63fda1b62e21cf6c5d0">DEBUG_BRAKE_IN</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a8e6cc793a9f4137bb348c93184e66fc9">DEBUG_BRAKE</a>)</td></tr>
-<tr class="separator:a23581d444df2c63fda1b62e21cf6c5d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae33d79f2390768d842e729727d5d5541"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#ae33d79f2390768d842e729727d5d5541">DEBUG_BRAKE_FAULT</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a8e6cc793a9f4137bb348c93184e66fc9">DEBUG_BRAKE</a>)</td></tr>
-<tr class="separator:ae33d79f2390768d842e729727d5d5541"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c35b4c71a9fd428c47eb27bf72c2789"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a4c35b4c71a9fd428c47eb27bf72c2789">DEBUG_GENERAL</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a4c35b4c71a9fd428c47eb27bf72c2789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04c63ab2d82d3f4b94883e1fb75e62f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a04c63ab2d82d3f4b94883e1fb75e62f4">DEBUG_STATUS</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a04c63ab2d82d3f4b94883e1fb75e62f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c6a36259add4723a0e33f323bbda248"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a9c6a36259add4723a0e33f323bbda248">DEBUG_STATUS_CAR</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a04c63ab2d82d3f4b94883e1fb75e62f4">DEBUG_STATUS</a>)</td></tr>
-<tr class="separator:a9c6a36259add4723a0e33f323bbda248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d792f9b86b0b6e682334a8c482dcdaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a1d792f9b86b0b6e682334a8c482dcdaf">DEBUG_STATUS_BRAKE</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a04c63ab2d82d3f4b94883e1fb75e62f4">DEBUG_STATUS</a>)</td></tr>
-<tr class="separator:a1d792f9b86b0b6e682334a8c482dcdaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac880a3535e9c803915338b28c521662f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#ac880a3535e9c803915338b28c521662f">DEBUG_HALL_SENSOR</a>&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>)</td></tr>
-<tr class="separator:ac880a3535e9c803915338b28c521662f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9d3888b021fa82a4c78185a961fdad84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a9d3888b021fa82a4c78185a961fdad84">DBG_THROTTLE</a> (const char *x)</td></tr>
-<tr class="memdesc:a9d3888b021fa82a4c78185a961fdad84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a throttle debug message to the serial console.  <br /></td></tr>
-<tr class="separator:a9d3888b021fa82a4c78185a961fdad84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a564faad1bd32a5894d3706e38f1067"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a9a564faad1bd32a5894d3706e38f1067">DBGLN_THROTTLE</a> (const char *x)</td></tr>
-<tr class="memdesc:a9a564faad1bd32a5894d3706e38f1067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a line to the serial console for throttle debug.  <br /></td></tr>
-<tr class="separator:a9a564faad1bd32a5894d3706e38f1067"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d60671317b513353287b53444954a4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a9d60671317b513353287b53444954a4b">DBG_GENERAL</a> (const char *x)</td></tr>
 <tr class="memdesc:a9d60671317b513353287b53444954a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a general debug message to the serial console.  <br /></td></tr>
 <tr class="separator:a9d60671317b513353287b53444954a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8d6e3de15309922f25c12f4d7cf727"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a8e8d6e3de15309922f25c12f4d7cf727">DBGLN_GENERAL</a> (const char *x)</td></tr>
 <tr class="memdesc:a8e8d6e3de15309922f25c12f4d7cf727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a line to the serial console for general debug.  <br /></td></tr>
 <tr class="separator:a8e8d6e3de15309922f25c12f4d7cf727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c41dd69d26e414610765b6feb86c475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a3c41dd69d26e414610765b6feb86c475">DBG_STATUS</a> (const char *x)</td></tr>
-<tr class="memdesc:a3c41dd69d26e414610765b6feb86c475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a status message to the serial console.  <br /></td></tr>
-<tr class="separator:a3c41dd69d26e414610765b6feb86c475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeb16efc082a41c9b137c2fa9d8162c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#adeb16efc082a41c9b137c2fa9d8162c0">DBGLN_STATUS</a> (const char *x)</td></tr>
-<tr class="memdesc:adeb16efc082a41c9b137c2fa9d8162c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a line to the serial console for status debug.  <br /></td></tr>
-<tr class="separator:adeb16efc082a41c9b137c2fa9d8162c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83973b3fea610da634610d01cd98e2d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a83973b3fea610da634610d01cd98e2d8">DBG_THROTTLE_FAULT</a> (<a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status, uint16_t value)</td></tr>
-<tr class="memdesc:a83973b3fea610da634610d01cd98e2d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends throttle fault debug info via CAN or serial (if enabled). Overloads for fault status with or without value.  <br /></td></tr>
-<tr class="separator:a83973b3fea610da634610d01cd98e2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55738d079053775022675f7d2e1cabcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a55738d079053775022675f7d2e1cabcf">DBG_THROTTLE_FAULT</a> (<a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status)</td></tr>
-<tr class="separator:a55738d079053775022675f7d2e1cabcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a460f71d79003b7e0c37275d93f7d5c53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a460f71d79003b7e0c37275d93f7d5c53">DBG_BMS_STATUS</a> (<a class="el" href="Enums_8hpp.html#af9f10f99b9e1fe09756feb57c6520cd8">BmsStatus</a> BMS_status)</td></tr>
-<tr class="memdesc:a460f71d79003b7e0c37275d93f7d5c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> debug info via CAN or serial (if enabled).  <br /></td></tr>
-<tr class="separator:a460f71d79003b7e0c37275d93f7d5c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c68ee33aecd3c1599e349752c4b37ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Debug_8hpp.html#a1c68ee33aecd3c1599e349752c4b37ca">DBG_GENERAL_CAN</a> (canid_t id, uint8_t data0=0x00, uint8_t data1=0x00, uint8_t data2=0x00, uint8_t data3=0x00, uint8_t data4=0x00, uint8_t data5=0x00, uint8_t data6=0x00, uint8_t data7=0x00)</td></tr>
+<tr class="memdesc:a1c68ee33aecd3c1599e349752c4b37ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends arbitrary debug data via CAN with specified message ID and data bytes.  <br /></td></tr>
+<tr class="separator:a1c68ee33aecd3c1599e349752c4b37ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Debugging macros and functions for serial and CAN output. </p>
 <dl class="section author"><dt>Author</dt><dd>Planeson, Red Bird Racing </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2026-01-15 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.2 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-02-17 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd>Debug_serial, Debug_can </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
@@ -205,55 +167,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00017">17</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a8e6cc793a9f4137bb348c93184e66fc9" name="a8e6cc793a9f4137bb348c93184e66fc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e6cc793a9f4137bb348c93184e66fc9">&#9670;&#160;</a></span>DEBUG_BRAKE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_BRAKE&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00033">33</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ae33d79f2390768d842e729727d5d5541" name="ae33d79f2390768d842e729727d5d5541"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae33d79f2390768d842e729727d5d5541">&#9670;&#160;</a></span>DEBUG_BRAKE_FAULT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_BRAKE_FAULT&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a8e6cc793a9f4137bb348c93184e66fc9">DEBUG_BRAKE</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00035">35</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a23581d444df2c63fda1b62e21cf6c5d0" name="a23581d444df2c63fda1b62e21cf6c5d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23581d444df2c63fda1b62e21cf6c5d0">&#9670;&#160;</a></span>DEBUG_BRAKE_IN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_BRAKE_IN&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a8e6cc793a9f4137bb348c93184e66fc9">DEBUG_BRAKE</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00034">34</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00023">23</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
 
 </div>
 </div>
@@ -269,7 +183,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00019">19</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00025">25</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
 
 </div>
 </div>
@@ -285,23 +199,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00036">36</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac880a3535e9c803915338b28c521662f" name="ac880a3535e9c803915338b28c521662f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac880a3535e9c803915338b28c521662f">&#9670;&#160;</a></span>DEBUG_HALL_SENSOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_HALL_SENSOR&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00040">40</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00035">35</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
 
 </div>
 </div>
@@ -317,175 +215,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00018">18</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a04c63ab2d82d3f4b94883e1fb75e62f4" name="a04c63ab2d82d3f4b94883e1fb75e62f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04c63ab2d82d3f4b94883e1fb75e62f4">&#9670;&#160;</a></span>DEBUG_STATUS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_STATUS&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00037">37</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a1d792f9b86b0b6e682334a8c482dcdaf" name="a1d792f9b86b0b6e682334a8c482dcdaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d792f9b86b0b6e682334a8c482dcdaf">&#9670;&#160;</a></span>DEBUG_STATUS_BRAKE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_STATUS_BRAKE&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a04c63ab2d82d3f4b94883e1fb75e62f4">DEBUG_STATUS</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00039">39</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a9c6a36259add4723a0e33f323bbda248" name="a9c6a36259add4723a0e33f323bbda248"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c6a36259add4723a0e33f323bbda248">&#9670;&#160;</a></span>DEBUG_STATUS_CAR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_STATUS_CAR&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a04c63ab2d82d3f4b94883e1fb75e62f4">DEBUG_STATUS</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00038">38</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a161269174793744d640c3a37ee8c97d1" name="a161269174793744d640c3a37ee8c97d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a161269174793744d640c3a37ee8c97d1">&#9670;&#160;</a></span>DEBUG_THROTTLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_THROTTLE&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00029">29</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a6d43d7188ea0eeea1c490073fad87559" name="a6d43d7188ea0eeea1c490073fad87559"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d43d7188ea0eeea1c490073fad87559">&#9670;&#160;</a></span>DEBUG_THROTTLE_FAULT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_THROTTLE_FAULT&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a161269174793744d640c3a37ee8c97d1">DEBUG_THROTTLE</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00032">32</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a10f2e3a2f2edf4c999933494557a2cf9" name="a10f2e3a2f2edf4c999933494557a2cf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10f2e3a2f2edf4c999933494557a2cf9">&#9670;&#160;</a></span>DEBUG_THROTTLE_IN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_THROTTLE_IN&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a161269174793744d640c3a37ee8c97d1">DEBUG_THROTTLE</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00030">30</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad0c4dd35d30dbc1881a09d5c339d09a3" name="ad0c4dd35d30dbc1881a09d5c339d09a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0c4dd35d30dbc1881a09d5c339d09a3">&#9670;&#160;</a></span>DEBUG_THROTTLE_OUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_THROTTLE_OUT&#160;&#160;&#160;(1 &amp;&amp; <a class="el" href="Debug_8hpp.html#a161269174793744d640c3a37ee8c97d1">DEBUG_THROTTLE</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00031">31</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00024">24</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a460f71d79003b7e0c37275d93f7d5c53" name="a460f71d79003b7e0c37275d93f7d5c53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a460f71d79003b7e0c37275d93f7d5c53">&#9670;&#160;</a></span>DBG_BMS_STATUS()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DBG_BMS_STATUS </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="Enums_8hpp.html#af9f10f99b9e1fe09756feb57c6520cd8">BmsStatus</a>&#160;</td>
-          <td class="paramname"><em>BMS_status</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sends <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> debug info via CAN or serial (if enabled). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">BMS_status</td><td>The <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> status enum. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00150">150</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00176">Debug_CAN::status_bms()</a>, and <a class="el" href="Debug__serial_8cpp_source.html#l00217">Debug_Serial::status_bms()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="BMS_8cpp_source.html#l00047">BMS::checkHv()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a460f71d79003b7e0c37275d93f7d5c53_cgraph.svg" width="392" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a460f71d79003b7e0c37275d93f7d5c53_icgraph.svg" width="583" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
 <a id="a9d60671317b513353287b53444954a4b" name="a9d60671317b513353287b53444954a4b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d60671317b513353287b53444954a4b">&#9670;&#160;</a></span>DBG_GENERAL()</h2>
 
@@ -519,7 +253,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Serial exclusive </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00073">73</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00044">44</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="Debug__serial_8cpp_source.html#l00029">Debug_Serial::print()</a>.</p>
 <div class="dynheader">
@@ -531,8 +265,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a3c41dd69d26e414610765b6feb86c475" name="a3c41dd69d26e414610765b6feb86c475"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c41dd69d26e414610765b6feb86c475">&#9670;&#160;</a></span>DBG_STATUS()</h2>
+<a id="a1c68ee33aecd3c1599e349752c4b37ca" name="a1c68ee33aecd3c1599e349752c4b37ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c68ee33aecd3c1599e349752c4b37ca">&#9670;&#160;</a></span>DBG_GENERAL_CAN()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -541,150 +275,58 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void DBG_STATUS </td>
+          <td class="memname">void DBG_GENERAL_CAN </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prints a status message to the serial console. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>The message to print. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Serial exclusive </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00097">97</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__serial_8cpp_source.html#l00029">Debug_Serial::print()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a3c41dd69d26e414610765b6feb86c475_cgraph.svg" width="312" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a9d3888b021fa82a4c78185a961fdad84" name="a9d3888b021fa82a4c78185a961fdad84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d3888b021fa82a4c78185a961fdad84">&#9670;&#160;</a></span>DBG_THROTTLE()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DBG_THROTTLE </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prints a throttle debug message to the serial console. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>The message to print. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Serial exclusive </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00049">49</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__serial_8cpp_source.html#l00029">Debug_Serial::print()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00258">Pedal::readMotor()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a9d3888b021fa82a4c78185a961fdad84_cgraph.svg" width="332" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a9d3888b021fa82a4c78185a961fdad84_icgraph.svg" width="602" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a55738d079053775022675f7d2e1cabcf" name="a55738d079053775022675f7d2e1cabcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55738d079053775022675f7d2e1cabcf">&#9670;&#160;</a></span>DBG_THROTTLE_FAULT() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DBG_THROTTLE_FAULT </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a>&#160;</td>
-          <td class="paramname"><em>fault_status</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00134">134</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00093">Debug_CAN::throttle_fault()</a>, and <a class="el" href="Debug__serial_8cpp_source.html#l00082">Debug_Serial::throttle_fault()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a55738d079053775022675f7d2e1cabcf_cgraph.svg" width="395" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a83973b3fea610da634610d01cd98e2d8" name="a83973b3fea610da634610d01cd98e2d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83973b3fea610da634610d01cd98e2d8">&#9670;&#160;</a></span>DBG_THROTTLE_FAULT() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DBG_THROTTLE_FAULT </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a>&#160;</td>
-          <td class="paramname"><em>fault_status</em>, </td>
+          <td class="paramtype">canid_t&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data0</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data1</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data2</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data3</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data4</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data5</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data6</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data7</em> = <code>0x00</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -699,30 +341,30 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Sends throttle fault debug info via CAN or serial (if enabled). Overloads for fault status with or without value. </p>
+<p>Sends arbitrary debug data via CAN with specified message ID and data bytes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fault_status</td><td>The fault status enum. </td></tr>
-    <tr><td class="paramname">value</td><td>Optional float value for fault. </td></tr>
+    <tr><td class="paramname">id</td><td>CAN message ID </td></tr>
+    <tr><td class="paramname">data0</td><td>Byte 0 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data1</td><td>Byte 1 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data2</td><td>Byte 2 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data3</td><td>Byte 3 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data4</td><td>Byte 4 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data5</td><td>Byte 5 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data6</td><td>Byte 6 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data7</td><td>Byte 7 of CAN data (default 0x00) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>CAN exclusive </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00122">122</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00078">78</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00093">Debug_CAN::throttle_fault()</a>, and <a class="el" href="Debug__serial_8cpp_source.html#l00082">Debug_Serial::throttle_fault()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00224">Pedal::checkPedalFault()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00061">Pedal::update()</a>.</p>
+<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00046">Debug_CAN::send_message()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a83973b3fea610da634610d01cd98e2d8_cgraph.svg" width="395" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a83973b3fea610da634610d01cd98e2d8_icgraph.svg" width="659" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a1c68ee33aecd3c1599e349752c4b37ca_cgraph.svg" width="418" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -761,7 +403,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Serial exclusive </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00085">85</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00056">56</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="Debug__serial_8cpp_source.html#l00037">Debug_Serial::println()</a>.</p>
 
@@ -776,104 +418,6 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a8e8d6e3de15309922f25c12f4d7cf727_icgraph.svg" width="576" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="adeb16efc082a41c9b137c2fa9d8162c0" name="adeb16efc082a41c9b137c2fa9d8162c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adeb16efc082a41c9b137c2fa9d8162c0">&#9670;&#160;</a></span>DBGLN_STATUS()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DBGLN_STATUS </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prints a line to the serial console for status debug. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>The message to print. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Serial exclusive </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00109">109</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__serial_8cpp_source.html#l00037">Debug_Serial::println()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_adeb16efc082a41c9b137c2fa9d8162c0_cgraph.svg" width="342" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a9a564faad1bd32a5894d3706e38f1067" name="a9a564faad1bd32a5894d3706e38f1067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a564faad1bd32a5894d3706e38f1067">&#9670;&#160;</a></span>DBGLN_THROTTLE()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DBGLN_THROTTLE </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prints a line to the serial console for throttle debug. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>The message to print. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Serial exclusive </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug_8hpp_source.html#l00061">61</a> of file <a class="el" href="Debug_8hpp_source.html">Debug.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__serial_8cpp_source.html#l00037">Debug_Serial::println()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00149">loop()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00128">Pedal::sendFrame()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a9a564faad1bd32a5894d3706e38f1067_cgraph.svg" width="360" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Debug_8hpp_a9a564faad1bd32a5894d3706e38f1067_icgraph.svg" width="623" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

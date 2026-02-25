@@ -1,0 +1,4 @@
+<map id="DBG_GENERAL_CAN" name="DBG_GENERAL_CAN">
+<area shape="rect" id="node1" title="Sends arbitrary debug data via CAN with specified message ID and data bytes." alt="" coords="5,5,160,31"/>
+<area shape="rect" id="node2" href="$namespaceDebug__CAN.html#a8d829d5a41ff1b23f3afa0bbd9320e56" title="Sends arbitrary debug data via CAN with specified message ID and data bytes." alt="" coords="208,5,412,31"/>
+</map>

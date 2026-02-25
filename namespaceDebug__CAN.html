@@ -110,128 +110,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a5c8b33000e36a19ccb285e45f666e64e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a5c8b33000e36a19ccb285e45f666e64e">initialize</a> (MCP2515 *<a class="el" href="namespaceDebug__CAN.html#af09d4c579d34dfa0f5fb18114f304203">can_interface</a>)</td></tr>
 <tr class="memdesc:a5c8b33000e36a19ccb285e45f666e64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <a class="el" href="namespaceDebug__CAN.html" title="Namespace for CAN debugging functions.">Debug_CAN</a> interface. It should be called before using any other <a class="el" href="namespaceDebug__CAN.html" title="Namespace for CAN debugging functions.">Debug_CAN</a> functions.  <br /></td></tr>
 <tr class="separator:a5c8b33000e36a19ccb285e45f666e64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c26a2303b6fa92439c0a693728d760e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a5c26a2303b6fa92439c0a693728d760e">throttle_in</a> (uint16_t pedal_filtered_1, uint16_t pedal_filtered_2, uint16_t pedal_2_scaled, uint16_t brake)</td></tr>
-<tr class="memdesc:a5c26a2303b6fa92439c0a693728d760e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a debug throttle input message over CAN.  <br /></td></tr>
-<tr class="separator:a5c26a2303b6fa92439c0a693728d760e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace21ce4da40cf6ae391410d839c59cb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#ace21ce4da40cf6ae391410d839c59cb3">throttle_out</a> (uint16_t throttle_final, int16_t throttle_torque_val)</td></tr>
-<tr class="memdesc:ace21ce4da40cf6ae391410d839c59cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a debug throttle output message over CAN.  <br /></td></tr>
-<tr class="separator:ace21ce4da40cf6ae391410d839c59cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aded6aa4b3ac940a9ea0941569e157522"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#aded6aa4b3ac940a9ea0941569e157522">throttle_fault</a> (<a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status, uint16_t value)</td></tr>
-<tr class="memdesc:aded6aa4b3ac940a9ea0941569e157522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a debug throttle fault message over CAN with a float value.  <br /></td></tr>
 <tr class="separator:aded6aa4b3ac940a9ea0941569e157522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff1ba009c1c228e994e83c89c4243e08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#aff1ba009c1c228e994e83c89c4243e08">throttle_fault</a> (<a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status)</td></tr>
-<tr class="memdesc:aff1ba009c1c228e994e83c89c4243e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a debug throttle fault message over CAN without a float value.  <br /></td></tr>
 <tr class="separator:aff1ba009c1c228e994e83c89c4243e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae04c7a1d3ee6130c72494d100be7e675"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#ae04c7a1d3ee6130c72494d100be7e675">brake_fault</a> (<a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status, uint16_t value)</td></tr>
-<tr class="memdesc:ae04c7a1d3ee6130c72494d100be7e675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a debug brake fault message over CAN with a float value.  <br /></td></tr>
-<tr class="separator:ae04c7a1d3ee6130c72494d100be7e675"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9be0dbb1d5cf478a27cadf6a38c94ddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a9be0dbb1d5cf478a27cadf6a38c94ddc">status_car</a> (<a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4be">CarStatus</a> car_status)</td></tr>
-<tr class="memdesc:a9be0dbb1d5cf478a27cadf6a38c94ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a debug car status message over CAN.  <br /></td></tr>
-<tr class="separator:a9be0dbb1d5cf478a27cadf6a38c94ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea833160214654f8d1a3eaf1b0c6b9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a3ea833160214654f8d1a3eaf1b0c6b9d">status_brake</a> (uint16_t brake_voltage)</td></tr>
-<tr class="separator:a3ea833160214654f8d1a3eaf1b0c6b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0514cc9d56b82f8a3b586aee6f4c97b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a0514cc9d56b82f8a3b586aee6f4c97b0">status_bms</a> (<a class="el" href="Enums_8hpp.html#af9f10f99b9e1fe09756feb57c6520cd8">BmsStatus</a> BMS_status)</td></tr>
-<tr class="memdesc:a0514cc9d56b82f8a3b586aee6f4c97b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a debug <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> status message over CAN.  <br /></td></tr>
-<tr class="separator:a0514cc9d56b82f8a3b586aee6f4c97b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42414365a04c66411b629e36d4b50466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a42414365a04c66411b629e36d4b50466">hall_sensor</a> (uint16_t hall_sensor_value)</td></tr>
-<tr class="memdesc:a42414365a04c66411b629e36d4b50466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a debug hall sensor message over CAN.  <br /></td></tr>
-<tr class="separator:a42414365a04c66411b629e36d4b50466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d829d5a41ff1b23f3afa0bbd9320e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a8d829d5a41ff1b23f3afa0bbd9320e56">send_message</a> (canid_t id, uint8_t data0=0x00, uint8_t data1=0x00, uint8_t data2=0x00, uint8_t data3=0x00, uint8_t data4=0x00, uint8_t data5=0x00, uint8_t data6=0x00, uint8_t data7=0x00)</td></tr>
+<tr class="memdesc:a8d829d5a41ff1b23f3afa0bbd9320e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends arbitrary debug data via CAN with specified message ID and data bytes.  <br /></td></tr>
+<tr class="separator:a8d829d5a41ff1b23f3afa0bbd9320e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:af09d4c579d34dfa0f5fb18114f304203"><td class="memItemLeft" align="right" valign="top">MCP2515 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#af09d4c579d34dfa0f5fb18114f304203">can_interface</a> = nullptr</td></tr>
 <tr class="separator:af09d4c579d34dfa0f5fb18114f304203"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c319bb5783d23f4c306add7f3c61af1"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a3c319bb5783d23f4c306add7f3c61af1">THROTTLE_IN_MSG</a> = 0x690</td></tr>
-<tr class="separator:a3c319bb5783d23f4c306add7f3c61af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a397dd1cd5b54162c75f21ea841573cf6"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a397dd1cd5b54162c75f21ea841573cf6">THROTTLE_OUT_MSG</a> = 0x691</td></tr>
-<tr class="separator:a397dd1cd5b54162c75f21ea841573cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64497e2ec71e82d81603aad44aaca13d"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a64497e2ec71e82d81603aad44aaca13d">THROTTLE_FAULT_MSG</a> = 0x692</td></tr>
 <tr class="separator:a64497e2ec71e82d81603aad44aaca13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30ea598e19d816673afecb5a06ac2396"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a30ea598e19d816673afecb5a06ac2396">STATUS_CAR_MSG</a> = 0x693</td></tr>
-<tr class="separator:a30ea598e19d816673afecb5a06ac2396"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c3940b0008387d73a48b06100ce2178"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a4c3940b0008387d73a48b06100ce2178">STATUS_CAR_CHANGE_MSG</a> = 0x694</td></tr>
-<tr class="separator:a4c3940b0008387d73a48b06100ce2178"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1bfeb9aafd26668d99f1f371b79850e"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#ad1bfeb9aafd26668d99f1f371b79850e">STATUS_BRAKE_MSG</a> = 0x695</td></tr>
-<tr class="separator:ad1bfeb9aafd26668d99f1f371b79850e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3a0771a0daa4118a076d04cd3571f02"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#ae3a0771a0daa4118a076d04cd3571f02">STATUS_BMS_MSG</a> = 0x696</td></tr>
-<tr class="separator:ae3a0771a0daa4118a076d04cd3571f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f7b1b326ce46fb95252f675b8178a3d"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a6f7b1b326ce46fb95252f675b8178a3d">STATUS_HALL_SENSOR_MSG</a> = 0x697</td></tr>
-<tr class="separator:a6f7b1b326ce46fb95252f675b8178a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace for CAN debugging functions. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae04c7a1d3ee6130c72494d100be7e675" name="ae04c7a1d3ee6130c72494d100be7e675"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae04c7a1d3ee6130c72494d100be7e675">&#9670;&#160;</a></span>brake_fault()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Debug_CAN::brake_fault </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a>&#160;</td>
-          <td class="paramname"><em>fault_status</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a debug brake fault message over CAN with a float value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fault_status</td><td>The status of the brake fault as defined in PedalFault enum. </td></tr>
-    <tr><td class="paramname">value</td><td>uint16_t value of reading </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00135">135</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>, and <a class="el" href="Debug__can_8hpp_source.html#l00042">THROTTLE_FAULT_MSG</a>.</p>
-
-</div>
-</div>
-<a id="a42414365a04c66411b629e36d4b50466" name="a42414365a04c66411b629e36d4b50466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42414365a04c66411b629e36d4b50466">&#9670;&#160;</a></span>hall_sensor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Debug_CAN::hall_sensor </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>hall_sensor_value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a debug hall sensor message over CAN. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hall_sensor_value</td><td>The current value of the hall sensor. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00195">195</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>, and <a class="el" href="Debug__can_8hpp_source.html#l00047">STATUS_HALL_SENSOR_MSG</a>.</p>
-
-</div>
-</div>
 <a id="a5c8b33000e36a19ccb285e45f666e64e" name="a5c8b33000e36a19ccb285e45f666e64e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c8b33000e36a19ccb285e45f666e64e">&#9670;&#160;</a></span>initialize()</h2>
 
@@ -270,89 +166,101 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a0514cc9d56b82f8a3b586aee6f4c97b0" name="a0514cc9d56b82f8a3b586aee6f4c97b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0514cc9d56b82f8a3b586aee6f4c97b0">&#9670;&#160;</a></span>status_bms()</h2>
+<a id="a8d829d5a41ff1b23f3afa0bbd9320e56" name="a8d829d5a41ff1b23f3afa0bbd9320e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d829d5a41ff1b23f3afa0bbd9320e56">&#9670;&#160;</a></span>send_message()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Debug_CAN::status_bms </td>
+          <td class="memname">void Debug_CAN::send_message </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="Enums_8hpp.html#af9f10f99b9e1fe09756feb57c6520cd8">BmsStatus</a>&#160;</td>
-          <td class="paramname"><em>BMS_status</em></td><td>)</td>
+          <td class="paramtype">canid_t&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data0</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data1</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data2</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data3</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data4</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data5</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data6</em> = <code>0x00</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data7</em> = <code>0x00</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sends a debug <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> status message over CAN. </p>
+<p>Sends arbitrary debug data via CAN with specified message ID and data bytes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">BMS_status</td><td>The current status of the <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> as defined in BmsStatus enum. </td></tr>
+    <tr><td class="paramname">id</td><td>CAN message ID </td></tr>
+    <tr><td class="paramname">data0</td><td>Byte 0 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data1</td><td>Byte 1 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data2</td><td>Byte 2 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data3</td><td>Byte 3 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data4</td><td>Byte 4 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data5</td><td>Byte 5 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data6</td><td>Byte 6 of CAN data (default 0x00) </td></tr>
+    <tr><td class="paramname">data7</td><td>Byte 7 of CAN data (default 0x00) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00176">176</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00046">46</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>, and <a class="el" href="Debug__can_8hpp_source.html#l00046">STATUS_BMS_MSG</a>.</p>
+<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Debug_8hpp_source.html#l00150">DBG_BMS_STATUS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Debug_8hpp_source.html#l00078">DBG_GENERAL_CAN()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespaceDebug__CAN_a0514cc9d56b82f8a3b586aee6f4c97b0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceDebug__CAN_a8d829d5a41ff1b23f3afa0bbd9320e56_icgraph.svg" width="418" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-
-</div>
-</div>
-<a id="a3ea833160214654f8d1a3eaf1b0c6b9d" name="a3ea833160214654f8d1a3eaf1b0c6b9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ea833160214654f8d1a3eaf1b0c6b9d">&#9670;&#160;</a></span>status_brake()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Debug_CAN::status_brake </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>brake_voltage</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9be0dbb1d5cf478a27cadf6a38c94ddc" name="a9be0dbb1d5cf478a27cadf6a38c94ddc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9be0dbb1d5cf478a27cadf6a38c94ddc">&#9670;&#160;</a></span>status_car()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Debug_CAN::status_car </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4be">CarStatus</a>&#160;</td>
-          <td class="paramname"><em>car_status</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a debug car status message over CAN. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">car_status</td><td>The current status of the car as defined in CarStatus enum. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00157">157</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>, and <a class="el" href="Debug__can_8hpp_source.html#l00043">STATUS_CAR_MSG</a>.</p>
 
 </div>
 </div>
@@ -371,18 +279,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Sends a debug throttle fault message over CAN without a float value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fault_status</td><td>The status of the throttle fault as defined in PedalFault enum. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00115">115</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>, and <a class="el" href="Debug__can_8hpp_source.html#l00042">THROTTLE_FAULT_MSG</a>.</p>
 
 </div>
 </div>
@@ -412,123 +308,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Sends a debug throttle fault message over CAN with a float value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fault_status</td><td>The status of the throttle fault as defined in PedalFault enum. </td></tr>
-    <tr><td class="paramname">value</td><td>Optional uint16_t value associated with the fault (e.g., pedal voltage). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00093">93</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>, and <a class="el" href="Debug__can_8hpp_source.html#l00042">THROTTLE_FAULT_MSG</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Debug_8hpp_source.html#l00122">DBG_THROTTLE_FAULT()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespaceDebug__CAN_aded6aa4b3ac940a9ea0941569e157522_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a5c26a2303b6fa92439c0a693728d760e" name="a5c26a2303b6fa92439c0a693728d760e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c26a2303b6fa92439c0a693728d760e">&#9670;&#160;</a></span>throttle_in()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Debug_CAN::throttle_in </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>pedal_filtered_1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>pedal_filtered_2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>pedal_2_scaled</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>brake</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a debug throttle input message over CAN. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pedal_filtered_1</td><td>Filtered value from pedal sensor 1. </td></tr>
-    <tr><td class="paramname">pedal_filtered_2</td><td>Filtered value from pedal sensor 2. </td></tr>
-    <tr><td class="paramname">pedal_2_scaled</td><td>Scaled value of pedal sensor 2. </td></tr>
-    <tr><td class="paramname">brake</td><td>Brake pedal value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00041">41</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>, and <a class="el" href="Debug__can_8hpp_source.html#l00040">THROTTLE_IN_MSG</a>.</p>
-
-</div>
-</div>
-<a id="ace21ce4da40cf6ae391410d839c59cb3" name="ace21ce4da40cf6ae391410d839c59cb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace21ce4da40cf6ae391410d839c59cb3">&#9670;&#160;</a></span>throttle_out()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Debug_CAN::throttle_out </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>throttle_final</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int16_t&#160;</td>
-          <td class="paramname"><em>throttle_torque_val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a debug throttle output message over CAN. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">throttle_final</td><td>Final value of the throttle pedal. </td></tr>
-    <tr><td class="paramname">throttle_torque_val</td><td>Calculated torque value based on the throttle input. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00069">69</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug__can_8cpp_source.html#l00018">can_interface</a>, and <a class="el" href="Debug__can_8hpp_source.html#l00041">THROTTLE_OUT_MSG</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -555,138 +334,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="Debug__can_8cpp_source.html#l00018">18</a> of file <a class="el" href="Debug__can_8cpp_source.html">Debug_can.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Debug__can_8cpp_source.html#l00135">brake_fault()</a>, <a class="el" href="Debug__can_8cpp_source.html#l00195">hall_sensor()</a>, <a class="el" href="Debug__can_8cpp_source.html#l00026">initialize()</a>, <a class="el" href="Debug__can_8cpp_source.html#l00176">status_bms()</a>, <a class="el" href="Debug__can_8cpp_source.html#l00157">status_car()</a>, <a class="el" href="Debug__can_8cpp_source.html#l00093">throttle_fault()</a>, <a class="el" href="Debug__can_8cpp_source.html#l00041">throttle_in()</a>, and <a class="el" href="Debug__can_8cpp_source.html#l00069">throttle_out()</a>.</p>
-
-</div>
-</div>
-<a id="ae3a0771a0daa4118a076d04cd3571f02" name="ae3a0771a0daa4118a076d04cd3571f02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3a0771a0daa4118a076d04cd3571f02">&#9670;&#160;</a></span>STATUS_BMS_MSG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr canid_t Debug_CAN::STATUS_BMS_MSG = 0x696</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Debug: <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> status message </p>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00046">46</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Debug__can_8cpp_source.html#l00176">status_bms()</a>.</p>
-
-</div>
-</div>
-<a id="ad1bfeb9aafd26668d99f1f371b79850e" name="ad1bfeb9aafd26668d99f1f371b79850e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1bfeb9aafd26668d99f1f371b79850e">&#9670;&#160;</a></span>STATUS_BRAKE_MSG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr canid_t Debug_CAN::STATUS_BRAKE_MSG = 0x695</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Debug: brake status message </p>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00045">45</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a4c3940b0008387d73a48b06100ce2178" name="a4c3940b0008387d73a48b06100ce2178"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c3940b0008387d73a48b06100ce2178">&#9670;&#160;</a></span>STATUS_CAR_CHANGE_MSG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr canid_t Debug_CAN::STATUS_CAR_CHANGE_MSG = 0x694</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Debug: car status change message </p>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00044">44</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a30ea598e19d816673afecb5a06ac2396" name="a30ea598e19d816673afecb5a06ac2396"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30ea598e19d816673afecb5a06ac2396">&#9670;&#160;</a></span>STATUS_CAR_MSG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr canid_t Debug_CAN::STATUS_CAR_MSG = 0x693</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Debug: car status message </p>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00043">43</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Debug__can_8cpp_source.html#l00157">status_car()</a>.</p>
-
-</div>
-</div>
-<a id="a6f7b1b326ce46fb95252f675b8178a3d" name="a6f7b1b326ce46fb95252f675b8178a3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f7b1b326ce46fb95252f675b8178a3d">&#9670;&#160;</a></span>STATUS_HALL_SENSOR_MSG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr canid_t Debug_CAN::STATUS_HALL_SENSOR_MSG = 0x697</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Debug: Hall sensor message </p>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00047">47</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Debug__can_8cpp_source.html#l00195">hall_sensor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Debug__can_8cpp_source.html#l00026">initialize()</a>, and <a class="el" href="Debug__can_8cpp_source.html#l00046">send_message()</a>.</p>
 
 </div>
 </div>
@@ -711,63 +359,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Debug: throttle fault message </p>
 
-<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00042">42</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Debug__can_8cpp_source.html#l00135">brake_fault()</a>, and <a class="el" href="Debug__can_8cpp_source.html#l00093">throttle_fault()</a>.</p>
-
-</div>
-</div>
-<a id="a3c319bb5783d23f4c306add7f3c61af1" name="a3c319bb5783d23f4c306add7f3c61af1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c319bb5783d23f4c306add7f3c61af1">&#9670;&#160;</a></span>THROTTLE_IN_MSG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr canid_t Debug_CAN::THROTTLE_IN_MSG = 0x690</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Debug: throttle input message </p>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00040">40</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Debug__can_8cpp_source.html#l00041">throttle_in()</a>.</p>
-
-</div>
-</div>
-<a id="a397dd1cd5b54162c75f21ea841573cf6" name="a397dd1cd5b54162c75f21ea841573cf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a397dd1cd5b54162c75f21ea841573cf6">&#9670;&#160;</a></span>THROTTLE_OUT_MSG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr canid_t Debug_CAN::THROTTLE_OUT_MSG = 0x691</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Debug: throttle output message </p>
-
-<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00041">41</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Debug__can_8cpp_source.html#l00069">throttle_out()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Debug__can_8hpp_source.html#l00043">43</a> of file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>
 
 </div>
 </div>

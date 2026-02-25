@@ -1,0 +1,4 @@
+<map id="Debug_CAN::send_message" name="Debug_CAN::send_message">
+<area shape="rect" id="node1" title="Sends arbitrary debug data via CAN with specified message ID and data bytes." alt="" coords="208,5,412,31"/>
+<area shape="rect" id="node2" href="$Debug_8hpp.html#a1c68ee33aecd3c1599e349752c4b37ca" title="Sends arbitrary debug data via CAN with specified message ID and data bytes." alt="" coords="5,5,160,31"/>
+</map>
