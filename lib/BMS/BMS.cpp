@@ -1,9 +1,9 @@
 /**
  * @file BMS.cpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson, Chiho, Red Bird Racing
  * @brief Implementation of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus
- * @version 1.3.1
- * @date 2026-02-12
+ * @version 1.3.2
+ * @date 2026-02-25
  * @see BMS.hpp
  */
 
