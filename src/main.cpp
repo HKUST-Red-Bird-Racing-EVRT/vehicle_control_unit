@@ -184,8 +184,6 @@ void loop()
 
     // do not return here if not in DRIVE mode, else can't detect pedal being on while starting
     case CarStatus::Init:
-        DBGLN_GENERAL("Motor State: INIT. Inhibiting drive.");
-
         if (digitalRead(DRIVE_MODE_BTN) == BUTTON_ACTIVE && brake_pressed)
         {
             car.pedal.status.bits.car_status = CarStatus::Startin;
@@ -196,8 +194,6 @@ void loop()
         break;
 
     case CarStatus::Startin:
-        DBGLN_GENERAL("Motor State: STARTIN. Waiting for START");
-
         if (digitalRead(DRIVE_MODE_BTN) != BUTTON_ACTIVE || !brake_pressed)
         {
             car.pedal.status.bits.car_status = CarStatus::Init;

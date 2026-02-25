@@ -88,7 +88,6 @@ void Pedal::update(uint16_t pedal_1, uint16_t pedal_2, uint16_t brake)
             {
                 car.pedal.faults.bits.fault_exceeded = true;
                 car.pedal.status.bits.force_stop = true; // critical fault, force stop; since early return, need set here
-                DBGLN_GENERAL("FAULT: Pedal difference exceeded 100ms");
                 return;
             }
         }
@@ -96,17 +95,12 @@ void Pedal::update(uint16_t pedal_1, uint16_t pedal_2, uint16_t brake)
         {
             // new fault
             fault_start_millis = car.millis;
-            DBGLN_GENERAL("FAULT: Pedal difference detected");
         }
         car.pedal.faults.bits.fault_active = true;
     }
     else
     {
         // no fault
-        if (car.pedal.faults.bits.fault_active)
-        {
-            DBGLN_GENERAL("FAULT: Pedal difference resolved");
-        }
         car.pedal.faults.bits.fault_active = false;
     }
 
@@ -130,7 +124,6 @@ void Pedal::sendFrame()
 
     if (car.pedal.status.bits.force_stop)
     {
-        DBGLN_GENERAL("Stopping motor: force_stop active");
         motor_can.sendMessage(&stop_frame);
         return;
     }
@@ -260,7 +253,6 @@ void Pedal::readMotor()
     if (car.millis - last_motor_read_millis > MAX_MOTOR_READ_MILLIS)
     {
         car.pedal.status.bits.motor_no_read = true;
-        DBGLN_GENERAL("No motor read for over 100 ms, disabling regen");
     }
     return;
 }
