@@ -1,9 +1,9 @@
 /**
  * @file main.cpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson, Chiho,Red Bird Racing
  * @brief Main VCU program entry point
- * @version 2.1
- * @date 2026-02-09
+ * @version 2.2
+ * @date 2026-02-25
  * @dir include @brief Contains all header-only files.
  * @dir lib @brief Contains all the libraries. Each library is in its own folder of the same name.
  * @dir src @brief Contains the main.cpp file, the main file of the program.
