@@ -22,8 +22,7 @@ namespace Debug_Serial {
     void print(const char* msg);
     void println(const char* msg);
     
-    void throttle_fault(PedalFault fault_status, uint16_t value);
-    void throttle_fault(PedalFault fault_status);
+   // telemetry repeated
 }
 
 #endif // DEBUG_SERIAL_HPP
