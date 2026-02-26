@@ -22,14 +22,6 @@ namespace Debug_Serial {
     void print(const char* msg);
     void println(const char* msg);
     
-    
-    void throttle_fault(PedalFault fault_status, uint16_t value);
-    void throttle_fault(PedalFault fault_status);
-    void brake_fault(PedalFault fault_status, uint16_t value);
-    
-    void status_brake(uint16_t brake_voltage);
-    void status_bms(BmsStatus BMS_status);
-    
 }
 
 #endif // DEBUG_SERIAL_HPP

@@ -134,27 +134,11 @@ void Pedal::sendFrame()
 
     if (car.pedal.status.bits.force_stop)
     {
-        DBGLN_THROTTLE("Stopping motor: pedal fault");
         motor_can.sendMessage(&stop_frame);
         return;
     }
     if (car.pedal.status.bits.car_status != CarStatus::Drive)
     {
-        switch (car.pedal.status.bits.car_status)
-        {
-        case CarStatus::Init:
-            DBGLN_THROTTLE("Stopping motor: in INIT.");
-            break;
-        case CarStatus::Startin:
-            DBGLN_THROTTLE("Stopping motor: in STARTIN.");
-            break;
-        case CarStatus::Bussin:
-            DBGLN_THROTTLE("Stopping motor: in BUSSIN.");
-            break;
-        default:
-            DBGLN_THROTTLE("Stopping motor: in UNKNOWN STATE.");
-            break;
-        }
         motor_can.sendMessage(&stop_frame);
         return;
     }
@@ -280,7 +264,6 @@ void Pedal::readMotor()
     if (car.millis - last_motor_read_millis > MAX_MOTOR_READ_MILLIS)
     {
         car.pedal.status.bits.motor_no_read = true;
-        DBG_THROTTLE("No motor read for over 100 ms, disabling regen");
     }
     return;
 }

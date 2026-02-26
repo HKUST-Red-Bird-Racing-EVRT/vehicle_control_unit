@@ -26,41 +26,13 @@
 #include <Debug_can.hpp>
 #endif
 
-#define DEBUG_THROTTLE (1 && DEBUG)
-#define DEBUG_THROTTLE_FAULT (1 && DEBUG_THROTTLE)
-#define DEBUG_BRAKE (1 && DEBUG)
-#define DEBUG_BRAKE_IN (1 && DEBUG_BRAKE)
-#define DEBUG_BRAKE_FAULT (1 && DEBUG_BRAKE)
 #define DEBUG_GENERAL 1
-#define DEBUG_STATUS 1 // Serial only
+#define DEBUG_STATUS (1 && DEBUG_SERIAL) // Serial only
 #define DEBUG_STATUS_CAR (1 && DEBUG_STATUS)
 #define DEBUG_STATUS_BRAKE (1 && DEBUG_STATUS)
 
 // ===== Simple Serial-Only Debug Functions =====
 
-/**
- * @brief Prints a throttle debug message to the serial console.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBG_THROTTLE(const char *x)
-{
-#if DEBUG_THROTTLE && DEBUG_SERIAL
-    Debug_Serial::print(x);
-#endif
-}
-
-/**
- * @brief Prints a line to the serial console for throttle debug.
- * @param x The message to print.
- * @note Serial exclusive
- */
-inline void DBGLN_THROTTLE(const char *x)
-{
-#if DEBUG_THROTTLE && DEBUG_SERIAL
-    Debug_Serial::println(x);
-#endif
-}
 
 /**
  * @brief Prints a general debug message to the serial console.
@@ -118,24 +90,18 @@ inline void DBGLN_STATUS(const char *x)
  */
 inline void DBG_THROTTLE_FAULT(PedalFault fault_status, uint16_t value)
 {
-#if DEBUG_THROTTLE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
+#if DEBUG_THROTTLE_FAULT && DEBUG_SERIAL
 #if DEBUG_SERIAL
     Debug_Serial::throttle_fault(fault_status, value);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::throttle_fault(fault_status, value);
 #endif
 #endif
 }
 
 inline void DBG_THROTTLE_FAULT(PedalFault fault_status)
 {
-#if DEBUG_THROTTLE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
+#if DEBUG_THROTTLE_FAULT && DEBUG_SERIAL
 #if DEBUG_SERIAL
     Debug_Serial::throttle_fault(fault_status);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::throttle_fault(fault_status);
 #endif
 #endif
 }
@@ -146,12 +112,9 @@ inline void DBG_THROTTLE_FAULT(PedalFault fault_status)
  */
 inline void DBG_BMS_STATUS(BmsStatus BMS_status)
 {
-#if DEBUG_BRAKE_FAULT && (DEBUG_SERIAL || DEBUG_CAN)
+#if DEBUG_BRAKE_FAULT && DEBUG_SERIAL
 #if DEBUG_SERIAL
     Debug_Serial::status_bms(BMS_status);
-#endif
-#if DEBUG_CAN
-    Debug_CAN::status_bms(BMS_status);
 #endif
 #endif
 }
