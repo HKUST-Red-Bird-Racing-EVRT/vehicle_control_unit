@@ -141,6 +141,7 @@ void setup()
 
 #if DEBUG_CAN
     Debug_CAN::initialize(&mcp2515_DL); // Currently using motor CAN for debug messages, should change to other
+    DBG_GENERAL_CAN(0x01);              // setup: debug CAN initialized
     DBGLN_GENERAL("Debug CAN initialized");
 #endif
 

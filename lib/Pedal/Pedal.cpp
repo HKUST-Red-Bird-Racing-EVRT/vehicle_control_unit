@@ -88,29 +88,19 @@ void Pedal::update(uint16_t pedal_1, uint16_t pedal_2, uint16_t brake)
             {
                 car.pedal.faults.bits.fault_exceeded = true;
                 car.pedal.status.bits.force_stop = true; // critical fault, force stop; since early return, need set here
-                DBG_THROTTLE_FAULT(PedalFault::DiffExceed100ms);
                 return;
-            }
-            else
-            {
-                DBG_THROTTLE_FAULT(PedalFault::DiffContinuing); // will be optimized out if the debug macro is off
             }
         }
         else
         {
             // new fault
             fault_start_millis = car.millis;
-            DBG_THROTTLE_FAULT(PedalFault::DiffStart);
         }
         car.pedal.faults.bits.fault_active = true;
     }
     else
     {
         // no fault
-        if (car.pedal.faults.bits.fault_active)
-        {
-            DBG_THROTTLE_FAULT(PedalFault::DiffResolved);
-        }
         car.pedal.faults.bits.fault_active = false;
     }
 
@@ -228,7 +218,6 @@ bool Pedal::checkPedalFault()
     // if more than 10% difference between the two pedals, consider it a fault
     if (delta > MAX_DELTA || delta < -MAX_DELTA)
     {
-        DBG_THROTTLE_FAULT(PedalFault::DiffContinuing, delta);
         return true;
     }
     return false;

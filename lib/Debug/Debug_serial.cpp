@@ -8,7 +8,6 @@
  */
 
 #include "Debug_serial.hpp"
-#include "Enums.hpp"
 
 /**
  * @brief Initializes the Debug_Serial interface.
@@ -35,88 +34,3 @@ void Debug_Serial::print(const char *msg) { Serial.print(msg); }
  * @note Serial exclusive
  */
 void Debug_Serial::println(const char *msg) { Serial.println(msg); }
-
-/**
- * @brief Prints a throttle fault message to the serial console.
- * This function formats and sends the throttle fault status and value to the serial console.
- * 
- * @param fault_status The status of the throttle fault as defined in PedalFault enum.
- * @param value Optional uint16_t value associated with the fault
- */
-void Debug_Serial::throttle_fault(PedalFault fault_status, uint16_t value)
-{
-    switch (fault_status)
-    {
-    case PedalFault::None:
-        break;
-    case PedalFault::DiffContinuing:
-        Serial.print("Pedal mismatch continuing. Difference: ");
-        Serial.println(value);
-        break;
-    case PedalFault::ThrottleLow:
-        Serial.print("Throttle input too low. Value: ");
-        Serial.println(value);
-        break;
-    case PedalFault::ThrottleHigh:
-        Serial.print("Throttle too high. Value: ");
-        Serial.println(value);
-        break;
-    default:
-        Serial.println("Unknown fault status");
-        break;
-    }
-}
-
-/**
- * @brief Prints a throttle fault message to the serial console without a float value.
- * This function formats and sends the throttle fault status to the serial console.
- * 
- * @param fault_status The status of the throttle fault as defined in PedalFault enum.
- */
-void Debug_Serial::throttle_fault(PedalFault fault_status)
-{
-    switch (fault_status)
-    {
-    case PedalFault::None:
-        break;
-    case PedalFault::DiffStart:
-        Serial.println("Pedal mismatch just started");
-        break;
-    case PedalFault::DiffExceed100ms:
-        Serial.println("FATAL FAULT: Pedal mismatch persisted > 100ms!");
-        break;
-    case PedalFault::DiffResolved:
-        Serial.println("Pedal mismatch resolved");
-        break;
-    default:
-        Serial.println("Unknown fault status");
-        break;
-    }
-}
-
-/**
- * @brief Prints a brake fault message to the serial console.
- * This function formats and sends the brake fault status and value to the serial console.
- * 
- * @param fault_status The status of the brake fault as defined in PedalFault enum.
- * @param value brake ADC reading
- */
-void Debug_Serial::brake_fault(PedalFault fault_status, uint16_t value)
-{
-    switch (fault_status)
-    {
-    case PedalFault::None:
-        break;
-    case PedalFault::BrakeLow:
-        Serial.print("Brake input too low. Value: ");
-        Serial.println(value);
-        break;
-    case PedalFault::BrakeHigh:
-        Serial.print("Brake too high. Value: ");
-        Serial.println(value);
-        break;
-    default:
-        Serial.println("Unknown fault status");
-        break;
-    }
-}

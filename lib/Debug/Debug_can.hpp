@@ -16,7 +16,7 @@
 #include <mcp2515.h>
 #pragma GCC diagnostic pop
 
-#include "Enums.hpp"
+#include <stdint.h>
 
 /**
  * @brief Namespace for CAN debugging functions
@@ -26,13 +26,9 @@ namespace Debug_CAN
     extern MCP2515 *can_interface; /**< Pointer to the MCP2515 CAN controller instance. */
 
     void initialize(MCP2515 *can_interface);
-
-    void throttle_fault(PedalFault fault_status, uint16_t value);
-    void throttle_fault(PedalFault fault_status);
-    void brake_fault(PedalFault fault_status, uint16_t value);
-    void status_brake(uint16_t brake_voltage);
-    constexpr canid_t THROTTLE_FAULT_MSG = 0x692;     /**< Debug: throttle fault message */
-    constexpr canid_t STATUS_BRAKE_MSG = 0x695;       /**< Debug: brake status message */
+    void general(uint8_t event_code);
+    void general(uint8_t event_code, uint16_t value);
+    constexpr canid_t GENERAL_DEBUG_MSG = 0x691; /**< Debug: general event message */
 
 }
 

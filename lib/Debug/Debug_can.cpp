@@ -30,67 +30,42 @@ void Debug_CAN::initialize(MCP2515 *can)
     can_interface = can;
 }
 
-/**
- * @brief Sends a debug throttle fault message over CAN with a float value.
- * 
- * @param fault_status The status of the throttle fault as defined in PedalFault enum.
- * @param value Optional uint16_t value associated with the fault (e.g., pedal voltage).
- */
-void Debug_CAN::throttle_fault(PedalFault fault_status, uint16_t value)
+void Debug_CAN::general(uint8_t event_code)
 {
     if (!can_interface)
         return;
 
     can_frame tx_msg;
-    tx_msg.can_id = THROTTLE_FAULT_MSG;
-    tx_msg.can_dlc = 3;
-
-    tx_msg.data[0] = static_cast<uint8_t>(fault_status); // Convert enum to uint8_t
-
-    tx_msg.data[1] = value & 0xFF;
-    tx_msg.data[2] = (value >> 8) & 0xFF; // Upper byte
-
-    can_interface->sendMessage(&tx_msg);
-}
-
-/**
- * @brief Sends a debug throttle fault message over CAN without a float value.
- * 
- * @param fault_status The status of the throttle fault as defined in PedalFault enum.
- */
-void Debug_CAN::throttle_fault(PedalFault fault_status)
-{
-    if (!can_interface)
-        return;
-
-    can_frame tx_msg;
-    tx_msg.can_id = THROTTLE_FAULT_MSG;
+    tx_msg.can_id = GENERAL_DEBUG_MSG;
     tx_msg.can_dlc = 1;
-
-    tx_msg.data[0] = static_cast<uint8_t>(fault_status); // Convert enum to uint8_t
+    tx_msg.data[0] = event_code;
+    tx_msg.data[1] = 0;
+    tx_msg.data[2] = 0;
+    tx_msg.data[3] = 0;
+    tx_msg.data[4] = 0;
+    tx_msg.data[5] = 0;
+    tx_msg.data[6] = 0;
+    tx_msg.data[7] = 0;
 
     can_interface->sendMessage(&tx_msg);
 }
 
-/**
- * @brief Sends a debug brake fault message over CAN with a float value.
- * 
- * @param fault_status The status of the brake fault as defined in PedalFault enum.
- * @param value uint16_t value of reading
- */
-void Debug_CAN::brake_fault(PedalFault fault_status, uint16_t value)
+void Debug_CAN::general(uint8_t event_code, uint16_t value)
 {
     if (!can_interface)
         return;
 
     can_frame tx_msg;
-    tx_msg.can_id = THROTTLE_FAULT_MSG;
+    tx_msg.can_id = GENERAL_DEBUG_MSG;
     tx_msg.can_dlc = 3;
-
-    tx_msg.data[0] = static_cast<uint8_t>(fault_status); // Convert enum to uint8_t
-
+    tx_msg.data[0] = event_code;
     tx_msg.data[1] = value & 0xFF;
-    tx_msg.data[2] = (value >> 8) & 0xFF; // Upper byte
+    tx_msg.data[2] = (value >> 8) & 0xFF;
+    tx_msg.data[3] = 0;
+    tx_msg.data[4] = 0;
+    tx_msg.data[5] = 0;
+    tx_msg.data[6] = 0;
+    tx_msg.data[7] = 0;
 
     can_interface->sendMessage(&tx_msg);
 }
