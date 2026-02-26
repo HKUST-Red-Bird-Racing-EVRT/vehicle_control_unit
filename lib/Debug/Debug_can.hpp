@@ -26,9 +26,7 @@ namespace Debug_CAN
     extern MCP2515 *can_interface; /**< Pointer to the MCP2515 CAN controller instance. */
 
     void initialize(MCP2515 *can_interface);
-
-    void throttle_fault(PedalFault fault_status, uint16_t value);
-    void throttle_fault(PedalFault fault_status);
+// deleted repeated throttle fault as it is been declared in telemetry already
     void send_message(
         canid_t id,
         uint8_t data0 = 0x00, 
