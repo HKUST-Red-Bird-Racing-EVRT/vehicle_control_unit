@@ -46,6 +46,7 @@ MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
 #define mcp2515_motor mcp2515_DL
 #define mcp2515_BMS mcp2515_DL
+// #define mcp2515_DL mcp2515_motor
 
 constexpr uint8_t NUM_MCP = 3;
 MCP2515 MCPS[NUM_MCP] = {mcp2515_motor, mcp2515_BMS, mcp2515_DL};
@@ -100,8 +101,9 @@ void schedulerTelemetryBms()
 }
 
 Scheduler<3, NUM_MCP> scheduler(
-    10000, // period_us
-    500    // spin_threshold_us
+    10000,  // period_us
+    500,    // spin_threshold_us
+    *micros // current_time_us function pointer
 );
 
 /**
@@ -178,7 +180,7 @@ void loop()
 
     brake_pressed = (car.pedal.brake >= BRAKE_THRESHOLD);
     digitalWrite(BRAKE_LIGHT, brake_pressed ? HIGH : LOW);
-    scheduler.update(*micros);
+    scheduler.update();
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
 
@@ -243,12 +245,17 @@ void loop()
         }
         break;
 
-    default:
-        // unreachable, reset to INIT
-        car.pedal.status.bits.state_unknown = true;
-        car.pedal.status.bits.car_status = CarStatus::Init;
-        car.status_millis = car.millis;
-        break;
+        /*
+        since we are switching on only 2 bits, and we use all 4 combinations,
+        it's physically impossible to reach a default case even with memory corruption, so no need for one
+
+        default:
+            // unreachable, reset to INIT
+            car.pedal.status.bits.state_unknown = true;
+            car.pedal.status.bits.car_status = CarStatus::Init;
+            car.status_millis = car.millis;
+            break;
+        */
     }
 
     // DRIVE mode has already returned, if reached here, then means car isn't in DRIVE
