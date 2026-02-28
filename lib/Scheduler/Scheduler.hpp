@@ -2,8 +2,8 @@
  * @file Scheduler.hpp
  * @author Planeson, Red Bird Racing
  * @brief Declaration of the Scheduler class template, for scheduling tasks on multiple MCP2515 instances
- * @version 1.1
- * @date 2026-01-13
+ * @version 1.2
+ * @date 2026-02-28
  * @see Scheduler.tpp
  * @dir Scheduler @brief The Scheduler library contains the Scheduler class template, which manages the scheduling of tasks for multiple MCP2515 instances, allowing for periodic execution of functions based on a specified time interval and spin-wait threshold.
  */
@@ -12,12 +12,6 @@
 #define SCHEDULER_HPP
 
 #include "Enums.hpp"
-
-// ignore -Wpedantic warnings for mcp2515.h
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpedantic"
-#include <mcp2515.h> // mcp2515 objects
-#pragma GCC diagnostic pop
 
 /**
  * @brief Scheduler class template for scheduling tasks on multiple MCP2515 instances
@@ -49,19 +43,17 @@
 template <uint8_t NUM_TASKS, uint8_t NUM_MCP2515>
 class Scheduler
 {
-public:
     using TaskFn = void (*)();
 
+public:
     Scheduler() = delete; /**< all arguments must be provided */
-    Scheduler(uint32_t period_us_, uint32_t spin_threshold_us_);
+    Scheduler(uint32_t period_us_, uint32_t spin_threshold_us_, unsigned long (*const current_time_us)());
     // no need destructor, since no dynamic memory allocation, and won't destruct in the middle of the program anyway
 
-    void update(unsigned long (*const current_time_us)());
+    void update();
     void synchronize(unsigned long (*const current_time_us)());
     bool addTask(const McpIndex mcp_index, const TaskFn task, const uint8_t tick_interval);
     bool removeTask(const McpIndex mcp_index, const TaskFn task);
-
-    uint8_t cycle_count = 0; /**< counts number of scheduler cycles since start, useful for other timers. */
 
     /**
      * @brief Returns the period of the scheduler in microseconds.
@@ -84,6 +76,7 @@ private:
     const uint32_t PERIOD_US;                      /**< Period (tick length). */
     const uint32_t SPIN_US;                        /**< Threshold to switch from letting non-scheduler task in loop() run, to spin-locking (to ensure on time firing). */
     uint32_t last_fire_us;                         /**< Last time scheduler fired, overridden if missed more than one period. */
+    unsigned long (*const CURRENT_TIME_US)();      /**< Function pointer to a function returning the current time in microseconds. */
 
     inline void runTasks();
 };

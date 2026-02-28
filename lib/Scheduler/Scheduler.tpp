@@ -2,21 +2,13 @@
  * @file Scheduler.tpp
  * @author Planeson, Red Bird Racing
  * @brief Implementation of the Scheduler class template
- * @version 1.1
- * @date 2026-01-13
+ * @version 1.2
+ * @date 2026-02-28
  * @see Scheduler.hpp
  */
 
 #include "Enums.hpp"
-
-// ignore -Wpedantic warnings for mcp2515.h
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpedantic"
-#include <mcp2515.h> // mcp2515 objects
-#pragma GCC diagnostic pop
-
 #include "Scheduler.hpp" // Scheduler class template declaration
-using TaskFn = void (*)(MCP2515 *);
 
 /**
  * @brief Construct a new Scheduler object
@@ -28,14 +20,16 @@ using TaskFn = void (*)(MCP2515 *);
  */
 template <uint8_t NUM_TASKS, uint8_t NUM_MCP2515>
 Scheduler<NUM_TASKS, NUM_MCP2515>::Scheduler(uint32_t period_us_,
-                                             uint32_t spin_threshold_us_)
+                                             uint32_t spin_threshold_us_,
+                                             unsigned long (*const current_time_us)())
     : tasks{nullptr},
       task_ticks{0},
       task_counters{0}, // run on first tick
       task_cnt{0},
       PERIOD_US(period_us_),
       SPIN_US(spin_threshold_us_),
-      last_fire_us(0)
+      last_fire_us(0),
+      CURRENT_TIME_US(current_time_us)
 {
 }
 
@@ -47,18 +41,15 @@ Scheduler<NUM_TASKS, NUM_MCP2515>::Scheduler(uint32_t period_us_,
  * @param[in] current_time_us Function pointer to a function returning the current time in microseconds
  */
 template <uint8_t NUM_TASKS, uint8_t NUM_MCP2515>
-void Scheduler<NUM_TASKS, NUM_MCP2515>::update(unsigned long (*const current_time_us)())
+void Scheduler<NUM_TASKS, NUM_MCP2515>::update()
 {
-    if (current_time_us == nullptr)
-        return;
-
-    uint32_t delta = current_time_us() - last_fire_us;
+    uint32_t delta = CURRENT_TIME_US() - last_fire_us;
     if (delta >= PERIOD_US)
     {
         runTasks();
         if (delta >= 2 * PERIOD_US)
             // we missed more than one period, override last_fire_us to avoid bursts
-            last_fire_us = current_time_us();
+            last_fire_us = CURRENT_TIME_US();
         else
             last_fire_us += PERIOD_US;
 
@@ -68,7 +59,7 @@ void Scheduler<NUM_TASKS, NUM_MCP2515>::update(unsigned long (*const current_tim
     if (delta >= PERIOD_US - SPIN_US)
     {
         // spin-wait
-        while ((uint32_t)(current_time_us() - last_fire_us) < PERIOD_US)
+        while ((uint32_t)(CURRENT_TIME_US() - last_fire_us) < PERIOD_US)
             ;
         // now it's time, run the tasks
         runTasks();
@@ -79,7 +70,7 @@ void Scheduler<NUM_TASKS, NUM_MCP2515>::update(unsigned long (*const current_tim
 
 /**
  * @brief Synchonize the scheduler to the current time, resetting all task counters, used when starting multiple Schedulers across different boards together
- * 
+ *
  * @tparam NUM_TASKS Number of tasks per MCP2515
  * @tparam NUM_MCP2515 Number of MCP2515 instances
  * @param[in] current_time_us Function pointer to a function returning the current time in microseconds
@@ -107,7 +98,7 @@ void Scheduler<NUM_TASKS, NUM_MCP2515>::synchronize(unsigned long (*const curren
  * @tparam NUM_MCP2515 Number of MCP2515 instances
  * @param[in] mcp_index Index of the MCP2515 instance
  * @param[in] task Function pointer to the task to be added
- * @param[in] tick_interval Number of ticks between task executions, so 1 for every tick, 10 for every 10 ticks
+ * @param[in] tick_interval Number of ticks between task executions, so 1 for every tick, 10 for every 10 ticks; 0 makes the given task disabled from repeating.
  * @return true if the task was added successfully, false otherwise
  */
 template <uint8_t NUM_TASKS, uint8_t NUM_MCP2515>
@@ -118,7 +109,7 @@ bool Scheduler<NUM_TASKS, NUM_MCP2515>::addTask(const McpIndex mcp_index, const 
         return false;
 
     if (task_cnt[mcp_idx] >= NUM_TASKS)
-        return false; // no space
+        return false; // full
 
     tasks[mcp_idx][task_cnt[mcp_idx]] = task;
     task_ticks[mcp_idx][task_cnt[mcp_idx]] = tick_interval;
@@ -176,7 +167,6 @@ bool Scheduler<NUM_TASKS, NUM_MCP2515>::removeTask(const McpIndex mcp_index, con
 template <uint8_t NUM_TASKS, uint8_t NUM_MCP2515>
 inline void Scheduler<NUM_TASKS, NUM_MCP2515>::runTasks()
 {
-
     for (uint8_t task_index = 0; task_index < NUM_TASKS; ++task_index)
     {
         for (uint8_t mcp_index = 0; mcp_index < NUM_MCP2515; ++mcp_index)
