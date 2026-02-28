@@ -1,9 +1,9 @@
 /**
  * @file main.cpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson, Chiho,Red Bird Racing
  * @brief Main VCU program entry point
- * @version 2.1
- * @date 2026-02-09
+ * @version 2.2
+ * @date 2026-02-25
  * @dir include @brief Contains all header-only files.
  * @dir lib @brief Contains all the libraries. Each library is in its own folder of the same name.
  * @dir src @brief Contains the main.cpp file, the main file of the program.
@@ -35,18 +35,17 @@
 // === Pin setup ===
 // Pin setup for pedal pins are done by the constructor of Pedal object
 constexpr uint8_t INPUT_COUNT = 5;
-constexpr uint8_t OUTPUT_COUNT = 3;
+constexpr uint8_t OUTPUT_COUNT = 4;
 constexpr uint8_t pins_in[INPUT_COUNT] = {DRIVE_MODE_BTN, BRAKE_IN, APPS_5V, APPS_3V3, HALL_SENSOR};
-constexpr uint8_t pins_out[OUTPUT_COUNT] = {FRG, BRAKE_LIGHT, BUZZER};
+constexpr uint8_t pins_out[OUTPUT_COUNT] = {FRG, BRAKE_LIGHT, BUZZER, BMS_FAILED_LED};
 
 // === even if unused, initialize ALL mcp2515 to make sure the CS pin is set up and they don't interfere with the SPI bus ===
 MCP2515 mcp2515_motor(CS_CAN_MOTOR); // motor CAN
 MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
 MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
-// #define mcp2515_motor mcp2515_DL
-// #define mcp2515_BMS mcp2515_motor
-#define mcp2515_DL mcp2515_motor
+#define mcp2515_motor mcp2515_DL
+#define mcp2515_BMS mcp2515_DL
 
 constexpr uint8_t NUM_MCP = 3;
 MCP2515 MCPS[NUM_MCP] = {mcp2515_motor, mcp2515_BMS, mcp2515_DL};
@@ -75,13 +74,10 @@ Pedal pedal(mcp2515_motor, car, car.pedal.apps_5v);
 BMS bms(mcp2515_BMS, car);
 Telemetry telem(mcp2515_DL, car);
 
-void schedulerMotorRead()
-{
-    pedal.readMotor();
-}
-void schedulerPedalSend()
+void scheduler_pedal()
 {
     pedal.sendFrame();
+    pedal.readMotor();
 }
 void scheduler_bms()
 {
@@ -100,7 +96,7 @@ void schedulerTelemetryBms()
     telem.sendBms();
 }
 
-Scheduler<3, NUM_MCP> scheduler(
+Scheduler<2, NUM_MCP> scheduler(
     10000, // period_us
     500    // spin_threshold_us
 );
@@ -111,7 +107,13 @@ Scheduler<3, NUM_MCP> scheduler(
  */
 void setup()
 {
+#if DEBUG_SERIAL
+    Debug_Serial::initialize();
+    DBGLN_GENERAL("Debug serial initialized");
+#endif
+
     // init GPIO pins (MCP2515 CS pins initialized in constructor))
+    DBGLN_GENERAL("Initializing GPIO pins...");
     for (uint8_t i = 0; i < INPUT_COUNT; ++i)
     {
         pinMode(pins_in[i], INPUT);
@@ -121,13 +123,10 @@ void setup()
         pinMode(pins_out[i], OUTPUT);
         digitalWrite(pins_out[i], LOW);
     }
-
-#if DEBUG_SERIAL
-    Debug_Serial::initialize();
-    DBGLN_GENERAL("Debug serial initialized");
-#endif
+    DBGLN_GENERAL("GPIO pins initialized");
 
     // Initialize MCP2515 CAN controllers
+    DBGLN_GENERAL("Initializing CAN interfaces...");
     for (uint8_t i = 0; i < NUM_MCP; ++i)
     {
         MCPS[i].reset();
@@ -144,16 +143,24 @@ void setup()
         delay(20);
     }
 
+    DBGLN_GENERAL("CAN interfaces initialized");
+
 #if DEBUG_CAN
-    Debug_CAN::initialize(&mcp2515_DL); // Currently using motor CAN for debug messages, should change to other
+    DBGLN_GENERAL("Initializing Debug CAN...");
+    Debug_CAN::initialize(&mcp2515_DL); // Currently using datalogger CAN for debug messages
     DBGLN_GENERAL("Debug CAN initialized");
 #endif
 
+    DBGLN_GENERAL("Adding scheduler tasks...");
+    scheduler.addTask(McpIndex::Motor, scheduler_pedal, 1);
     scheduler.addTask(McpIndex::Motor, schedulerMotorRead, 1);
     scheduler.addTask(McpIndex::Motor, schedulerPedalSend, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryPedal, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryMotor, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryBms, 10);
+    DBGLN_GENERAL("Scheduler tasks added");
+
+    DBGLN_GENERAL("===== SETUP COMPLETE =====");
 
     pinMode(OUT_4, OUTPUT);
     pinMode(OUT_5, OUTPUT);
@@ -183,14 +190,7 @@ void loop()
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
 
-    digitalWrite(OUT_4, car.pedal.status.bits.force_stop ? HIGH : LOW);     // debug pin for force stop
-    digitalWrite(OUT_5, car.pedal.faults.bits.fault_exceeded ? HIGH : LOW); // debug pin for fault exceeded
-    digitalWrite(OUT_6, car.motor.motor_error ? HIGH : LOW);                // debug pin for motor error
-    digitalWrite(OUT_7, car.motor.motor_error & 0x0020 ? HIGH : LOW);       // debug pin for Vout Sat limit
-
-    digitalWrite(BUZZER, car.motor.torque_val < 0 ? HIGH : LOW); // if fault active, turn on buzzer, else off. Note that this overrides the buzzer for STARTIN state, but since a pedal fault is more critical than waiting for BMS HV ready, it's better to prioritize the pedal fault indication
-
-    if (false && car.pedal.status.bits.force_stop)
+    if (car.pedal.status.bits.force_stop)
     {
         car.pedal.status.bits.car_status = CarStatus::Init; // safety, later change to fault status
         digitalWrite(BUZZER, LOW);                          // Turn off buzzer
@@ -207,8 +207,6 @@ void loop()
 
     // do not return here if not in DRIVE mode, else can't detect pedal being on while starting
     case CarStatus::Init:
-        DBGLN_THROTTLE("Stopping motor: INIT.");
-
         if (digitalRead(DRIVE_MODE_BTN) == BUTTON_ACTIVE && brake_pressed)
         {
             car.pedal.status.bits.car_status = CarStatus::Startin;
@@ -219,8 +217,6 @@ void loop()
         break;
 
     case CarStatus::Startin:
-        DBGLN_THROTTLE("Stopping motor: STARTIN.");
-
         if (digitalRead(DRIVE_MODE_BTN) != BUTTON_ACTIVE || !brake_pressed)
         {
             car.pedal.status.bits.car_status = CarStatus::Init;
@@ -242,7 +238,6 @@ void loop()
             car.status_millis = car.millis;
             digitalWrite(BUZZER, HIGH);
             scheduler.removeTask(McpIndex::Bms, scheduler_bms); // stop checking BMS HV ready since override to BUSSIN
-            delay(2000);
             break;
         }
         break;
