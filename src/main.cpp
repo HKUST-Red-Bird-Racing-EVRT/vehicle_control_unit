@@ -1,16 +1,16 @@
 /**
  * @file main.cpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson, Chiho, Red Bird Racing
  * @brief Main VCU program entry point
- * @version 2.1
- * @date 2026-02-09
+ * @version 2.2.1
+ * @date 2026-02-25
  * @dir include @brief Contains all header-only files.
  * @dir lib @brief Contains all the libraries. Each library is in its own folder of the same name.
  * @dir src @brief Contains the main.cpp file, the main file of the program.
  */
 
 #include <Arduino.h>
-#include "BoardConf.h"
+#include "BoardConfig.h"
 #include "Pedal.hpp"
 #include "BMS.hpp"
 #include "Enums.hpp"
@@ -114,17 +114,12 @@ void setup()
 {
 #if DEBUG_SERIAL
     Debug_Serial::initialize();
-    DBGLN_GENERAL("Debug serial initialized");
+    DBGLN_GENERAL("===== VCU STARTUP =====");
+    DBGLN_GENERAL("Serial initialized");
 #endif
 
-    for (uint8_t i = 0; i < NUM_MCP; ++i)
-    {
-        MCPS[i].reset();
-        MCPS[i].setBitrate(CAN_RATE, MCP2515_CRYSTAL_FREQ);
-        MCPS[i].setNormalMode();
-    }
-
     // init GPIO pins (MCP2515 CS pins initialized in constructor))
+    DBGLN_GENERAL("Initializing GPIO pins...");
     for (uint8_t i = 0; i < INPUT_COUNT; ++i)
     {
         pinMode(pins_in[i], INPUT);
@@ -134,18 +129,43 @@ void setup()
         pinMode(pins_out[i], OUTPUT);
         digitalWrite(pins_out[i], LOW);
     }
+    DBGLN_GENERAL("GPIO pins initialized");
+
+    // Initialize MCP2515 CAN controllers
+    DBGLN_GENERAL("Initializing CAN interfaces...");
+    for (uint8_t i = 0; i < NUM_MCP; ++i)
+    {
+        MCPS[i].reset();
+        MCPS[i].setBitrate(CAN_RATE, MCP2515_CRYSTAL_FREQ);
+        MCPS[i].setNormalMode();
+    }
+
+    // Initialize MCP2515 filters for Pedal and BMS
+    pedal.initFilter();
+    bms.initFilter();
+
+    while (!pedal.initMotor())
+    {
+        delay(20);
+    }
+
+    DBGLN_GENERAL("CAN interfaces initialized");
 
 #if DEBUG_CAN
-    Debug_CAN::initialize(&mcp2515_DL); // Currently using motor CAN for debug messages, should change to other
+    DBGLN_GENERAL("Initializing Debug CAN...");
+    Debug_CAN::initialize(&mcp2515_DL); // Currently using datalogger CAN for debug messages
     DBGLN_GENERAL("Debug CAN initialized");
 #endif
 
+    DBGLN_GENERAL("Adding scheduler tasks...");
     scheduler.addTask(McpIndex::Motor, schedulerMotorRead, 1);
     scheduler.addTask(McpIndex::Motor, schedulerPedalSend, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryPedal, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryMotor, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryBms, 10);
-    DBGLN_GENERAL("Setup complete, entering main loop");
+    DBGLN_GENERAL("Scheduler tasks added");
+
+    DBGLN_GENERAL("===== SETUP COMPLETE =====");
 }
 
 /**
@@ -181,8 +201,6 @@ void loop()
 
     // do not return here if not in DRIVE mode, else can't detect pedal being on while starting
     case CarStatus::Init:
-        DBGLN_THROTTLE("Stopping motor: INIT.");
-
         if (digitalRead(DRIVE_MODE_BTN) == BUTTON_ACTIVE && brake_pressed)
         {
             car.pedal.status.bits.car_status = CarStatus::Startin;
@@ -193,8 +211,6 @@ void loop()
         break;
 
     case CarStatus::Startin:
-        DBGLN_THROTTLE("Stopping motor: STARTIN.");
-
         if (digitalRead(DRIVE_MODE_BTN) != BUTTON_ACTIVE || !brake_pressed)
         {
             car.pedal.status.bits.car_status = CarStatus::Init;
