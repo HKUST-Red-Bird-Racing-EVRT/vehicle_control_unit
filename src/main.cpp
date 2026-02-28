@@ -45,7 +45,7 @@ MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
 MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
 // #define mcp2515_motor mcp2515_DL
-#define mcp2515_BMS mcp2515_motor
+// #define mcp2515_BMS mcp2515_motor
 #define mcp2515_DL mcp2515_motor
 
 constexpr uint8_t NUM_MCP = 3;
@@ -74,19 +74,6 @@ struct CarState car = {
 Pedal pedal(mcp2515_motor, car, car.pedal.apps_5v);
 BMS bms(mcp2515_BMS, car);
 Telemetry telem(mcp2515_DL, car);
-
-void schedulerMotorInit()
-{
-    pedal.initMotor();
-}
-unsigned long mockMicros()
-{
-    digitalWrite(BUZZER, HIGH);
-    static uint32_t fake_micros = 0;
-    fake_micros += 1000000; // increment by 1000 microseconds (1 ms) each call
-    digitalWrite(BUZZER, LOW);
-    return fake_micros;
-}
 
 void schedulerMotorRead()
 {
@@ -167,7 +154,7 @@ void setup()
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryPedal, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryMotor, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryBms, 10);
-    
+
     pinMode(OUT_4, OUTPUT);
     pinMode(OUT_5, OUTPUT);
     pinMode(OUT_6, OUTPUT);
