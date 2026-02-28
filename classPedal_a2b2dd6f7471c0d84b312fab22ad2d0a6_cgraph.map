@@ -1,0 +1,5 @@
+<map id="Pedal::initMotor" name="Pedal::initMotor">
+<area shape="rect" id="node1" title="Initializes the motor CAN communication by setting up cyclic reads for motor data and configuring CAN..." alt="" coords="5,31,131,56"/>
+<area shape="rect" id="node2" href="$classPedal.html#a2ef64ef89c257cc2840425c662f7ad14" title=" " alt="" coords="179,5,355,31"/>
+<area shape="rect" id="node3" href="$classPedal.html#aec7ba639c6b2e3596d3ae1d14d3572ea" title="Sends a cyclic read request to the motor controller for speed (rpm)." alt="" coords="182,55,351,80"/>
+</map>

@@ -3,7 +3,7 @@ var Curves_8hpp =
     [ "APPS_RATIO", "Curves_8hpp.html#aedcd0f18b2470e28672db5668bdb1e8b", null ],
     [ "APPS_3V3_MAX", "Curves_8hpp.html#abf9aa96004a0358d0a8caceb05d31e62", null ],
     [ "APPS_3V3_MIN", "Curves_8hpp.html#a15bc3e3092556f8a92bb9b0ec187d3ee", null ],
-    [ "APPS_3V3_SCALE_TABLE", "Curves_8hpp.html#a7319b955b5bc8bd900d393f63c05c11f", null ],
+    [ "APPS_3V3_SCALE_TABLE", "Curves_8hpp.html#adac8b3a21f7ecfb6700361ba6130e210", null ],
     [ "APPS_5V_MAX", "Curves_8hpp.html#afbdd46bf9fad2de4083425d25cd3a753", null ],
     [ "APPS_5V_MIN", "Curves_8hpp.html#ac78f73e16d168cd0a220ffd18f8ff9db", null ],
     [ "APPS_5V_PERCENT_TABLE", "Curves_8hpp.html#abea8d96694cbce83613206c8dc606658", null ],

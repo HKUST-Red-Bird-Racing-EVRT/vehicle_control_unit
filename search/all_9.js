@@ -5,6 +5,6 @@ var searchData=
   ['last_5fout_2',['last_out',['../classExponentialFilter.html#ab71a0670da64ef01d175532476025f10',1,'ExponentialFilter']]],
   ['linearinterp_3',['LinearInterp',['../classLinearInterp.html',1,'LinearInterp&lt; Tin, Tout, Tmid, size &gt;'],['../classLinearInterp.html#a45153c62e0b76bbcb7edc6ab205cf879',1,'LinearInterp::LinearInterp()=delete'],['../classLinearInterp.html#a889aaf1a88ab071815c751f56bae278f',1,'LinearInterp::LinearInterp(const TablePoint&lt; Tin, Tout &gt;(&amp;table_)[size])']]],
   ['linearinterp_3c_20uint16_5ft_2c_20int16_5ft_2c_20int32_5ft_2c_205_20_3e_4',['LinearInterp&lt; uint16_t, int16_t, int32_t, 5 &gt;',['../classLinearInterp.html',1,'']]],
-  ['linearinterp_3c_20uint16_5ft_2c_20uint16_5ft_2c_20uint32_5ft_2c_202_20_3e_5',['LinearInterp&lt; uint16_t, uint16_t, uint32_t, 2 &gt;',['../classLinearInterp.html',1,'']]],
+  ['linearinterp_3c_20uint16_5ft_2c_20uint16_5ft_2c_20uint32_5ft_2c_203_20_3e_5',['LinearInterp&lt; uint16_t, uint16_t, uint32_t, 3 &gt;',['../classLinearInterp.html',1,'']]],
   ['loop_6',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]]
 ];

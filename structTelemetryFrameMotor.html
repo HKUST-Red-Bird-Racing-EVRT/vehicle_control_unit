@@ -122,8 +122,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae225aab3e58dc02ca22908ff4dbb18b8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTelemetryFrameMotor.html#ae225aab3e58dc02ca22908ff4dbb18b8">torque_val</a></td></tr>
-<tr class="separator:ae225aab3e58dc02ca22908ff4dbb18b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e35402dab1cd55decc8d3266275938a"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTelemetryFrameMotor.html#a1e35402dab1cd55decc8d3266275938a">torque_val</a></td></tr>
+<tr class="separator:a1e35402dab1cd55decc8d3266275938a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83aa4cf1a92356179d1508de54b1100d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTelemetryFrameMotor.html#a83aa4cf1a92356179d1508de54b1100d">motor_rpm</a></td></tr>
 <tr class="separator:a83aa4cf1a92356179d1508de54b1100d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a239b50f5dcc87885a5f62a5cb2b70f36"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTelemetryFrameMotor.html#a239b50f5dcc87885a5f62a5cb2b70f36">motor_error</a></td></tr>
@@ -192,7 +192,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="CarState_8hpp_source.html#l00100">100</a> of file <a class="el" href="CarState_8hpp_source.html">CarState.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00231">Pedal::readMotor()</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">toCanFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00286">Pedal::readMotor()</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">toCanFrame()</a>.</p>
 
 </div>
 </div>
@@ -211,7 +211,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="CarState_8hpp_source.html#l00099">99</a> of file <a class="el" href="CarState_8hpp_source.html">CarState.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00231">Pedal::readMotor()</a>, <a class="el" href="Pedal_8cpp_source.html#l00118">Pedal::sendFrame()</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">toCanFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00286">Pedal::readMotor()</a>, <a class="el" href="Pedal_8cpp_source.html#l00156">Pedal::sendFrame()</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">toCanFrame()</a>.</p>
 
 </div>
 </div>
@@ -230,18 +230,18 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="CarState_8hpp_source.html#l00101">101</a> of file <a class="el" href="CarState_8hpp_source.html">CarState.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00231">Pedal::readMotor()</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">toCanFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00286">Pedal::readMotor()</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">toCanFrame()</a>.</p>
 
 </div>
 </div>
-<a id="ae225aab3e58dc02ca22908ff4dbb18b8" name="ae225aab3e58dc02ca22908ff4dbb18b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae225aab3e58dc02ca22908ff4dbb18b8">&#9670;&#160;</a></span>torque_val</h2>
+<a id="a1e35402dab1cd55decc8d3266275938a" name="a1e35402dab1cd55decc8d3266275938a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e35402dab1cd55decc8d3266275938a">&#9670;&#160;</a></span>torque_val</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t TelemetryFrameMotor::torque_val</td>
+          <td class="memname">int16_t TelemetryFrameMotor::torque_val</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -249,7 +249,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="CarState_8hpp_source.html#l00098">98</a> of file <a class="el" href="CarState_8hpp_source.html">CarState.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00118">Pedal::sendFrame()</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">toCanFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00156">Pedal::sendFrame()</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">toCanFrame()</a>.</p>
 
 </div>
 </div>

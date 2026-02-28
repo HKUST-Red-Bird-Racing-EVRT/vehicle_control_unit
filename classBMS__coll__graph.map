@@ -1,5 +1,5 @@
 <map id="BMS" name="BMS">
-<area shape="rect" id="node1" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="316,756,431,877"/>
+<area shape="rect" id="node1" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="316,756,431,892"/>
 <area shape="rect" id="node2" href="$structCarState.html" title="Represents the state of the car. Holds telemetry data and status, used as central data sharing struct..." alt="" coords="313,601,433,693"/>
 <area shape="rect" id="node3" href="$structTelemetryFramePedal.html" title="Telemetry frame structure for the Pedals." alt="" coords="102,417,266,539"/>
 <area shape="rect" id="node4" href="$unionTelemetryFramePedal_1_1StateByteStatus.html" title="Union of bits for car status besides Pedal." alt="" coords="9,263,173,355"/>

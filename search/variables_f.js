@@ -12,5 +12,5 @@ var searchData=
   ['throttle_5fmap_9',['THROTTLE_MAP',['../classPedal.html#a5f4ba934e57009aa760e4b10a946f552',1,'Pedal']]],
   ['throttle_5ftable_10',['THROTTLE_TABLE',['../Curves_8hpp.html#a5f35ab827c7c75990e4f28729b8fd04f',1,'Curves.hpp']]],
   ['torque_5fmsg_11',['torque_msg',['../classPedal.html#ae00465a23de214b9a9c5bf48f5b93587',1,'Pedal']]],
-  ['torque_5fval_12',['torque_val',['../structTelemetryFrameMotor.html#ae225aab3e58dc02ca22908ff4dbb18b8',1,'TelemetryFrameMotor']]]
+  ['torque_5fval_12',['torque_val',['../structTelemetryFrameMotor.html#a1e35402dab1cd55decc8d3266275938a',1,'TelemetryFrameMotor']]]
 ];

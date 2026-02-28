@@ -4,5 +4,5 @@ var structTelemetryFrameMotor =
     [ "motor_error", "structTelemetryFrameMotor.html#a239b50f5dcc87885a5f62a5cb2b70f36", null ],
     [ "motor_rpm", "structTelemetryFrameMotor.html#a83aa4cf1a92356179d1508de54b1100d", null ],
     [ "motor_warn", "structTelemetryFrameMotor.html#a7a0f53a9eb76f25025d60090029196d2", null ],
-    [ "torque_val", "structTelemetryFrameMotor.html#ae225aab3e58dc02ca22908ff4dbb18b8", null ]
+    [ "torque_val", "structTelemetryFrameMotor.html#a1e35402dab1cd55decc8d3266275938a", null ]
 ];

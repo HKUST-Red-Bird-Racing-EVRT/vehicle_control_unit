@@ -24,5 +24,5 @@ var searchData=
   ['throttlelow_21',['ThrottleLow',['../Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210faa816e588b7137d8f974a9ffb21859b28',1,'Enums.hpp']]],
   ['tocanframe_22',['toCanFrame',['../structTelemetryFrameBms.html#a6b03b160b930c3a40a06e99f6e6cb175',1,'TelemetryFrameBms::toCanFrame()'],['../structTelemetryFrameMotor.html#a34bcb5a8f27caa3a1098c35c051236aa',1,'TelemetryFrameMotor::toCanFrame()'],['../structTelemetryFramePedal.html#af36459761c019b01b84e3844f8c38f49',1,'TelemetryFramePedal::toCanFrame()']]],
   ['torque_5fmsg_23',['torque_msg',['../classPedal.html#ae00465a23de214b9a9c5bf48f5b93587',1,'Pedal']]],
-  ['torque_5fval_24',['torque_val',['../structTelemetryFrameMotor.html#ae225aab3e58dc02ca22908ff4dbb18b8',1,'TelemetryFrameMotor']]]
+  ['torque_5fval_24',['torque_val',['../structTelemetryFrameMotor.html#a1e35402dab1cd55decc8d3266275938a',1,'TelemetryFrameMotor']]]
 ];

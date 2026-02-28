@@ -8,7 +8,8 @@ var main_8cpp =
     [ "mcp2515_motor", "main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5", null ],
     [ "pedal", "main_8cpp.html#a22decc8e5af13f6021fb6ad2aaa765be", null ],
     [ "scheduler_bms", "main_8cpp.html#a55b57abe9bcb30f6af0fb927f7d576a4", null ],
-    [ "scheduler_pedal", "main_8cpp.html#a1174b6795782479542559289cd623faf", null ],
+    [ "schedulerMotorRead", "main_8cpp.html#a4849579a51ba5515a1140dda7c80ed61", null ],
+    [ "schedulerPedalSend", "main_8cpp.html#a35850a25a9bfe403bb5f5d4c4796ad41", null ],
     [ "schedulerTelemetryBms", "main_8cpp.html#a6ce4f6f8e1e47dc50c24b0240f7390c4", null ],
     [ "schedulerTelemetryMotor", "main_8cpp.html#af749f68ca5ebf490db3de9a27bf7bfc6", null ],
     [ "schedulerTelemetryPedal", "main_8cpp.html#a2e1609fa80a6555982d945314147b005", null ],
@@ -25,6 +26,6 @@ var main_8cpp =
     [ "OUTPUT_COUNT", "main_8cpp.html#a5df142f03646c5b92649924c05eb448e", null ],
     [ "pins_in", "main_8cpp.html#ac81c886455652a75221096759b0b39ca", null ],
     [ "pins_out", "main_8cpp.html#ab31c3e7c8bfd2740573b89eb4a2b1d48", null ],
-    [ "scheduler", "main_8cpp.html#aaff62e0a1868f071ac6a22e167be1548", null ],
+    [ "scheduler", "main_8cpp.html#a866c898b5e3396b6f90675a4cab25a2a", null ],
     [ "telem", "main_8cpp.html#a195436960f942e58a1499aa0434267fd", null ]
 ];
