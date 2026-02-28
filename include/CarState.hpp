@@ -95,7 +95,7 @@ struct TelemetryFramePedal
  */
 struct TelemetryFrameMotor
 {
-    uint16_t torque_val;  /**< Torque value sent to motor controller*/
+    int16_t torque_val;  /**< Torque value sent to motor controller*/
     uint16_t motor_rpm;   /**< Motor RPM */
     uint16_t motor_error; /**< Motor status byte */
     uint16_t motor_warn;  /**< Motor error/warning byte */

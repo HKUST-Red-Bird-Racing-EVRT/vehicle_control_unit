@@ -33,8 +33,23 @@ BMS::BMS(MCP2515 &bms_can_, CarState &car_)
     : bms_can(bms_can_), car(car_)
 {
     car.pedal.status.bits.hv_ready = false;
-    while (bms_can.setFilter(MCP2515::RXF0,true,BMS_INFO_EXT) != MCP2515::ERROR_OK)
+}
+
+/**
+ * @brief Initializes the CAN filters for reading BMS data.
+ * Call after constructing the BMS object and the MCP2515 object it references to ensure BMS data is being read correctly.
+ * This function will block until the filter is set correctly on the MCP2515. If it never succeed, the program will be stuck here.
+ * Consider that in the case that we can't even set the filter on the MCP2515, we probably can't communicate with the BMS at all,
+ * so being stuck here is acceptable since the car won't start without BMS communication anyway.
+ */
+void BMS::initFilter()
+{
+    bms_can.setConfigMode();
+    while (bms_can.setFilterMask(MCP2515::MASK0, true, 0x7FF) != MCP2515::ERROR_OK)
         ;
+    while (bms_can.setFilter(MCP2515::RXF0, true, BMS_INFO_EXT) != MCP2515::ERROR_OK)
+        ;
+    bms_can.setNormalMode();
 }
 
 /**

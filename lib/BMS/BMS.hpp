@@ -52,6 +52,7 @@ public:
      * @return true if HV started, false otherwise
      */
     bool hvReady() const { return car.pedal.status.bits.hv_ready; };
+    void initFilter();
     void checkHv();
 
 private:

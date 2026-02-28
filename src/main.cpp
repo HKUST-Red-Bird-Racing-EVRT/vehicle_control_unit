@@ -1,8 +1,8 @@
 /**
  * @file main.cpp
- * @author Planeson, Chiho,Red Bird Racing
+ * @author Planeson, Chiho, Red Bird Racing
  * @brief Main VCU program entry point
- * @version 2.2
+ * @version 2.2.1
  * @date 2026-02-25
  * @dir include @brief Contains all header-only files.
  * @dir lib @brief Contains all the libraries. Each library is in its own folder of the same name.
@@ -35,9 +35,9 @@
 // === Pin setup ===
 // Pin setup for pedal pins are done by the constructor of Pedal object
 constexpr uint8_t INPUT_COUNT = 5;
-constexpr uint8_t OUTPUT_COUNT = 4;
+constexpr uint8_t OUTPUT_COUNT = 3;
 constexpr uint8_t pins_in[INPUT_COUNT] = {DRIVE_MODE_BTN, BRAKE_IN, APPS_5V, APPS_3V3, HALL_SENSOR};
-constexpr uint8_t pins_out[OUTPUT_COUNT] = {FRG, BRAKE_LIGHT, BUZZER, BMS_FAILED_LED};
+constexpr uint8_t pins_out[OUTPUT_COUNT] = {FRG, BRAKE_LIGHT, BUZZER};
 
 // === even if unused, initialize ALL mcp2515 to make sure the CS pin is set up and they don't interfere with the SPI bus ===
 MCP2515 mcp2515_motor(CS_CAN_MOTOR); // motor CAN
@@ -74,10 +74,13 @@ Pedal pedal(mcp2515_motor, car, car.pedal.apps_5v);
 BMS bms(mcp2515_BMS, car);
 Telemetry telem(mcp2515_DL, car);
 
-void scheduler_pedal()
+void schedulerMotorRead()
+{
+    pedal.readMotor();
+}
+void schedulerPedalSend()
 {
     pedal.sendFrame();
-    pedal.readMotor();
 }
 void scheduler_bms()
 {
@@ -96,7 +99,7 @@ void schedulerTelemetryBms()
     telem.sendBms();
 }
 
-Scheduler<2, NUM_MCP> scheduler(
+Scheduler<3, NUM_MCP> scheduler(
     10000, // period_us
     500    // spin_threshold_us
 );
@@ -113,15 +116,6 @@ void setup()
     DBGLN_GENERAL("Serial initialized");
 #endif
 
-    DBGLN_GENERAL("Initializing CAN interfaces...");
-    for (uint8_t i = 0; i < NUM_MCP; ++i)
-    {
-        MCPS[i].reset();
-        MCPS[i].setBitrate(CAN_RATE, MCP2515_CRYSTAL_FREQ);
-        MCPS[i].setNormalMode();
-    }
-    DBGLN_GENERAL("CAN interfaces initialized");
-
     // init GPIO pins (MCP2515 CS pins initialized in constructor))
     DBGLN_GENERAL("Initializing GPIO pins...");
     for (uint8_t i = 0; i < INPUT_COUNT; ++i)
@@ -135,6 +129,26 @@ void setup()
     }
     DBGLN_GENERAL("GPIO pins initialized");
 
+    // Initialize MCP2515 CAN controllers
+    DBGLN_GENERAL("Initializing CAN interfaces...");
+    for (uint8_t i = 0; i < NUM_MCP; ++i)
+    {
+        MCPS[i].reset();
+        MCPS[i].setBitrate(CAN_RATE, MCP2515_CRYSTAL_FREQ);
+        MCPS[i].setNormalMode();
+    }
+
+    // Initialize MCP2515 filters for Pedal and BMS
+    pedal.initFilter();
+    bms.initFilter();
+
+    while (!pedal.initMotor())
+    {
+        delay(20);
+    }
+
+    DBGLN_GENERAL("CAN interfaces initialized");
+
 #if DEBUG_CAN
     DBGLN_GENERAL("Initializing Debug CAN...");
     Debug_CAN::initialize(&mcp2515_DL); // Currently using datalogger CAN for debug messages
@@ -142,12 +156,13 @@ void setup()
 #endif
 
     DBGLN_GENERAL("Adding scheduler tasks...");
-    scheduler.addTask(McpIndex::Motor, scheduler_pedal, 1);
+    scheduler.addTask(McpIndex::Motor, schedulerMotorRead, 1);
+    scheduler.addTask(McpIndex::Motor, schedulerPedalSend, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryPedal, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryMotor, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryBms, 10);
     DBGLN_GENERAL("Scheduler tasks added");
-    
+
     DBGLN_GENERAL("===== SETUP COMPLETE =====");
 }
 
