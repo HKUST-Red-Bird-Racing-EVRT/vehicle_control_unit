@@ -112,7 +112,8 @@ void setup()
 {
 #if DEBUG_SERIAL
     Debug_Serial::initialize();
-    DBGLN_GENERAL("Debug serial initialized");
+    DBGLN_GENERAL("===== VCU STARTUP =====");
+    DBGLN_GENERAL("Serial initialized");
 #endif
 
     // init GPIO pins (MCP2515 CS pins initialized in constructor))
@@ -180,7 +181,6 @@ void loop()
     scheduler.update(*micros);
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
-
 
     if (car.pedal.status.bits.force_stop)
     {
