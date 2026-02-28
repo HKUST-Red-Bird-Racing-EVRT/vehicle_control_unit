@@ -1,8 +1,8 @@
 /**
  * @file main.cpp
- * @author Planeson, Chiho,Red Bird Racing
+ * @author Planeson, Chiho, Red Bird Racing
  * @brief Main VCU program entry point
- * @version 2.2
+ * @version 2.2.1
  * @date 2026-02-25
  * @dir include @brief Contains all header-only files.
  * @dir lib @brief Contains all the libraries. Each library is in its own folder of the same name.
@@ -35,9 +35,9 @@
 // === Pin setup ===
 // Pin setup for pedal pins are done by the constructor of Pedal object
 constexpr uint8_t INPUT_COUNT = 5;
-constexpr uint8_t OUTPUT_COUNT = 4;
+constexpr uint8_t OUTPUT_COUNT = 3;
 constexpr uint8_t pins_in[INPUT_COUNT] = {DRIVE_MODE_BTN, BRAKE_IN, APPS_5V, APPS_3V3, HALL_SENSOR};
-constexpr uint8_t pins_out[OUTPUT_COUNT] = {FRG, BRAKE_LIGHT, BUZZER, BMS_FAILED_LED};
+constexpr uint8_t pins_out[OUTPUT_COUNT] = {FRG, BRAKE_LIGHT, BUZZER};
 
 // === even if unused, initialize ALL mcp2515 to make sure the CS pin is set up and they don't interfere with the SPI bus ===
 MCP2515 mcp2515_motor(CS_CAN_MOTOR); // motor CAN
@@ -74,10 +74,13 @@ Pedal pedal(mcp2515_motor, car, car.pedal.apps_5v);
 BMS bms(mcp2515_BMS, car);
 Telemetry telem(mcp2515_DL, car);
 
-void scheduler_pedal()
+void schedulerMotorRead()
+{
+    pedal.readMotor();
+}
+void schedulerPedalSend()
 {
     pedal.sendFrame();
-    pedal.readMotor();
 }
 void scheduler_bms()
 {
@@ -96,7 +99,7 @@ void schedulerTelemetryBms()
     telem.sendBms();
 }
 
-Scheduler<2, NUM_MCP> scheduler(
+Scheduler<3, NUM_MCP> scheduler(
     10000, // period_us
     500    // spin_threshold_us
 );
@@ -152,7 +155,6 @@ void setup()
 #endif
 
     DBGLN_GENERAL("Adding scheduler tasks...");
-    scheduler.addTask(McpIndex::Motor, scheduler_pedal, 1);
     scheduler.addTask(McpIndex::Motor, schedulerMotorRead, 1);
     scheduler.addTask(McpIndex::Motor, schedulerPedalSend, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryPedal, 1);
@@ -161,17 +163,6 @@ void setup()
     DBGLN_GENERAL("Scheduler tasks added");
 
     DBGLN_GENERAL("===== SETUP COMPLETE =====");
-
-    pinMode(OUT_4, OUTPUT);
-    pinMode(OUT_5, OUTPUT);
-    pinMode(OUT_6, OUTPUT);
-    pinMode(OUT_7, OUTPUT);
-    digitalWrite(OUT_4, LOW);
-    digitalWrite(OUT_5, LOW);
-    digitalWrite(OUT_6, LOW);
-    digitalWrite(OUT_7, LOW);
-
-    DBGLN_GENERAL("Setup complete, entering main loop");
 }
 
 /**
@@ -189,6 +180,7 @@ void loop()
     scheduler.update(*micros);
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
+
 
     if (car.pedal.status.bits.force_stop)
     {
