@@ -26,6 +26,6 @@ var main_8cpp =
     [ "OUTPUT_COUNT", "main_8cpp.html#a5df142f03646c5b92649924c05eb448e", null ],
     [ "pins_in", "main_8cpp.html#ac81c886455652a75221096759b0b39ca", null ],
     [ "pins_out", "main_8cpp.html#ab31c3e7c8bfd2740573b89eb4a2b1d48", null ],
-    [ "scheduler", "main_8cpp.html#a866c898b5e3396b6f90675a4cab25a2a", null ],
+    [ "scheduler", "main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc", null ],
     [ "telem", "main_8cpp.html#a195436960f942e58a1499aa0434267fd", null ]
 ];

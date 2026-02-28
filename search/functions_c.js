@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['scheduler_0',['Scheduler',['../classScheduler.html#adb37f42cfbafdae88ba8822e858a11a1',1,'Scheduler::Scheduler(uint32_t period_us_, uint32_t spin_threshold_us_)'],['../classScheduler.html#a299319973d96b26de8de719dca8822fd',1,'Scheduler::Scheduler()=delete']]],
+  ['scheduler_0',['Scheduler',['../classScheduler.html#a062196239232a8dc67ad82f40dc76c1c',1,'Scheduler::Scheduler(uint32_t period_us_, uint32_t spin_threshold_us_, unsigned long(*const current_time_us)())'],['../classScheduler.html#a299319973d96b26de8de719dca8822fd',1,'Scheduler::Scheduler()=delete']]],
   ['scheduler_5fbms_1',['scheduler_bms',['../main_8cpp.html#a55b57abe9bcb30f6af0fb927f7d576a4',1,'main.cpp']]],
   ['schedulermotorread_2',['schedulerMotorRead',['../main_8cpp.html#a4849579a51ba5515a1140dda7c80ed61',1,'main.cpp']]],
   ['schedulerpedalsend_3',['schedulerPedalSend',['../main_8cpp.html#a35850a25a9bfe403bb5f5d4c4796ad41',1,'main.cpp']]],

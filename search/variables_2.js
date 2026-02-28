@@ -4,6 +4,6 @@ var searchData=
   ['car_1',['car',['../classBMS.html#abb3de30014ac8e4e94de7e44b623a50d',1,'BMS::car()'],['../classPedal.html#a62eed1bcc4b9bb0cc4b1419cd77472da',1,'Pedal::car()'],['../classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef',1,'Telemetry::car()'],['../main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8',1,'car():&#160;main.cpp']]],
   ['car_5fstatus_2',['car_status',['../structTelemetryFramePedal_1_1StateByteStatus_1_1Bits.html#aee38be468bda33ee83ed5b59fbf8b375',1,'TelemetryFramePedal::StateByteStatus::Bits']]],
   ['count_3',['count',['../classRingBuffer.html#a375926eb439fc06803b497e1a19add6a',1,'RingBuffer']]],
-  ['curve_5ftable_4',['CURVE_TABLE',['../Curves_8hpp.html#a258f6b8060168f42914191e7539ef5ef',1,'Curves.hpp']]],
-  ['cycle_5fcount_5',['cycle_count',['../classScheduler.html#abd8e19c5fc655a2069f609d3e3c6a177',1,'Scheduler']]]
+  ['current_5ftime_5fus_4',['CURRENT_TIME_US',['../classScheduler.html#af44f119a382d4db7b9a840ac27fa02c9',1,'Scheduler']]],
+  ['curve_5ftable_5',['CURVE_TABLE',['../Curves_8hpp.html#a258f6b8060168f42914191e7539ef5ef',1,'Curves.hpp']]]
 ];

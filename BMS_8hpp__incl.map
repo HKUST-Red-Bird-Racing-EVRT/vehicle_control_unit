@@ -1,10 +1,10 @@
 <map id="vehicle_control_unit/lib/BMS/BMS.hpp" name="vehicle_control_unit/lib/BMS/BMS.hpp">
-<area shape="rect" id="node1" title="Declaration of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="69,5,223,45"/>
-<area shape="rect" id="node2" href="$Scheduler_8hpp.html" title="Declaration of the Scheduler class template, for scheduling tasks on multiple MCP2515 instances." alt="" coords="89,93,203,119"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,240,100,265"/>
-<area shape="rect" id="node8" href="$CarState_8hpp.html" title="Definition of the CarState structure representing the state of the car." alt="" coords="277,167,383,192"/>
-<area shape="rect" id="node3" href="$Enums_8hpp.html" title="Enumeration definitions for the VCU." alt="" coords="192,240,287,265"/>
-<area shape="rect" id="node7" href="$Scheduler_8tpp.html" title="Implementation of the Scheduler class template." alt="" coords="91,167,201,192"/>
-<area shape="rect" id="node4" title=" " alt="" coords="228,313,299,339"/>
-<area shape="rect" id="node5" title=" " alt="" coords="335,313,392,339"/>
+<area shape="rect" id="node1" title="Declaration of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="145,5,299,45"/>
+<area shape="rect" id="node2" href="$Scheduler_8hpp.html" title="Declaration of the Scheduler class template, for scheduling tasks on multiple MCP2515 instances." alt="" coords="48,93,161,119"/>
+<area shape="rect" id="node7" href="$CarState_8hpp.html" title="Definition of the CarState structure representing the state of the car." alt="" coords="191,167,298,192"/>
+<area shape="rect" id="node8" title=" " alt="" coords="260,93,355,119"/>
+<area shape="rect" id="node3" href="$Enums_8hpp.html" title="Enumeration definitions for the VCU." alt="" coords="107,240,201,265"/>
+<area shape="rect" id="node6" href="$Scheduler_8tpp.html" title="Implementation of the Scheduler class template." alt="" coords="5,167,116,192"/>
+<area shape="rect" id="node4" title=" " alt="" coords="243,313,313,339"/>
+<area shape="rect" id="node5" title=" " alt="" coords="149,313,207,339"/>
 </map>

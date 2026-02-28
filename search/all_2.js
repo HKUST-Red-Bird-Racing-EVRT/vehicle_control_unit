@@ -15,8 +15,8 @@ var searchData=
   ['cs_5fcan_5fbms_12',['CS_CAN_BMS',['../BoardConfig_8h.html#ab476064511df004d8a67875afbd3521b',1,'BoardConfig.h']]],
   ['cs_5fcan_5fdl_13',['CS_CAN_DL',['../BoardConfig_8h.html#a661f70456357c09fff639665b5e89852',1,'BoardConfig.h']]],
   ['cs_5fcan_5fmotor_14',['CS_CAN_MOTOR',['../BoardConfig_8h.html#a65b24582a92e368f91aca95b4dbe5847',1,'BoardConfig.h']]],
-  ['curve_5ftable_15',['CURVE_TABLE',['../Curves_8hpp.html#a258f6b8060168f42914191e7539ef5ef',1,'Curves.hpp']]],
-  ['curves_2ehpp_16',['Curves.hpp',['../Curves_8hpp.html',1,'']]],
-  ['cycle_5fcount_17',['cycle_count',['../classScheduler.html#abd8e19c5fc655a2069f609d3e3c6a177',1,'Scheduler']]],
+  ['current_5ftime_5fus_15',['CURRENT_TIME_US',['../classScheduler.html#af44f119a382d4db7b9a840ac27fa02c9',1,'Scheduler']]],
+  ['curve_5ftable_16',['CURVE_TABLE',['../Curves_8hpp.html#a258f6b8060168f42914191e7539ef5ef',1,'Curves.hpp']]],
+  ['curves_2ehpp_17',['Curves.hpp',['../Curves_8hpp.html',1,'']]],
   ['cyclesneeded_18',['cyclesNeeded',['../classScheduler.html#a9e44ac674f314b307d08a42456cb6c8a',1,'Scheduler']]]
 ];
