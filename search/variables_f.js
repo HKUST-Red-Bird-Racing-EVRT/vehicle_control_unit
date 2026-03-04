@@ -8,9 +8,8 @@ var searchData=
   ['telemetry_5fbms_5fmsg_5',['TELEMETRY_BMS_MSG',['../CarState_8hpp.html#aaf5c87ec2586cde937c51756d9a50025',1,'CarState.hpp']]],
   ['telemetry_5fmotor_5fmsg_6',['TELEMETRY_MOTOR_MSG',['../CarState_8hpp.html#a68020dda3bb0a0cbf219e904f283859c',1,'CarState.hpp']]],
   ['telemetry_5fpedal_5fmsg_7',['TELEMETRY_PEDAL_MSG',['../CarState_8hpp.html#a3b73ee9ec3bd3255bd5472e6561b0f1e',1,'CarState.hpp']]],
-  ['throttle_5ffault_5fmsg_8',['THROTTLE_FAULT_MSG',['../namespaceDebug__CAN.html#a64497e2ec71e82d81603aad44aaca13d',1,'Debug_CAN']]],
-  ['throttle_5fmap_9',['THROTTLE_MAP',['../classPedal.html#a5f4ba934e57009aa760e4b10a946f552',1,'Pedal']]],
-  ['throttle_5ftable_10',['THROTTLE_TABLE',['../Curves_8hpp.html#a5f35ab827c7c75990e4f28729b8fd04f',1,'Curves.hpp']]],
-  ['torque_5fmsg_11',['torque_msg',['../classPedal.html#ae00465a23de214b9a9c5bf48f5b93587',1,'Pedal']]],
-  ['torque_5fval_12',['torque_val',['../structTelemetryFrameMotor.html#a1e35402dab1cd55decc8d3266275938a',1,'TelemetryFrameMotor']]]
+  ['throttle_5fmap_8',['THROTTLE_MAP',['../classPedal.html#a5f4ba934e57009aa760e4b10a946f552',1,'Pedal']]],
+  ['throttle_5ftable_9',['THROTTLE_TABLE',['../Curves_8hpp.html#a5f35ab827c7c75990e4f28729b8fd04f',1,'Curves.hpp']]],
+  ['torque_5fmsg_10',['torque_msg',['../classPedal.html#ae00465a23de214b9a9c5bf48f5b93587',1,'Pedal']]],
+  ['torque_5fval_11',['torque_val',['../structTelemetryFrameMotor.html#a1e35402dab1cd55decc8d3266275938a',1,'TelemetryFrameMotor']]]
 ];

@@ -133,10 +133,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a5c8b33000e36a19ccb285e45f666e64e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a5c8b33000e36a19ccb285e45f666e64e">Debug_CAN::initialize</a> (MCP2515 *can_interface)</td></tr>
 <tr class="memdesc:a5c8b33000e36a19ccb285e45f666e64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <a class="el" href="namespaceDebug__CAN.html" title="Namespace for CAN debugging functions.">Debug_CAN</a> interface. It should be called before using any other <a class="el" href="namespaceDebug__CAN.html" title="Namespace for CAN debugging functions.">Debug_CAN</a> functions.  <br /></td></tr>
 <tr class="separator:a5c8b33000e36a19ccb285e45f666e64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aded6aa4b3ac940a9ea0941569e157522"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#aded6aa4b3ac940a9ea0941569e157522">Debug_CAN::throttle_fault</a> (<a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status, uint16_t value)</td></tr>
-<tr class="separator:aded6aa4b3ac940a9ea0941569e157522"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff1ba009c1c228e994e83c89c4243e08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#aff1ba009c1c228e994e83c89c4243e08">Debug_CAN::throttle_fault</a> (<a class="el" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status)</td></tr>
-<tr class="separator:aff1ba009c1c228e994e83c89c4243e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d829d5a41ff1b23f3afa0bbd9320e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a8d829d5a41ff1b23f3afa0bbd9320e56">Debug_CAN::send_message</a> (canid_t id, uint8_t data0=0x00, uint8_t data1=0x00, uint8_t data2=0x00, uint8_t data3=0x00, uint8_t data4=0x00, uint8_t data5=0x00, uint8_t data6=0x00, uint8_t data7=0x00)</td></tr>
 <tr class="memdesc:a8d829d5a41ff1b23f3afa0bbd9320e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends arbitrary debug data via CAN with specified message ID and data bytes.  <br /></td></tr>
 <tr class="separator:a8d829d5a41ff1b23f3afa0bbd9320e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,14 +141,12 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:af09d4c579d34dfa0f5fb18114f304203"><td class="memItemLeft" align="right" valign="top">MCP2515 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#af09d4c579d34dfa0f5fb18114f304203">Debug_CAN::can_interface</a> = nullptr</td></tr>
 <tr class="separator:af09d4c579d34dfa0f5fb18114f304203"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64497e2ec71e82d81603aad44aaca13d"><td class="memItemLeft" align="right" valign="top">constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDebug__CAN.html#a64497e2ec71e82d81603aad44aaca13d">Debug_CAN::THROTTLE_FAULT_MSG</a> = 0x692</td></tr>
-<tr class="separator:a64497e2ec71e82d81603aad44aaca13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Declaration of the <a class="el" href="namespaceDebug__CAN.html" title="Namespace for CAN debugging functions.">Debug_CAN</a> namespace for CAN debugging functions. </p>
 <dl class="section author"><dt>Author</dt><dd>Planeson, Chiho, Red Bird Racing </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2026-02-25 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-03-04 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="Debug__can_8cpp.html" title="Implementation of the Debug_CAN namespace for CAN debugging functions.">Debug_can.cpp</a> </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="Debug__can_8hpp_source.html">Debug_can.hpp</a>.</p>

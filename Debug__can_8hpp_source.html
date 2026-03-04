@@ -102,8 +102,8 @@ $(document).ready(function(){initNavTree('Debug__can_8hpp_source.html',''); init
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file Debug_can.hpp</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @author Planeson, Chiho, Red Bird Racing</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @brief Declaration of the Debug_CAN namespace for CAN debugging functions</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @version 2.0</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @date 2026-02-25</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @version 2.0.1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @date 2026-03-04</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * @see Debug_can.cpp</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
@@ -127,30 +127,24 @@ $(document).ready(function(){initNavTree('Debug__can_8hpp_source.html',''); init
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceDebug__CAN.html#a5c8b33000e36a19ccb285e45f666e64e">initialize</a>(MCP2515 *<a class="code hl_variable" href="namespaceDebug__CAN.html#af09d4c579d34dfa0f5fb18114f304203">can_interface</a>);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceDebug__CAN.html#aded6aa4b3ac940a9ea0941569e157522">   30</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceDebug__CAN.html#aded6aa4b3ac940a9ea0941569e157522">throttle_fault</a>(<a class="code hl_enumeration" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status, uint16_t value);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespaceDebug__CAN.html#aff1ba009c1c228e994e83c89c4243e08">   31</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceDebug__CAN.html#aded6aa4b3ac940a9ea0941569e157522">throttle_fault</a>(<a class="code hl_enumeration" href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a> fault_status);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceDebug__CAN.html#a8d829d5a41ff1b23f3afa0bbd9320e56">send_message</a>(</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        canid_t <span class="keywordtype">id</span>,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        uint8_t data0 = 0x00, </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        uint8_t data1 = 0x00, </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        uint8_t data2 = 0x00,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        uint8_t data3 = 0x00,</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        uint8_t data4 = 0x00, </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        uint8_t data5 = 0x00,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        uint8_t data6 = 0x00, </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        uint8_t data7 = 0x00);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceDebug__CAN.html#a8d829d5a41ff1b23f3afa0bbd9320e56">send_message</a>(</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        canid_t <span class="keywordtype">id</span>,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        uint8_t data0 = 0x00, </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        uint8_t data1 = 0x00, </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        uint8_t data2 = 0x00,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        uint8_t data3 = 0x00,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        uint8_t data4 = 0x00, </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        uint8_t data5 = 0x00,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        uint8_t data6 = 0x00, </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        uint8_t data7 = 0x00);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespaceDebug__CAN.html#a64497e2ec71e82d81603aad44aaca13d">   43</a></span>    <span class="keyword">constexpr</span> canid_t <a class="code hl_variable" href="namespaceDebug__CAN.html#a64497e2ec71e82d81603aad44aaca13d">THROTTLE_FAULT_MSG</a> = 0x692;     <span class="comment">/**&lt; Debug: throttle fault message */</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif </span><span class="comment">// DEBUG_CAN_HPP</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif </span><span class="comment">// DEBUG_CAN_HPP</span></div>
 <div class="ttc" id="aEnums_8hpp_html"><div class="ttname"><a href="Enums_8hpp.html">Enums.hpp</a></div><div class="ttdoc">Enumeration definitions for the VCU.</div></div>
-<div class="ttc" id="aEnums_8hpp_html_ad084009f7e1f2139381bc18bb5bc210f"><div class="ttname"><a href="Enums_8hpp.html#ad084009f7e1f2139381bc18bb5bc210f">PedalFault</a></div><div class="ttdeci">PedalFault</div><div class="ttdoc">Pedal fault status codes.</div><div class="ttdef"><b>Definition:</b> <a href="Enums_8hpp_source.html#l00032">Enums.hpp:33</a></div></div>
 <div class="ttc" id="anamespaceDebug__CAN_html"><div class="ttname"><a href="namespaceDebug__CAN.html">Debug_CAN</a></div><div class="ttdoc">Namespace for CAN debugging functions.</div><div class="ttdef"><b>Definition:</b> <a href="Debug__can_8hpp_source.html#l00024">Debug_can.hpp:25</a></div></div>
 <div class="ttc" id="anamespaceDebug__CAN_html_a5c8b33000e36a19ccb285e45f666e64e"><div class="ttname"><a href="namespaceDebug__CAN.html#a5c8b33000e36a19ccb285e45f666e64e">Debug_CAN::initialize</a></div><div class="ttdeci">void initialize(MCP2515 *can_interface)</div><div class="ttdoc">Initializes the Debug_CAN interface. It should be called before using any other Debug_CAN functions.</div><div class="ttdef"><b>Definition:</b> <a href="Debug__can_8cpp_source.html#l00026">Debug_can.cpp:26</a></div></div>
-<div class="ttc" id="anamespaceDebug__CAN_html_a64497e2ec71e82d81603aad44aaca13d"><div class="ttname"><a href="namespaceDebug__CAN.html#a64497e2ec71e82d81603aad44aaca13d">Debug_CAN::THROTTLE_FAULT_MSG</a></div><div class="ttdeci">constexpr canid_t THROTTLE_FAULT_MSG</div><div class="ttdef"><b>Definition:</b> <a href="Debug__can_8hpp_source.html#l00043">Debug_can.hpp:43</a></div></div>
 <div class="ttc" id="anamespaceDebug__CAN_html_a8d829d5a41ff1b23f3afa0bbd9320e56"><div class="ttname"><a href="namespaceDebug__CAN.html#a8d829d5a41ff1b23f3afa0bbd9320e56">Debug_CAN::send_message</a></div><div class="ttdeci">void send_message(canid_t id, uint8_t data0=0x00, uint8_t data1=0x00, uint8_t data2=0x00, uint8_t data3=0x00, uint8_t data4=0x00, uint8_t data5=0x00, uint8_t data6=0x00, uint8_t data7=0x00)</div><div class="ttdoc">Sends arbitrary debug data via CAN with specified message ID and data bytes.</div><div class="ttdef"><b>Definition:</b> <a href="Debug__can_8cpp_source.html#l00046">Debug_can.cpp:46</a></div></div>
-<div class="ttc" id="anamespaceDebug__CAN_html_aded6aa4b3ac940a9ea0941569e157522"><div class="ttname"><a href="namespaceDebug__CAN.html#aded6aa4b3ac940a9ea0941569e157522">Debug_CAN::throttle_fault</a></div><div class="ttdeci">void throttle_fault(PedalFault fault_status, uint16_t value)</div></div>
 <div class="ttc" id="anamespaceDebug__CAN_html_af09d4c579d34dfa0f5fb18114f304203"><div class="ttname"><a href="namespaceDebug__CAN.html#af09d4c579d34dfa0f5fb18114f304203">Debug_CAN::can_interface</a></div><div class="ttdeci">MCP2515 * can_interface</div><div class="ttdef"><b>Definition:</b> <a href="Debug__can_8cpp_source.html#l00018">Debug_can.cpp:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
