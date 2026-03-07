@@ -1,4 +1,4 @@
-# Red Bird Racing VCU 2025
+# Red Bird Racing Vehicle Control Unit
 
 Vehicle Control Unit (VCU) firmware for Red Bird Racing.
 As of current, this codebase is ready for Gen 5 (2025) and Gen 6 (2026).
@@ -9,7 +9,7 @@ As of current, this codebase is ready for Gen 5 (2025) and Gen 6 (2026).
 This repository contains the embedded firmware for the VCU, responsible for pedal input processing, CAN communication, and vehicle state management. The codebase is modular, with a focus on reliability, maintainability, and real-time performance for electric race vehicles.
 
 ## Documentation
-- [**Doxygen Documentation**](https://hkust-red-bird-racing-evrt.github.io/ee_sw_vcu_2025/)
+- [**Doxygen Documentation**](https://hkust-red-bird-racing-evrt.github.io/vehicle_control_unit/)
 - [**External System/Design Documentation**](https://drive.google.com/drive/folders/1Ny3oZfMf1QJ1frPJsuiHh42v5gLH2OJs?usp=drive_link)
 
 ## Key Components
@@ -27,13 +27,12 @@ This repository contains the embedded firmware for the VCU, responsible for peda
 	- Use PlatformIO or your preferred toolchain to build and upload the firmware.
 	- Ensure the vehicle is safely jacked up and powered off during flashing.
 4. **Sensor Calibration:**
-	- Probe APPS sensor voltages (5V and 3.3V rails) to determine min/max values and scale the curve correctly.
+	- Use CAN and the .dbc file to determine the curves for the two APPS, as well as the brakes.
 	- Adjust configuration (step 2) as needed for reliable and desirable operation.
 
 ## Debugging
 - Enable/disable debug messages by setting flags in `Debug.hpp`.
-- Significantly slows down the VCU due to the extra work
-- Should not affect motor/BMS/Telemetry frame timings majorly, though the Scheduler can handle missed frames correctly.
+- Debug messages sent as they are produced, and does not have a set interval.
 - Debug is centred around showing what Telemetry would show, so there's more focus on tracing the car's states before Telemetry starts communicating, or if the CAN don't work.
 - **Serial Debugging:**
   - Connect the VCU to a serial monitor.
@@ -54,7 +53,7 @@ platformio.ini   # PlatformIO project config
 ```
 
 ## Current Development
-- Debug awaiting cleanup
+- Tuning
 
 ## Future Plans
 - Continuous maintenance
