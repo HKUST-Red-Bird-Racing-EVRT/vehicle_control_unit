@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['red_20bird_20racing_20vcu_202025_0',['Red Bird Racing VCU 2025',['../index.html',1,'']]]
+  ['red_20bird_20racing_20vehicle_20control_20unit_0',['Red Bird Racing Vehicle Control Unit',['../index.html',1,'']]]
 ];

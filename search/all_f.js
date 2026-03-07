@@ -3,7 +3,7 @@ var searchData=
   ['range_0',['range',['../classLinearInterp.html#a9928dbf5a866f066fa19a3c4794bf71a',1,'LinearInterp']]],
   ['readme_2emd_1',['Readme.md',['../Readme_8md.html',1,'']]],
   ['readmotor_2',['readMotor',['../classPedal.html#aa66167fb494c00db7b8a0b8140e85973',1,'Pedal']]],
-  ['red_20bird_20racing_20vcu_202025_3',['Red Bird Racing VCU 2025',['../index.html',1,'']]],
+  ['red_20bird_20racing_20vehicle_20control_20unit_3',['Red Bird Racing Vehicle Control Unit',['../index.html',1,'']]],
   ['regen_5fenabled_4',['REGEN_ENABLED',['../Pedal_8hpp.html#ad9af782d63c8bc4cfaf4a3b19d1489f3',1,'Pedal.hpp']]],
   ['regid_5fread_5',['REGID_READ',['../classPedal.html#a9422c33b0af4d42efa9de0723dd6d5c0',1,'Pedal']]],
   ['removetask_6',['removeTask',['../classScheduler.html#a3d83583589e7251bfcebc0ff852d59c5',1,'Scheduler']]],

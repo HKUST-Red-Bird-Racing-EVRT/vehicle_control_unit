@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Red Bird Racing VCU", "index.html", [
-    [ "Red Bird Racing VCU 2025", "index.html", "index" ],
+    [ "Red Bird Racing Vehicle Control Unit", "index.html", "index" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

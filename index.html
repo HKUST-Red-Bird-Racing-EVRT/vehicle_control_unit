@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Red Bird Racing VCU: Red Bird Racing VCU 2025</title>
+<title>Red Bird Racing VCU: Red Bird Racing Vehicle Control Unit</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Red Bird Racing VCU 2025 </div></div>
+  <div class="headertitle"><div class="title">Red Bird Racing Vehicle Control Unit </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_vehicle_control_unit_Readme"></a> Vehicle Control Unit (VCU) firmware for Red Bird Racing. As of current, this codebase is ready for Gen 5 (2025) and Gen 6 (2026).</p>
@@ -106,7 +106,7 @@ Overview</h1>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Documentation</h1>
 <ul>
-<li><a href="https://hkust-red-bird-racing-evrt.github.io/ee_sw_vcu_2025/"><b>Doxygen Documentation</b></a></li>
+<li><a href="https://hkust-red-bird-racing-evrt.github.io/vehicle_control_unit/"><b>Doxygen Documentation</b></a></li>
 <li><a href="https://drive.google.com/drive/folders/1Ny3oZfMf1QJ1frPJsuiHh42v5gLH2OJs?usp=drive_link"><b>External System/Design Documentation</b></a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md4"></a>
@@ -134,7 +134,7 @@ Getting Started</h1>
 </ul>
 </li>
 <li><b>Sensor Calibration:</b><ul>
-<li>Probe APPS sensor voltages (5V and 3.3V rails) to determine min/max values and scale the curve correctly.</li>
+<li>Use CAN and the .dbc file to determine the curves for the two APPS, as well as the brakes.</li>
 <li>Adjust configuration (step 2) as needed for reliable and desirable operation.</li>
 </ul>
 </li>
@@ -143,8 +143,7 @@ Getting Started</h1>
 Debugging</h1>
 <ul>
 <li>Enable/disable debug messages by setting flags in <code><a class="el" href="Debug_8hpp.html" title="Debugging macros and functions for serial and CAN output.">Debug.hpp</a></code>.</li>
-<li>Significantly slows down the VCU due to the extra work</li>
-<li>Should not affect motor/BMS/Telemetry frame timings majorly, though the <a class="el" href="classScheduler.html" title="Scheduler class template for scheduling tasks on multiple MCP2515 instances Takes in function pointer...">Scheduler</a> can handle missed frames correctly.</li>
+<li>Debug messages sent as they are produced, and does not have a set interval.</li>
 <li>Debug is centred around showing what <a class="el" href="classTelemetry.html" title="Telemetry class for managing telemetry data transmission over CAN bus Grabs and sends telemetry frame...">Telemetry</a> would show, so there's more focus on tracing the car's states before <a class="el" href="classTelemetry.html" title="Telemetry class for managing telemetry data transmission over CAN bus Grabs and sends telemetry frame...">Telemetry</a> starts communicating, or if the CAN don't work.</li>
 <li><b>Serial Debugging:</b><ul>
 <li>Connect the VCU to a serial monitor.</li>
@@ -169,7 +168,7 @@ Project Structure</h1>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 Current Development</h1>
 <ul>
-<li>Debug awaiting cleanup</li>
+<li>Tuning</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md9"></a>
 Future Plans</h1>
