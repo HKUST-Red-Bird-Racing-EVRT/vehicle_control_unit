@@ -40,9 +40,9 @@ constexpr uint8_t pins_in[INPUT_COUNT] = {DRIVE_MODE_BTN, BRAKE_IN, APPS_5V, APP
 constexpr uint8_t pins_out[OUTPUT_COUNT] = {FRG, BRAKE_LIGHT, BUZZER};
 
 // === even if unused, initialize ALL mcp2515 to make sure the CS pin is set up and they don't interfere with the SPI bus ===
-MCP2515 mcp2515_motor(CS_CAN_MOTOR); // motor CAN
-MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
-MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
+MCP2515 mcp2515_motor{CS_CAN_MOTOR}; // motor CAN
+MCP2515 mcp2515_BMS{CS_CAN_BMS};     // BMS CAN
+MCP2515 mcp2515_DL{CS_CAN_DL};       // datalogger CAN
 
 #define mcp2515_motor mcp2515_DL
 #define mcp2515_BMS mcp2515_DL
@@ -71,9 +71,9 @@ struct CarState car = {
 };
 
 // Global objects
-Pedal pedal(mcp2515_motor, car, car.pedal.apps_5v);
-BMS bms(mcp2515_BMS, car);
-Telemetry telem(mcp2515_DL, car);
+Pedal pedal{mcp2515_motor, car, car.pedal.apps_5v};
+BMS bms{mcp2515_BMS, car};
+Telemetry telem{mcp2515_DL, car};
 
 void schedulerMotorRead()
 {
@@ -248,18 +248,11 @@ void loop()
         /*
         since we are switching on only 2 bits, and we use all 4 combinations,
         it's physically impossible to reach a default case even with memory corruption, so no need for one
-
-        default:
-            // unreachable, reset to INIT
-            car.pedal.status.bits.state_unknown = true;
-            car.pedal.status.bits.car_status = CarStatus::Init;
-            car.status_millis = car.millis;
-            break;
         */
     }
 
-    // DRIVE mode has already returned, if reached here, then means car isn't in DRIVE
-    if (pedal.pedal_final > THROTTLE_TABLE[0].in) // if pedal pressed while not in DRIVE, reset to INIT
+    // Drive mode has already returned, if reached here, then means car isn't in Drive
+    if (pedal.pedal_final > THROTTLE_TABLE[0].in) // if pedal pressed while not in Drive, reset to Init
     {
         car.pedal.status.bits.car_status = CarStatus::Init;
         car.status_millis = car.millis; // Set to current time, in case any counter relies on this
