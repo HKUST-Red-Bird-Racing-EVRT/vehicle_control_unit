@@ -46,7 +46,7 @@ MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
 // #define mcp2515_motor mcp2515_DL
 // #define mcp2515_BMS mcp2515_motor
-#define mcp2515_DL mcp2515_motor
+#define mcp2515_DL mcp2515_BMS
 
 constexpr uint8_t NUM_MCP = 3;
 MCP2515 MCPS[NUM_MCP] = {mcp2515_motor, mcp2515_BMS, mcp2515_DL};
@@ -140,14 +140,25 @@ void setup()
         MCPS[i].setNormalMode();
     }
 
+    pinMode(OUT_4, OUTPUT);
+    pinMode(OUT_5, OUTPUT);
+    pinMode(OUT_6, OUTPUT);
+    pinMode(OUT_7, OUTPUT);
+
+    digitalWrite(OUT_4, HIGH);
+
     // Initialize MCP2515 filters for Pedal and BMS
     pedal.initFilter();
+    digitalWrite(OUT_5, HIGH);
     bms.initFilter();
+    digitalWrite(OUT_6, HIGH);
 
     while (!pedal.initMotor())
     {
         delay(20);
     }
+
+    digitalWrite(OUT_7, HIGH);
 
     DBGLN_GENERAL("CAN interfaces initialized");
 
@@ -165,10 +176,6 @@ void setup()
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryBms, 10);
     DBGLN_GENERAL("Scheduler tasks added");
 
-    pinMode(OUT_4, OUTPUT);
-    pinMode(OUT_5, OUTPUT);
-    pinMode(OUT_6, OUTPUT);
-    pinMode(OUT_7, OUTPUT);
     digitalWrite(OUT_4, LOW);
     digitalWrite(OUT_5, LOW);
     digitalWrite(OUT_6, LOW);
@@ -192,13 +199,6 @@ void loop()
     scheduler.update();
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
-
-    digitalWrite(OUT_4, car.pedal.status.bits.force_stop ? HIGH : LOW);     // debug pin for force stop
-    digitalWrite(OUT_5, car.pedal.faults.bits.fault_exceeded ? HIGH : LOW); // debug pin for fault exceeded
-    digitalWrite(OUT_6, car.motor.motor_error ? HIGH : LOW);                // debug pin for motor error
-    digitalWrite(OUT_7, car.motor.motor_error & 0x0020 ? HIGH : LOW);       // debug pin for Vout Sat limit
-
-    digitalWrite(BUZZER, car.motor.torque_val < 0 ? HIGH : LOW); // buzzer on if regen, for testing
 
     if (car.pedal.status.bits.force_stop)
     {
@@ -248,7 +248,6 @@ void loop()
             car.status_millis = car.millis;
             digitalWrite(BUZZER, HIGH);
             scheduler.removeTask(McpIndex::Bms, scheduler_bms); // stop checking BMS HV ready since override to BUSSIN
-            delay(2000); // else overriden by regen buzzer
             break;
         }
         break;
