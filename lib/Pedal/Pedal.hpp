@@ -42,23 +42,23 @@ constexpr uint32_t MAX_MOTOR_READ_MILLIS = 100; /**< Maximum time in millisecond
 namespace PedalConstants
 {
     constexpr uint8_t MIN_REGEN_KMH = 10;          /**< Minimum speed (km/h) for regenerative braking to be active. */
-    constexpr uint8_t GEAR_RATIO_NUMERATOR = 60;   /**< Gear ratio numerator of the drivetrain. */
+    constexpr uint8_t GEAR_RATIO_NUMERATOR = 50;   /**< Gear ratio numerator of the drivetrain. */
     constexpr uint8_t GEAR_RATIO_DENOMINATOR = 13; /**< Gear ratio denominator of the drivetrain. */
 
     // === Calculation for RPM threshold ===
-    constexpr uint8_t WHEEL_DIAMETER_INCH = 13; /**< Wheel diameter in inches. */
-    constexpr uint16_t MAX_MOTOR_RPM = 7000;    /**< Maximum motor RPM. */
-    constexpr uint16_t MAX_TORQUE_VAL = 32767;  /**< Maximum torque value for motor controller. */
+    constexpr uint16_t WHEEL_DIAMETER_MM = 455;       /**< Wheel diameter in millimeters (actual recorded). */
+    constexpr uint16_t MAX_MOTOR_RPM = 7000;          /**< Maximum motor RPM. */
+    constexpr uint16_t MAX_MOTOR_RPM_READING = 32767; /**< Maximum motor RPM reading from CAN (2^15 - 1 for signed 16-bit). */
+    constexpr uint16_t MAX_TORQUE_VAL = 32767;        /**< Maximum torque value for motor controller. */
 
-    constexpr uint16_t INCH_PER_KM = 39370;                   /**< Inches per kilometer. */
+    constexpr uint32_t MM_PER_KM = (uint32_t)1000 * 1000;     /**< Millimeters per kilometer. */
     constexpr uint8_t MINUTES_PER_HOUR = 60;                  /**< Minutes per hour. */
     constexpr double PI_ = 3.1415926535897932384626433832795; /**< Value of pi, unnamed to avoid clashing with Arduino.h's definition. */
 
     /** Final RPM = KMH -> Inches per Hour -> Inch per minute -> RPM at wheel -> RPM at motor */
     constexpr int16_t MIN_REGEN_RPM_VAL =
-        (double)MIN_REGEN_KMH / MINUTES_PER_HOUR * INCH_PER_KM / WHEEL_DIAMETER_INCH / PI_ * GEAR_RATIO_NUMERATOR / GEAR_RATIO_DENOMINATOR * MAX_TORQUE_VAL / MAX_MOTOR_RPM; /**< Minimum RPM for regenerative braking to be active. */
+        (double)MIN_REGEN_KMH / MINUTES_PER_HOUR * MM_PER_KM / WHEEL_DIAMETER_MM / PI_ * GEAR_RATIO_NUMERATOR / GEAR_RATIO_DENOMINATOR * MAX_TORQUE_VAL / MAX_MOTOR_RPM; /**< Minimum RPM for regenerative braking to be active. */
 } // namespace PedalConstants
-constexpr uint8_t ADC_BUFFER_SIZE = 16; /**< Size of the ADC reading buffer for filtering. */
 
 /**
  * @brief Pedal class for managing throttle and brake pedal inputs.
