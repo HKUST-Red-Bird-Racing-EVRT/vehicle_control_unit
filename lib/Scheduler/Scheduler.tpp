@@ -13,8 +13,6 @@
 /**
  * @brief Construct a new Scheduler object
  *
- * @tparam NUM_TASKS Number of tasks per MCP2515
- * @tparam NUM_MCP2515 Number of MCP2515 instances
  * @param[in] period_us_ Period of the scheduler in microseconds
  * @param[in] spin_threshold_us_ Spin-wait threshold in microseconds
  */
@@ -36,8 +34,6 @@ Scheduler<NUM_TASKS, NUM_MCP2515>::Scheduler(uint32_t period_us_,
 /**
  * @brief Update the scheduler, checking if tasks need to be run based on the current time
  *
- * @tparam NUM_TASKS Number of tasks per MCP2515
- * @tparam NUM_MCP2515 Number of MCP2515 instances
  * @param[in] current_time_us Function pointer to a function returning the current time in microseconds
  */
 template <uint8_t NUM_TASKS, uint8_t NUM_MCP2515>
@@ -71,8 +67,6 @@ void Scheduler<NUM_TASKS, NUM_MCP2515>::update()
 /**
  * @brief Synchonize the scheduler to the current time, resetting all task counters, used when starting multiple Schedulers across different boards together
  *
- * @tparam NUM_TASKS Number of tasks per MCP2515
- * @tparam NUM_MCP2515 Number of MCP2515 instances
  * @param[in] current_time_us Function pointer to a function returning the current time in microseconds
  */
 template <uint8_t NUM_TASKS, uint8_t NUM_MCP2515>
@@ -94,8 +88,6 @@ void Scheduler<NUM_TASKS, NUM_MCP2515>::synchronize(unsigned long (*const curren
 /**
  * @brief Add a task to the scheduler for a specific MCP2515 index
  *
- * @tparam NUM_TASKS Number of tasks per MCP2515
- * @tparam NUM_MCP2515 Number of MCP2515 instances
  * @param[in] mcp_index Index of the MCP2515 instance
  * @param[in] task Function pointer to the task to be added
  * @param[in] tick_interval Number of ticks between task executions, so 1 for every tick, 10 for every 10 ticks; 0 makes the given task disabled from repeating.
@@ -121,8 +113,6 @@ bool Scheduler<NUM_TASKS, NUM_MCP2515>::addTask(const McpIndex mcp_index, const 
 /**
  * @brief Remove a task from the scheduler for a specific MCP2515 instance
  *
- * @tparam NUM_TASKS Number of tasks per MCP2515
- * @tparam NUM_MCP2515 Number of MCP2515 instances
  * @param[in] mcp_index Index of the MCP2515 instance
  * @param[in] task Function pointer to the task to be removed
  * @return true if the task was removed successfully, false otherwise
@@ -161,8 +151,6 @@ bool Scheduler<NUM_TASKS, NUM_MCP2515>::removeTask(const McpIndex mcp_index, con
 /**
  * @brief Helper function to run scheduled tasks
  *
- * @tparam NUM_TASKS Number of tasks per MCP2515
- * @tparam NUM_MCP2515 Number of MCP2515 instances
  */
 template <uint8_t NUM_TASKS, uint8_t NUM_MCP2515>
 inline void Scheduler<NUM_TASKS, NUM_MCP2515>::runTasks()

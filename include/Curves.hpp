@@ -32,8 +32,8 @@ constexpr uint16_t APPS_3V3_MAX = 950;           /**< value above which apps_3v3
  */
 constexpr TablePoint<uint16_t, int16_t> CURVE_TABLE[5] = {
     {0, 0},
-    {15000, 2000},
-    {30000, 10000},
+    {15000, 3000},
+    {30000, 8000},
     {45000, 25000},
     {60000, 32500}}; // make sure this point doesn't exceed +-32767
 
@@ -46,11 +46,11 @@ constexpr uint16_t brake_max = 950; /**< value above which brake is considered s
  * @brief Brake mapping table, negative values for regen
  */
 constexpr TablePoint<uint16_t, int16_t> BRAKE_TABLE[5] = {
-    {120, 0},
-    {150, -15000},
-    {180, -26000},
-    {210, -31000},
-    {240, -32500}}; // make sure this point doesn't exceed +-32767
+    {0x7A, 0},
+    {135, -15000},
+    {150, -26000},
+    {170, -31000},
+    {200, -32500}}; // make sure this point doesn't exceed +-32767
 
 /**
  * @brief APPS_3V3 mapping table, maps 3V3 readings to 5V readings
@@ -64,8 +64,8 @@ constexpr TablePoint<uint16_t, uint16_t> APPS_3V3_SCALE_TABLE[3] = {
  * @brief APPS_5V to percent mapping table, maps 5V readings to percent throttle (0-60000) 
  */
 constexpr TablePoint<uint16_t, uint16_t> APPS_5V_PERCENT_TABLE[2] = {
-    {370, 0},
-    {740, 60000}};
+    {0x130, 0},
+    {0x30A, 60000}};
 
 // === calculated tables
 /**

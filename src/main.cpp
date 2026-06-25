@@ -44,9 +44,9 @@ MCP2515 mcp2515_motor(CS_CAN_MOTOR); // motor CAN
 MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
 MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
-#define mcp2515_motor mcp2515_DL
-#define mcp2515_BMS mcp2515_DL
-// #define mcp2515_DL mcp2515_motor
+// #define mcp2515_motor mcp2515_DL
+// #define mcp2515_BMS mcp2515_motor
+#define mcp2515_DL mcp2515_BMS
 
 constexpr uint8_t NUM_MCP = 3;
 MCP2515 MCPS[NUM_MCP] = {mcp2515_motor, mcp2515_BMS, mcp2515_DL};
@@ -140,14 +140,25 @@ void setup()
         MCPS[i].setNormalMode();
     }
 
+    pinMode(OUT_4, OUTPUT);
+    pinMode(OUT_5, OUTPUT);
+    pinMode(OUT_6, OUTPUT);
+    pinMode(OUT_7, OUTPUT);
+
+    digitalWrite(OUT_4, HIGH);
+
     // Initialize MCP2515 filters for Pedal and BMS
     pedal.initFilter();
+    digitalWrite(OUT_5, HIGH);
     bms.initFilter();
+    digitalWrite(OUT_6, HIGH);
 
     while (!pedal.initMotor())
     {
         delay(20);
     }
+
+    digitalWrite(OUT_7, HIGH);
 
     DBGLN_GENERAL("CAN interfaces initialized");
 
@@ -164,6 +175,11 @@ void setup()
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryMotor, 1);
     scheduler.addTask(McpIndex::Datalogger, schedulerTelemetryBms, 10);
     DBGLN_GENERAL("Scheduler tasks added");
+
+    digitalWrite(OUT_4, LOW);
+    digitalWrite(OUT_5, LOW);
+    digitalWrite(OUT_6, LOW);
+    digitalWrite(OUT_7, LOW);
 
     DBGLN_GENERAL("===== SETUP COMPLETE =====");
 }
@@ -184,7 +200,7 @@ void loop()
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
 
-    if (car.pedal.status.bits.force_stop)
+    if (false && car.pedal.status.bits.force_stop)
     {
         car.pedal.status.bits.car_status = CarStatus::Init; // safety, later change to fault status
         digitalWrite(BUZZER, LOW);                          // Turn off buzzer
@@ -245,17 +261,12 @@ void loop()
         }
         break;
 
-        /*
-        since we are switching on only 2 bits, and we use all 4 combinations,
-        it's physically impossible to reach a default case even with memory corruption, so no need for one
-
-        default:
-            // unreachable, reset to INIT
-            car.pedal.status.bits.state_unknown = true;
-            car.pedal.status.bits.car_status = CarStatus::Init;
-            car.status_millis = car.millis;
-            break;
-        */
+    /*
+    since we are switching on only 2 bits, and we use all 4 combinations,
+    it's physically impossible to reach a default case even with memory corruption, so no need for one
+    */
+    default:
+        __builtin_unreachable();
     }
 
     // DRIVE mode has already returned, if reached here, then means car isn't in DRIVE
