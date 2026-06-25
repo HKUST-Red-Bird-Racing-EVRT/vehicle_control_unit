@@ -132,8 +132,8 @@ $(document).ready(function(){initNavTree('Curves_8hpp_source.html',''); initResi
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="Curves_8hpp.html#a258f6b8060168f42914191e7539ef5ef">   33</a></span><span class="keyword">constexpr</span> <a class="code hl_struct" href="structTablePoint.html">TablePoint&lt;uint16_t, int16_t&gt;</a> <a class="code hl_variable" href="Curves_8hpp.html#a258f6b8060168f42914191e7539ef5ef">CURVE_TABLE</a>[5] = {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {0, 0},</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {15000, 2000},</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {30000, 10000},</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {15000, 3000},</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {30000, 8000},</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {45000, 25000},</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {60000, 32500}}; <span class="comment">// make sure this point doesn&#39;t exceed +-32767</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
@@ -146,11 +146,11 @@ $(document).ready(function(){initNavTree('Curves_8hpp_source.html',''); initResi
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> * @brief Brake mapping table, negative values for regen</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="Curves_8hpp.html#aa9235baa5785862eb452871ed359355a">   48</a></span><span class="keyword">constexpr</span> <a class="code hl_struct" href="structTablePoint.html">TablePoint&lt;uint16_t, int16_t&gt;</a> <a class="code hl_variable" href="Curves_8hpp.html#aa9235baa5785862eb452871ed359355a">BRAKE_TABLE</a>[5] = {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {120, 0},</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {150, -15000},</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {180, -26000},</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {210, -31000},</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {240, -32500}}; <span class="comment">// make sure this point doesn&#39;t exceed +-32767</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {0x7A, 0},</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {135, -15000},</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {150, -26000},</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {170, -31000},</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {200, -32500}}; <span class="comment">// make sure this point doesn&#39;t exceed +-32767</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/**</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> * @brief APPS_3V3 mapping table, maps 3V3 readings to 5V readings</span></div>
@@ -164,8 +164,8 @@ $(document).ready(function(){initNavTree('Curves_8hpp_source.html',''); initResi
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"> * @brief APPS_5V to percent mapping table, maps 5V readings to percent throttle (0-60000) </span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="Curves_8hpp.html#abea8d96694cbce83613206c8dc606658">   66</a></span><span class="keyword">constexpr</span> <a class="code hl_struct" href="structTablePoint.html">TablePoint&lt;uint16_t, uint16_t&gt;</a> <a class="code hl_variable" href="Curves_8hpp.html#abea8d96694cbce83613206c8dc606658">APPS_5V_PERCENT_TABLE</a>[2] = {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {370, 0},</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {740, 60000}};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {0x130, 0},</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {0x30A, 60000}};</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">// === calculated tables</span><span class="comment"></span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/**</span></div>

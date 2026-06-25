@@ -1,12 +1,11 @@
 var main_8cpp =
 [
-    [ "mcp2515_BMS", "main_8cpp.html#a682e31b8dba40df5e2e5e291dd4ec33b", null ],
-    [ "mcp2515_motor", "main_8cpp.html#a781fd80765f85ec1d4f8250b59e9850e", null ],
+    [ "mcp2515_DL", "main_8cpp.html#a6770590dae448c8096d1851aac19aa56", null ],
     [ "loop", "main_8cpp.html#afe461d27b9c48d5921c00d521181f12f", null ],
     [ "mcp2515_BMS", "main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779", null ],
     [ "mcp2515_DL", "main_8cpp.html#a95581c94a7dc4a68f61fa24f06cc90d1", null ],
     [ "mcp2515_motor", "main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5", null ],
-    [ "pedal", "main_8cpp.html#a22decc8e5af13f6021fb6ad2aaa765be", null ],
+    [ "pedal", "main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808", null ],
     [ "scheduler_bms", "main_8cpp.html#a55b57abe9bcb30f6af0fb927f7d576a4", null ],
     [ "schedulerMotorRead", "main_8cpp.html#a4849579a51ba5515a1140dda7c80ed61", null ],
     [ "schedulerPedalSend", "main_8cpp.html#a35850a25a9bfe403bb5f5d4c4796ad41", null ],
@@ -14,7 +13,7 @@ var main_8cpp =
     [ "schedulerTelemetryMotor", "main_8cpp.html#af749f68ca5ebf490db3de9a27bf7bfc6", null ],
     [ "schedulerTelemetryPedal", "main_8cpp.html#a2e1609fa80a6555982d945314147b005", null ],
     [ "setup", "main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
-    [ "bms", "main_8cpp.html#ac77c8df52a00079a8991b07c5b1c23b5", null ],
+    [ "bms", "main_8cpp.html#ab3f382b3698110b33ae3911fe44fb4b8", null ],
     [ "BMS_OVERRIDE_MILLIS", "main_8cpp.html#aa91c7d6cc540d6a614fe9936ba08b4dd", null ],
     [ "brake_pressed", "main_8cpp.html#a363e40cf047b6f6ac073c3564fcc5ee7", null ],
     [ "BRAKE_THRESHOLD", "main_8cpp.html#a74a2a1ed8be72bc6e757566973698af9", null ],
@@ -27,5 +26,5 @@ var main_8cpp =
     [ "pins_in", "main_8cpp.html#ac81c886455652a75221096759b0b39ca", null ],
     [ "pins_out", "main_8cpp.html#ab31c3e7c8bfd2740573b89eb4a2b1d48", null ],
     [ "scheduler", "main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc", null ],
-    [ "telem", "main_8cpp.html#a195436960f942e58a1499aa0434267fd", null ]
+    [ "telem", "main_8cpp.html#a99b433a194ab30bc080dccbcfa90a1b9", null ]
 ];

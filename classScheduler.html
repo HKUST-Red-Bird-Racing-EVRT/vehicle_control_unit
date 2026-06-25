@@ -279,13 +279,6 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
 </div><div class="memdoc">
 
 <p>Construct a new <a class="el" href="classScheduler.html" title="Scheduler class template for scheduling tasks on multiple MCP2515 instances Takes in function pointer...">Scheduler</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">NUM_TASKS</td><td>Number of tasks per MCP2515 </td></tr>
-    <tr><td class="paramname">NUM_MCP2515</td><td>Number of MCP2515 instances </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">period_us_</td><td>Period of the scheduler in microseconds </td></tr>
@@ -294,7 +287,7 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00022">22</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00020">20</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
 
 </div>
 </div>
@@ -334,13 +327,6 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
 </div><div class="memdoc">
 
 <p>Add a task to the scheduler for a specific MCP2515 index. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">NUM_TASKS</td><td>Number of tasks per MCP2515 </td></tr>
-    <tr><td class="paramname">NUM_MCP2515</td><td>Number of MCP2515 instances </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">mcp_index</td><td>Index of the MCP2515 instance </td></tr>
@@ -351,7 +337,7 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the task was added successfully, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00105">105</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00097">97</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
 
 </div>
 </div>
@@ -459,13 +445,6 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
 </div><div class="memdoc">
 
 <p>Remove a task from the scheduler for a specific MCP2515 instance. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">NUM_TASKS</td><td>Number of tasks per MCP2515 </td></tr>
-    <tr><td class="paramname">NUM_MCP2515</td><td>Number of MCP2515 instances </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">mcp_index</td><td>Index of the MCP2515 instance </td></tr>
@@ -475,7 +454,7 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the task was removed successfully, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00131">131</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00121">121</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
 
 </div>
 </div>
@@ -502,15 +481,8 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
 </div><div class="memdoc">
 
 <p>Helper function to run scheduled tasks. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">NUM_TASKS</td><td>Number of tasks per MCP2515 </td></tr>
-    <tr><td class="paramname">NUM_MCP2515</td><td>Number of MCP2515 instances </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00168">168</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00156">156</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
 
 </div>
 </div>
@@ -533,13 +505,6 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
 </div><div class="memdoc">
 
 <p>Synchonize the scheduler to the current time, resetting all task counters, used when starting multiple Schedulers across different boards together. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">NUM_TASKS</td><td>Number of tasks per MCP2515 </td></tr>
-    <tr><td class="paramname">NUM_MCP2515</td><td>Number of MCP2515 instances </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">current_time_us</td><td>Function pointer to a function returning the current time in microseconds </td></tr>
@@ -547,7 +512,7 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00079">79</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00073">73</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
 
 </div>
 </div>
@@ -566,13 +531,6 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
 </div><div class="memdoc">
 
 <p>Update the scheduler, checking if tasks need to be run based on the current time. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">NUM_TASKS</td><td>Number of tasks per MCP2515 </td></tr>
-    <tr><td class="paramname">NUM_MCP2515</td><td>Number of MCP2515 instances </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">current_time_us</td><td>Function pointer to a function returning the current time in microseconds </td></tr>
@@ -580,7 +538,7 @@ template&lt;uint8_t NUM_TASKS, uint8_t NUM_MCP2515&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00044">44</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Scheduler_8tpp_source.html#l00040">40</a> of file <a class="el" href="Scheduler_8tpp_source.html">Scheduler.tpp</a>.</p>
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 <map id="schedulerPedalSend" name="schedulerPedalSend">
 <area shape="rect" id="node1" title=" " alt="" coords="5,15,159,40"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a22decc8e5af13f6021fb6ad2aaa765be" title=" " alt="" coords="687,5,745,31"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808" title=" " alt="" coords="687,5,745,31"/>
 <area shape="rect" id="node3" href="$classPedal.html#a1027941444ce0b3f32ab8991e05c2015" title="Sends the appropriate CAN frame to the motor based on pedal and car state." alt="" coords="207,43,345,68"/>
 <area shape="rect" id="node4" href="$classExponentialFilter.html#a598576f308881ed4adeb618e0bf1f75a" title="Retrieves the filtered value from the ExponentialFilter." alt="" coords="424,35,564,75"/>
 <area shape="rect" id="node5" href="$classPedal.html#ae82e0ae8a1a0c6918d43fb27bf8d9d0d" title="Maps the pedal ADC to a torque value. If no braking requested, maps throttle normally...." alt="" coords="393,100,595,125"/>
