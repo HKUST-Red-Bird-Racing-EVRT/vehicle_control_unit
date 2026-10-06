@@ -54,6 +54,7 @@ platformio.ini   # PlatformIO project config
 
 ## Current Development
 - Tuning
+- Increase parameters used for curving
 
 ## Future Plans
 - Continuous maintenance
