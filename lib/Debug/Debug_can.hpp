@@ -2,8 +2,8 @@
  * @file Debug_can.hpp
  * @author Planeson, Chiho, Red Bird Racing
  * @brief Declaration of the Debug_CAN namespace for CAN debugging functions
- * @version 2.0
- * @date 2026-02-25
+ * @version 2.0.1
+ * @date 2026-03-04
  * @see Debug_can.cpp
  */
 
@@ -27,8 +27,7 @@ namespace Debug_CAN
 
     void initialize(MCP2515 *can_interface);
 
-    void throttle_fault(PedalFault fault_status, uint16_t value);
-    void throttle_fault(PedalFault fault_status);
+
     void send_message(
         canid_t id,
         uint8_t data0 = 0x00, 
@@ -39,8 +38,6 @@ namespace Debug_CAN
         uint8_t data5 = 0x00,
         uint8_t data6 = 0x00, 
         uint8_t data7 = 0x00);
-
-    constexpr canid_t THROTTLE_FAULT_MSG = 0x692;     /**< Debug: throttle fault message */
 }
 
 #endif // DEBUG_CAN_HPP

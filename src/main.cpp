@@ -63,9 +63,9 @@ bool brake_pressed = false; // boolean for brake light on VCU (for ignition)
  * @see CarState
  */
 struct CarState car = {
-    {}, // TelemetryFrameAdc
-    {}, // TelemetryFrameDigital
-    {}, // TelemetryFrameState
+    {}, // TelemetryPedal
+    {}, // TelemetryMotor
+    {}, // TelemetryBms
     0,  // millis
     0   // status_millis
 };
