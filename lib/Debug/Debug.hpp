@@ -11,6 +11,10 @@
 #ifndef DEBUG_HPP
 #define DEBUG_HPP
 
+// ignore -Wunused-parameter warnings for Debug.h
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+
 #include "Enums.hpp"
 
 // ignore -Wpedantic warnings for mcp2515.h
@@ -87,5 +91,7 @@ inline void DBG_GENERAL_CAN(canid_t id, uint8_t data0 = 0x00, uint8_t data1 = 0x
     Debug_CAN::send_message(id, data0, data1, data2, data3, data4, data5, data6, data7);
 #endif
 }
+
+#pragma GCC diagnostic pop // undo #pragma GCC diagnostic ignored "-Wunused-parameter"
 
 #endif // DEBUG_HPP

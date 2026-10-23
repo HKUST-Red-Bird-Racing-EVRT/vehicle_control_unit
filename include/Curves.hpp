@@ -1,7 +1,7 @@
 /**
  * @file Curves.hpp
  * @author Planeson, Red Bird Racing
- * @brief Definition of throttle and brake mapping tables
+ * @brief Definition of power output mapping curves
  * @version 1.5
  * @date 2026-02-09
  * @see Interp.hpp, Pedal
@@ -23,7 +23,7 @@ constexpr uint16_t APPS_3V3_MAX = 950;           /**< value above which apps_3v3
 /**
  * @brief Ratio between 5V APPS and 3.3V APPS, use integer math to avoid float operations.
  * Expanded to apps_scaled = apps_3v3 * APPS_RATIO
- * @note max 64 for multiply to prevent overflow
+ * @note max 64 for multiply to prevent overflow, 1024*64 = 65536, max 16 bit value
  */
 #define APPS_RATIO 53 / 34
 

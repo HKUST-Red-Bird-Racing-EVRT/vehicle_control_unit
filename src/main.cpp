@@ -1,9 +1,12 @@
 /**
  * @file main.cpp
- * @author Planeson, Chiho, Red Bird Racing
+ * @author Planeson, Chiho
  * @brief Main VCU program entry point
- * @version 2.2.1
+ * @version 2.3
  * @date 2026-02-25
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
+ * 
  * @dir include @brief Contains all header-only files.
  * @dir lib @brief Contains all the libraries. Each library is in its own folder of the same name.
  * @dir src @brief Contains the main.cpp file, the main file of the program.
@@ -26,12 +29,6 @@
 #include <mcp2515.h>
 #pragma GCC diagnostic pop
 
-// ignore -Wunused-parameter warnings for Debug.h
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-parameter"
-#include "Debug.hpp"
-#pragma GCC diagnostic pop
-
 // === Pin setup ===
 // Pin setup for pedal pins are done by the constructor of Pedal object
 constexpr uint8_t INPUT_COUNT = 5;
@@ -44,15 +41,15 @@ MCP2515 mcp2515_motor(CS_CAN_MOTOR); // motor CAN
 MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
 MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
+// macros to use a single mcp2515 for multiple uses, hardware config
 // #define mcp2515_motor mcp2515_DL
 // #define mcp2515_BMS mcp2515_motor
-#define mcp2515_DL mcp2515_BMS
+// #define mcp2515_DL mcp2515_BMS
 
 constexpr uint8_t NUM_MCP = 3;
 MCP2515 MCPS[NUM_MCP] = {mcp2515_motor, mcp2515_BMS, mcp2515_DL};
 
 constexpr uint16_t BUSSIN_MILLIS = 2000;       // The amount of time that the buzzer will buzz for
-constexpr uint16_t BMS_OVERRIDE_MILLIS = 1000; // The maximum amount of time to wait for the BMS to start HV, if passed, assume started but not reading response
 
 constexpr uint16_t BRAKE_THRESHOLD = BRAKE_TABLE[0].in; // The threshold for the brake pedal to be considered pressed
 
