@@ -140,25 +140,34 @@ void setup()
         MCPS[i].setNormalMode();
     }
 
+    // boot progress LEDs, OUT_5-7 only exist on v3.2 (v3.3 OUT_1-3 drive real loads)
     pinMode(OUT_4, OUTPUT);
+#ifdef OUT_5
     pinMode(OUT_5, OUTPUT);
     pinMode(OUT_6, OUTPUT);
     pinMode(OUT_7, OUTPUT);
+#endif
 
     digitalWrite(OUT_4, HIGH);
 
     // Initialize MCP2515 filters for Pedal and BMS
     pedal.initFilter();
+#ifdef OUT_5
     digitalWrite(OUT_5, HIGH);
+#endif
     bms.initFilter();
+#ifdef OUT_6
     digitalWrite(OUT_6, HIGH);
+#endif
 
     while (!pedal.initMotor())
     {
         delay(20);
     }
 
+#ifdef OUT_7
     digitalWrite(OUT_7, HIGH);
+#endif
 
     DBGLN_GENERAL("CAN interfaces initialized");
 
@@ -177,9 +186,11 @@ void setup()
     DBGLN_GENERAL("Scheduler tasks added");
 
     digitalWrite(OUT_4, LOW);
+#ifdef OUT_5
     digitalWrite(OUT_5, LOW);
     digitalWrite(OUT_6, LOW);
     digitalWrite(OUT_7, LOW);
+#endif
 
     DBGLN_GENERAL("===== SETUP COMPLETE =====");
 }
@@ -195,7 +206,9 @@ void loop()
     pedal.update(analogRead(APPS_5V), analogRead(APPS_3V3), analogRead(BRAKE_IN));
 
     brake_pressed = (car.pedal.brake >= BRAKE_THRESHOLD);
-    digitalWrite(BRAKE_LIGHT, brake_pressed ? HIGH : LOW);
+    digitalWrite(BRAKE_LIGHT, HIGH);
+    delay(500);
+    digitalWrite(BRAKE_LIGHT, LOW);
     scheduler.update();
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
