@@ -45,8 +45,8 @@ MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
 MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
 // #define mcp2515_motor mcp2515_DL
-// #define mcp2515_BMS mcp2515_motor
-#define mcp2515_DL mcp2515_BMS
+#define mcp2515_BMS mcp2515_motor
+#define mcp2515_DL mcp2515_motor
 
 constexpr uint8_t NUM_MCP = 3;
 MCP2515 MCPS[NUM_MCP] = {mcp2515_motor, mcp2515_BMS, mcp2515_DL};
@@ -206,9 +206,7 @@ void loop()
     pedal.update(analogRead(APPS_5V), analogRead(APPS_3V3), analogRead(BRAKE_IN));
 
     brake_pressed = (car.pedal.brake >= BRAKE_THRESHOLD);
-    digitalWrite(BRAKE_LIGHT, HIGH);
-    delay(500);
-    digitalWrite(BRAKE_LIGHT, LOW);
+    digitalWrite(BRAKE_LIGHT, brake_pressed ? HIGH : LOW);
     scheduler.update();
 
     car.pedal.hall_sensor = analogRead(HALL_SENSOR);
