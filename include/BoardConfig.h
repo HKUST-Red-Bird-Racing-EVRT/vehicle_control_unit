@@ -13,7 +13,7 @@
  * - @c USE_VCU_V3: Use VCU V3 pin numbers
  * - @c USE_3CH_CAN: Use 3 channel CAN dev board pin numbers
  * - @c USE_VCU_V3_2: Use VCU V3.2 pin numbers
- * - @c USE_VCU_V3_3: Use VCU V3.3 pin numbers
+ * - @c USE_VCU_V3_4: Use VCU V3.4 pin numbers
  * - Undefined: no pins defined, intentional compilation error
  *
  * @note Only one option should be uncommented at a time.
@@ -23,11 +23,11 @@
 #define BOARDCONFIG_H
 
 // select the board configuration to use
-#define USE_VCU_V3_3
+#define USE_VCU_V3_4
 
 
 
-#ifdef USE_VCU_V3_3
+#ifdef USE_VCU_V3_4
 
 #define OUT_1 PIN_PD7
 #define OUT_2 PIN_PB0
@@ -50,16 +50,16 @@
 
 // === APPS and Brake pins ===
 #define APPS_5V PIN_A6  // not on the v3.3 pin list, assumed same as v3.2
-#define APPS_3V3 PIN_A7 // not on the v3.3 pin list, assumed same as v3.2
-#define BRAKE_IN PIN_PC0
+#define APPS_3V3 PIN_PC0 // not on the v3.3 pin list, assumed same as v3.2
+#define BRAKE_IN PIN_A7
 #define HALL_SENSOR PIN_PC1 // CURRENT_HI_MCU
 #define CURRENT_LO PIN_PC2  // CURRENT_LO_MCU
 
 // VCU brake light
-#define BRAKE_LIGHT OUT_1
+#define BRAKE_LIGHT OUT_2
 
 // === Drive mode ===
-#define FRG OUT_3
+#define FRG OUT_1
 #define DRIVE_MODE_BTN DIN5V_1
 
 // === Buzzer for car status ===
