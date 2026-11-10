@@ -25,36 +25,16 @@ enum class CarStatus : uint8_t
 };
 
 /**
- * @brief Pedal fault status codes.
+ * @brief AMS status
  *
- * Represents the current fault status related to pedal input.
+ * Represents the current state of the Accumulator Management System (AMS).
  */
-enum class PedalFault : uint8_t
+enum class AmsStatus : uint8_t
 {
-    None = 0x00,            /**< No fault detected */
-    DiffStart = 0x10,       /**< >10% difference fault just started */
-    DiffContinuing = 0x11,  /**< >10% difference fault is ongoing */
-    DiffExceed100ms = 0x12, /**< >10% difference fault exceeded 100ms */
-    DiffResolved = 0x19,    /**< Difference fault resolved */
-    ThrottleLow = 0x20,     /**< Throttle pedal below lower threshold */
-    ThrottleHigh = 0x29,    /**< Throttle pedal above upper threshold */
-    BrakeLow = 0x30,        /**< Brake pedal below lower threshold */
-    BrakeHigh = 0x39,       /**< Brake pedal above upper threshold */
-};
-
-/**
- * @brief BMS status
- *
- * Represents the current state of the Battery Management System (BMS).
- */
-enum class BmsStatus : uint8_t
-{
-    NoMsg = 0,    /**< No message received from BMS */
-    //WrongId = 1,  /**< Received message with wrong CAN ID */
-    Waiting = 1,  /**< BMS is in standby, waiting to start HV */
-    Starting = 2, /**< BMS is starting high voltage */
-    Started = 3,  /**< BMS has started high voltage */
-    Unused = 4    /**< Unused status code */
+    Init = 0,      /**< BDUCU waiting for VCU/charger signal */
+    Precharge = 1, /**< Precharging, AIR- and PRE closed */
+    Active = 2,    /**< TS running, AIR- and AIR+ closed */
+    Discharge = 3, /**< SDC tripped, BDUCU loses control of relays, all relays open */
 };
 
 /**

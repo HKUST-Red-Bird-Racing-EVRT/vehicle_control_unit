@@ -1,11 +1,14 @@
 /**
  * @file Pedal.hpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me),
+ *         Oscar (oscarckh0818@gmail.com)
  * @brief Declaration of the Pedal class for handling throttle and brake pedal inputs
- * @version 1.6
- * @date 2026-02-12
+ * @version 1.6.1
+ * @date 2026-11-10
  * @see Pedal.cpp
  * @dir Pedal @brief The Pedal library contains the Pedal class to manage throttle and brake pedal inputs, including filtering, fault detection, and CAN communication.
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #ifndef PEDAL_HPP

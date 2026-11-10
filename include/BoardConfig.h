@@ -1,8 +1,10 @@
 /**
  * @file BoardConfig.h
- * @author Planeson, Red Bird Racing
- * @date 2026-01-15
- * @version 2.0.1
+ * @author Planeson (carson.cpk@proton.me),
+ *         Chiho (nganchihon@gmail.com),
+ *         Oscar (oscarckh0818@gmail.com)
+ * @date 2026-11-10
+ * @version 2.1
  * @brief Board configuration for the VCU (Vehicle Control Unit)
  * @details This file defines the board configuration and pin mappings for different versions of the VCU and for Arduino Uno.
  * Define the appropriate macro to select the desired board configuration.
@@ -17,6 +19,8 @@
  * - Undefined: no pins defined, intentional compilation error
  *
  * @note Only one option should be uncommented at a time.
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #ifndef BOARDCONFIG_H
@@ -42,7 +46,7 @@
 // === CAN bus pins ===
 // PD0/PD1 are the UART pins: keep DEBUG_SERIAL off on this board
 #define CS_CAN_MOTOR PIN_PD0
-#define CS_CAN_BMS PIN_PD1
+#define CS_CAN_AMS PIN_PD1
 #define CS_CAN_DL PIN_PD5     // Debug CAN
 #define MOTOR_INT PIN_PD2     // INT0
 #define AMS_INT PIN_PD3       // INT1

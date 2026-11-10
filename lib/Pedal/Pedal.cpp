@@ -1,10 +1,13 @@
 /**
  * @file Pedal.cpp
- * @author Planeson, Chiho, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me),
+ *         Chiho (nganchihon@gmail.com)
  * @brief Implementation of the Pedal class for handling throttle pedal inputs
- * @version 1.7
- * @date 2026-02-25
+ * @version 1.7.1
+ * @date 2026-11-10
  * @see Pedal.hpp
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #include "Pedal.hpp"
