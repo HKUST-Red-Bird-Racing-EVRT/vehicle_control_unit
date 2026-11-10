@@ -1,18 +1,22 @@
 /**
  * @file main.cpp
- * @author Planeson, Chiho, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me),
+ *         Oscar (oscarckh0818@gmail.com),
+ *         Chiho (nganchihon@gmail.com)
  * @brief Main VCU program entry point
- * @version 2.2.1
- * @date 2026-02-25
+ * @version 2.3
+ * @date 2026-11-10
  * @dir include @brief Contains all header-only files.
  * @dir lib @brief Contains all the libraries. Each library is in its own folder of the same name.
  * @dir src @brief Contains the main.cpp file, the main file of the program.
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #include <Arduino.h>
 #include "BoardConfig.h"
 #include "Pedal.hpp"
-#include "BMS.hpp"
+#include "Ams.hpp"
 #include "Enums.hpp"
 #include "CarState.hpp"
 #include "Scheduler.hpp"
@@ -41,7 +45,7 @@ constexpr uint8_t pins_out[OUTPUT_COUNT] = {FRG, BRAKE_LIGHT, BUZZER};
 
 // === even if unused, initialize ALL mcp2515 to make sure the CS pin is set up and they don't interfere with the SPI bus ===
 MCP2515 mcp2515_motor(CS_CAN_MOTOR); // motor CAN
-MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
+MCP2515 mcp2515_BMS(CS_CAN_AMS);     // AMS CAN
 MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
 // #define mcp2515_motor mcp2515_DL
@@ -72,7 +76,7 @@ struct CarState car = {
 
 // Global objects
 Pedal pedal(mcp2515_motor, car, car.pedal.apps_5v);
-BMS bms(mcp2515_BMS, car);
+Ams ams(mcp2515_BMS, car);
 Telemetry telem(mcp2515_DL, car);
 
 void schedulerMotorRead()
@@ -85,7 +89,7 @@ void schedulerPedalSend()
 }
 void scheduler_bms()
 {
-    bms.checkHv();
+    ams.checkHv();
 }
 void schedulerTelemetryPedal()
 {
@@ -155,7 +159,6 @@ void setup()
 #ifdef OUT_5
     digitalWrite(OUT_5, HIGH);
 #endif
-    bms.initFilter();
 #ifdef OUT_6
     digitalWrite(OUT_6, HIGH);
 #endif

@@ -2,7 +2,7 @@
  * @file Interp.hpp
  * @author Planeson, Red Bird Racing
  * @brief Declaration and definition of the LinearInterp class template for linear interpolation
- * @version 1.2.3
+ * @version 1.3
  * @date 2026-02-09
  */
 
@@ -50,6 +50,8 @@ public:
         // Clamp above last point
         if (input >= table[size - 1].in)
             return table[size - 1].out;
+
+        
         // Find segment
         for (uint8_t i = 1; i < size; ++i)
         {
