@@ -160,7 +160,7 @@ void Pedal::sendFrame()
     car.pedal.apps_3v3 = pedal2_filter.getFiltered();
     car.pedal.brake = brake_filter.getFiltered();
 
-    if (false && car.pedal.status.bits.force_stop)
+    if (car.pedal.status.bits.force_stop)
     {
         motor_can.sendMessage(&stop_frame);
         return;

@@ -14,11 +14,11 @@
 
 // === APPS Limits ===
 
-constexpr uint16_t APPS_5V_MIN = 50;  /**< value below which apps_5v is considered shorted to ground */
-constexpr uint16_t APPS_5V_MAX = 950; /**< value above which apps_5v is considered shorted to rail */
+constexpr uint16_t APPS_5V_MIN = 30;  /**< value below which apps_5v is considered shorted to ground */
+constexpr uint16_t APPS_5V_MAX = 980; /**< value above which apps_5v is considered shorted to rail */
 
-constexpr uint16_t APPS_3V3_MIN = 50;            /**< value below which apps_3v3 is considered shorted to ground */
-constexpr uint16_t APPS_3V3_MAX = 950;           /**< value above which apps_3v3 is considered shorted to rail */
+constexpr uint16_t APPS_3V3_MIN = 30;            /**< value below which apps_3v3 is considered shorted to ground */
+constexpr uint16_t APPS_3V3_MAX = 980;           /**< value above which apps_3v3 is considered shorted to rail */
 
 /**
  * @brief Ratio between 5V APPS and 3.3V APPS, use integer math to avoid float operations.
@@ -39,17 +39,17 @@ constexpr TablePoint<uint16_t, int16_t> CURVE_TABLE[5] = {
 
 // === Brake Limits ===
 
-constexpr uint16_t brake_min = 50;  /**< value below which brake is considered shorted to ground */
-constexpr uint16_t brake_max = 950; /**< value above which brake is considered shorted to rail */
+constexpr uint16_t brake_min = 300;  /**< value below which brake is considered shorted to ground */
+constexpr uint16_t brake_max = 1000; /**< value above which brake is considered shorted to rail */
 
 /**
  * @brief Brake mapping table, negative values for regen
  */
 constexpr TablePoint<uint16_t, int16_t> BRAKE_TABLE[5] = {
-    {295, 0},
-    {370, -15000},
-    {400, -26000},
-    {450, -31000},
+    {350, 0},
+    {380, -15000},
+    {440, -26000},
+    {480, -31000},
     {500, -32500}}; // make sure this point doesn't exceed +-32767
 
 /**
@@ -57,14 +57,14 @@ constexpr TablePoint<uint16_t, int16_t> BRAKE_TABLE[5] = {
  */
 constexpr TablePoint<uint16_t, uint16_t> APPS_3V3_SCALE_TABLE[2] = {
     {59, 127}, // 3V Min, 5V Min
-    {672, 828}}; // 3V Max, 5V Max
+    {715, 893}}; // 3V Max, 5V Max
 
 /**
  * @brief APPS_5V to percent mapping table, maps 5V readings to percent throttle (0-60000) 
  */
 constexpr TablePoint<uint16_t, uint16_t> APPS_5V_PERCENT_TABLE[2] = {
     {135, 0},
-    {820, 60000}};
+    {860, 60000}};
 
 // === calculated tables
 /**

@@ -160,10 +160,10 @@ void setup()
     digitalWrite(OUT_6, HIGH);
 #endif
 
-   // while (!pedal.initMotor())
-   // {
-    //    delay(20);
-    //}
+    while (!pedal.initMotor())
+    {
+        delay(20);
+    }
 
 #ifdef OUT_7
     digitalWrite(OUT_7, HIGH);
