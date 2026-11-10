@@ -44,12 +44,7 @@ BMS::BMS(MCP2515 &bms_can_, CarState &car_)
  */
 void BMS::initFilter()
 {
-    bms_can.setConfigMode();
-    while (bms_can.setFilterMask(MCP2515::MASK0, true, 0x7FF) != MCP2515::ERROR_OK)
-        ;
-    while (bms_can.setFilter(MCP2515::RXF0, true, BMS_INFO_EXT) != MCP2515::ERROR_OK)
-        ;
-    bms_can.setNormalMode();
+    return;
 }
 
 /**
@@ -61,42 +56,12 @@ void BMS::initFilter()
  */
 void BMS::checkHv()
 {
-    car.pedal.status.bits.bms_no_msg = false;
     if (car.pedal.status.bits.hv_ready)
-    return; // already started
-    car.pedal.status.bits.hv_ready = false;
-    if (bms_can.readMessage(&rx_bms_msg) == MCP2515::ERROR_NOMSG)
     {
-        car.pedal.status.bits.bms_no_msg = true;
-        return;
+        return; // already started, no need to check again
     }
-
-    /* now that we set filter on MCP2515, it's impossible to get wrong ID
-    // Check if the BMS is in standby state (0x3 in upper 4 bits)
-    if (rx_bms_msg.can_id != BMS_INFO_EXT)
-    {
-        car.pedal.status.bits.bms_wrong_id = true;
-        return;
-    } // Not a BMS info frame, retry
-    */
-
-    switch (rx_bms_msg.data[6] & 0xF0)
-    {
-    case 0x30: // Standby state
-        bms_can.sendMessage(&start_hv_msg);
-        DBGLN_GENERAL("BMS in standby state, sent start HV cmd");
-        // sent start HV cmd, wait for BMS to change state
-        return;
-    case 0x40: // Precharge state
-        bms_can.sendMessage(&start_hv_msg);
-        DBGLN_GENERAL("BMS in precharge state, HV starting");
-        return; // BMS is in precharge state, wait
-    case 0x50:  // Run state
-        DBGLN_GENERAL("BMS in run state, HV started");
-        car.pedal.status.bits.hv_ready = true; // BMS is in run state
-        return;
-    default:
-        DBGLN_GENERAL("BMS in unknown state, retrying...");
-        return; // Unknown state, retry
-    }
+    bms_can.sendMessage(&start_hv_msg);
+    car.pedal.status.bits.bms_no_msg = false;
+    car.pedal.status.bits.hv_ready = true;
+    return; // send start HV command, wait for BMS to change state
 }

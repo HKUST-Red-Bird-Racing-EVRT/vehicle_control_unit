@@ -45,7 +45,7 @@ MCP2515 mcp2515_BMS(CS_CAN_BMS);     // BMS CAN
 MCP2515 mcp2515_DL(CS_CAN_DL);       // datalogger CAN
 
 // #define mcp2515_motor mcp2515_DL
-#define mcp2515_BMS mcp2515_motor
+// #define mcp2515_BMS mcp2515_motor
 #define mcp2515_DL mcp2515_motor
 
 constexpr uint8_t NUM_MCP = 3;

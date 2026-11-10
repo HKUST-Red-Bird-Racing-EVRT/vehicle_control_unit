@@ -42,8 +42,8 @@
 // === CAN bus pins ===
 // PD0/PD1 are the UART pins: keep DEBUG_SERIAL off on this board
 #define CS_CAN_MOTOR PIN_PD0
+#define CS_CAN_BMS PIN_PD1
 #define CS_CAN_DL PIN_PD5     // Debug CAN
-#define CS_CAN_BMS CS_CAN_DL  // no BMS CAN on v3.3, BMS shares the debug CAN
 #define MOTOR_INT PIN_PD2     // INT0
 #define AMS_INT PIN_PD3       // INT1
 #define DEBUG_INT PIN_PD4

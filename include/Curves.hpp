@@ -46,7 +46,7 @@ constexpr uint16_t brake_max = 950; /**< value above which brake is considered s
  * @brief Brake mapping table, negative values for regen
  */
 constexpr TablePoint<uint16_t, int16_t> BRAKE_TABLE[5] = {
-    {300, 0},
+    {295, 0},
     {370, -15000},
     {400, -26000},
     {450, -31000},

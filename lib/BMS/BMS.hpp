@@ -20,24 +20,13 @@
 #include <mcp2515.h>
 #pragma GCC diagnostic pop
 
-constexpr uint32_t BMS_COMMAND = 0x1801F340;                  /**< BMS command ID */
-constexpr uint32_t BMS_SEND_CMD = BMS_COMMAND | CAN_EFF_FLAG; /**< BMS command ID with Extended Frame Format flag */
-
-constexpr uint32_t BMS_INFO = 0x186040F3;                  /**< BMS info ID */
-constexpr uint32_t BMS_INFO_EXT = BMS_INFO | CAN_EFF_FLAG; /**< BMS info ID with Extended Frame Format flag */
+constexpr uint16_t BDUCU_ID = 0x500;
 
 /** Start HV command frame */
 constexpr can_frame start_hv_msg = {
-    BMS_SEND_CMD, /**< can_id */
-    2,            /**< can_dlc */
-    {0x01, 0x01}  /**< data: MainRlyCmd = 1 (output HV), ShutDownCmd = 1 (do not shutdown) */
-};
-
-/** Stop HV command frame */
-constexpr can_frame stop_hv_msg = {
-    BMS_SEND_CMD, /**< can_id */
-    2,            /**< can_dlc */
-    {0x00, 0x00}  /**< data: MainRlyCmd = 0 (break open HV), ShutDownCmd = 0 (shutdown) */
+    BDUCU_ID, /**< can_id */
+    1,        /**< can_dlc */
+    {0x01}    /**< data: VCU is host */
 };
 
 /**
@@ -63,6 +52,6 @@ private:
         0,   /**< can_dlc */
         {0}, /**< data */
     };
-    CarState &car;       /**< Reference to CarState, for the status flags and setting BMS data */
+    CarState &car; /**< Reference to CarState, for the status flags and setting BMS data */
 };
 #endif // BMS_HPP
