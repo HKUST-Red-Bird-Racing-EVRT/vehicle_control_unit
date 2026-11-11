@@ -1,11 +1,14 @@
 /**
  * @file Pedal.hpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me),
+ *         Oscar (oscarckh0818@gmail.com)
  * @brief Declaration of the Pedal class for handling throttle and brake pedal inputs
- * @version 1.6
- * @date 2026-02-12
+ * @version 1.6.1
+ * @date 2026-11-10
  * @see Pedal.cpp
  * @dir Pedal @brief The Pedal library contains the Pedal class to manage throttle and brake pedal inputs, including filtering, fault detection, and CAN communication.
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #ifndef PEDAL_HPP
@@ -111,7 +114,7 @@ private:
 
     static constexpr LinearInterp<uint16_t, int16_t, int32_t, 5> THROTTLE_MAP{THROTTLE_TABLE};               /**< Interpolation map for throttle torque */
     static constexpr LinearInterp<uint16_t, int16_t, int32_t, 5> BRAKE_MAP{BRAKE_TABLE};                     /**< Interpolation map for brake torque */
-    static constexpr LinearInterp<uint16_t, uint16_t, uint32_t, 3> APPS_3V3_SCALE_MAP{APPS_3V3_SCALE_TABLE}; /**< Interpolation map for APPS_3V3->APPS_5V */
+    static constexpr LinearInterp<uint16_t, uint16_t, uint32_t, 2> APPS_3V3_SCALE_MAP{APPS_3V3_SCALE_TABLE}; /**< Interpolation map for APPS_3V3->APPS_5V */
 
     static constexpr canid_t MOTOR_SEND = 0x201; /**< Motor send CAN ID */
     static constexpr canid_t MOTOR_READ = 0x181; /**< Motor read CAN ID */
