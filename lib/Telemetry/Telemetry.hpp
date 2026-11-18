@@ -1,11 +1,13 @@
 /**
  * @file Telemetry.hpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me)
  * @brief Declaration of the Telemetry class for sending telemetry data over CAN bus
- * @version 1.0
- * @date 2026-01-26
+ * @version 1.0.1
+ * @date 2026-11-10
  * @see Telemetry.cpp
  * @dir lib/Telemetry @brief The Telemetry library contains the Telemetry class for managing telemetry data transmission over CAN bus, including grabbing and sending telemetry frames in fixed order based on scheduling logic.
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #ifndef TELEMETRY_HPP

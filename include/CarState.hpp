@@ -1,10 +1,12 @@
 /**
  * @file CarState.hpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me)
  * @brief Definition of the CarState structure representing the state of the car
- * @version 1.4.1
- * @date 2026-02-09
+ * @version 1.5
+ * @date 2026-11-10
  * @see can.h, Enums.h
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #ifndef CAR_STATE_HPP
@@ -39,7 +41,7 @@ struct TelemetryFramePedal
             CarStatus car_status : 2; /**< Current car status, produces compiler warning before GCC 9.3 due to bug */
             bool state_unknown : 1;   /**< Unknown car state */
             bool hv_ready : 1;        /**< High voltage ready */
-            bool bms_no_msg : 1;      /**< BMS read no message */
+            bool ams_no_msg : 1;      /**< AMS read no message */
             bool motor_no_read : 1;    /**< MCU read no message */
             bool screenshot : 1;      /**< Screenshot, throttle + brake > threshold */
             bool force_stop : 1;      /**< Fault forced car to stop */
@@ -121,30 +123,30 @@ struct TelemetryFrameMotor
 };
 
 /**
- * @brief Telemetry frame structure for the BMS data.
+ * @brief Telemetry frame structure for the AMS data.
  */
-struct TelemetryFrameBms
+struct TelemetryFrameAms
 {
 
-    uint8_t bms_data[8]; /**< Raw BMS data bytes */
+    uint8_t ams_data[8]; /**< Raw AMS data bytes */
 
     /**
-     * @brief Converts the TelemetryFrameBms to a CAN frame.
-     * @return CAN frame representing the telemetry BMS data.
+     * @brief Converts the TelemetryFrameAms to a CAN frame.
+     * @return CAN frame representing the telemetry AMS data.
      */
     constexpr can_frame toCanFrame() const
     {
         return can_frame{
             TELEMETRY_BMS_MSG, // can_id
             8,                 // can_dlc
-            bms_data[0],
-            bms_data[1],
-            bms_data[2],
-            bms_data[3],
-            bms_data[4],
-            bms_data[5],
-            bms_data[6],
-            bms_data[7]};
+            ams_data[0],
+            ams_data[1],
+            ams_data[2],
+            ams_data[3],
+            ams_data[4],
+            ams_data[5],
+            ams_data[6],
+            ams_data[7]};
     }
 };
 
@@ -158,7 +160,7 @@ struct CarState
 {
     TelemetryFramePedal pedal; /**< Struct holding pedal telemetry data, ready for sending over CAN */
     TelemetryFrameMotor motor; /**< Struct holding motor telemetry data, ready for sending over CAN */
-    TelemetryFrameBms bms;     /**< Struct holding BMS telemetry data, ready for sending over CAN */
+    TelemetryFrameAms ams;     /**< Struct holding BMS telemetry data, ready for sending over CAN */
     uint32_t status_millis;    /**< Millisecond counter for the current car status (for state transitions) */
     uint32_t millis;           /**< Current time in milliseconds for the current loop iteration */
 };

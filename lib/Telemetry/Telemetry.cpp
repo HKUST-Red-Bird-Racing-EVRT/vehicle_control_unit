@@ -1,10 +1,12 @@
 /**
  * @file Telemetry.cpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me)
  * @brief Implementation of the Telemetry class for sending telemetry data over CAN bus
- * @version 1.0
- * @date 2026-01-26
+ * @version 1.0.1
+ * @date 2026-11-10
  * @see Telemetry.hpp
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #include "Telemetry.hpp"
@@ -42,6 +44,6 @@ void Telemetry::sendMotor()
  */
 void Telemetry::sendBms()
 {
-    can_frame bms_frame = car.bms.toCanFrame();
-    mcp2515.sendMessage(&bms_frame);
+    can_frame ams_frame = car.ams.toCanFrame();
+    mcp2515.sendMessage(&ams_frame);
 }

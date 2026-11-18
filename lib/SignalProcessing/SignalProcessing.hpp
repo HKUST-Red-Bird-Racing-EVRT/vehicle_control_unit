@@ -1,11 +1,13 @@
 /**
  * @file SignalProcessing.hpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me)
  * @brief Declaration of signal processing functions
- * @version 2.1
- * @date 2026-01-28
+ * @version 2.1.1
+ * @date 2026-11-10
  * @see SignalProcessing.tpp
  * @dir SignalProcessing @brief The SignalProcessing library contains signal processing functions, including the AverageFilter and ExponentialFilter class templates for filtering ADC readings from the pedals.
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 #ifndef SIGNAL_PROCESSING_HPP
 #define SIGNAL_PROCESSING_HPP

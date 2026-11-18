@@ -1,10 +1,12 @@
 /**
  * @file SignalProcessing.tpp
- * @author Planeson, Red Bird Racing
+ * @author Planeson (carson.cpk@proton.me)
  * @brief Definition of Signal Processing functions
- * @version 2.1
- * @date 2026-01-28
+ * @version 2.1.1
+ * @date 2026-11-10
  * @see Signal_Processing.hpp
+ * 
+ * @copyright Copyright (c) 2026 Red Bird Racing
  */
 
 #include "SignalProcessing.hpp"
