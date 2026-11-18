@@ -100,50 +100,52 @@ $(document).ready(function(){initNavTree('Telemetry_8hpp_source.html',''); initR
 <div class="contents">
 <a href="Telemetry_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file Telemetry.hpp</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @author Planeson, Red Bird Racing</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @author Planeson (carson.cpk@proton.me)</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @brief Declaration of the Telemetry class for sending telemetry data over CAN bus</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @version 1.0</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @date 2026-01-26</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @version 1.0.1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @date 2026-11-10</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * @see Telemetry.cpp</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * @dir lib/Telemetry @brief The Telemetry library contains the Telemetry class for managing telemetry data transmission over CAN bus, including grabbing and sending telemetry frames in fixed order based on scheduling logic.</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef TELEMETRY_HPP</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define TELEMETRY_HPP</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="CarState_8hpp.html">CarState.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * @copyright Copyright (c) 2026 Red Bird Racing</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef TELEMETRY_HPP</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define TELEMETRY_HPP</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// ignore -Wpedantic warnings for mcp2515.h</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wpedantic&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;mcp2515.h&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"></span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * @brief Telemetry class for managing telemetry data transmission over CAN bus</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * Grabs and sends telemetry frames in fixed order based on scheduling logic</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classTelemetry.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="classTelemetry.html">Telemetry</a></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="classTelemetry.html">Telemetry</a>(MCP2515 &amp;mcp2515_, <a class="code hl_struct" href="structCarState.html">CarState</a> &amp;car_);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTelemetry.html#a8fea6e56820f19a233237434f32aa511">sendPedal</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTelemetry.html#a24571b8d560d99079a460857669231a1">sendMotor</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTelemetry.html#a9b8b2cf254f25b0133b5f3bafd1b80e1">sendBms</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classTelemetry.html#ade142dcc49cf5242a92cc82cc0845bb1">   35</a></span>    MCP2515 &amp;<a class="code hl_variable" href="classTelemetry.html#ade142dcc49cf5242a92cc82cc0845bb1">mcp2515</a>; <span class="comment">/**&lt; Reference to MCP2515 for sending CAN messages */</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef">   36</a></span>    <a class="code hl_struct" href="structCarState.html">CarState</a> &amp;<a class="code hl_variable" href="classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef">car</a>;    <span class="comment">/**&lt; Reference to CarState */</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">// TELEMETRY_HPP</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="CarState_8hpp.html">CarState.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// ignore -Wpedantic warnings for mcp2515.h</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wpedantic&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;mcp2515.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * @brief Telemetry class for managing telemetry data transmission over CAN bus</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * Grabs and sends telemetry frames in fixed order based on scheduling logic</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classTelemetry.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="classTelemetry.html">Telemetry</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="classTelemetry.html">Telemetry</a>(MCP2515 &amp;mcp2515_, <a class="code hl_struct" href="structCarState.html">CarState</a> &amp;car_);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTelemetry.html#a8fea6e56820f19a233237434f32aa511">sendPedal</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTelemetry.html#a24571b8d560d99079a460857669231a1">sendMotor</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTelemetry.html#a9b8b2cf254f25b0133b5f3bafd1b80e1">sendBms</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classTelemetry.html#ade142dcc49cf5242a92cc82cc0845bb1">   37</a></span>    MCP2515 &amp;<a class="code hl_variable" href="classTelemetry.html#ade142dcc49cf5242a92cc82cc0845bb1">mcp2515</a>; <span class="comment">/**&lt; Reference to MCP2515 for sending CAN messages */</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef">   38</a></span>    <a class="code hl_struct" href="structCarState.html">CarState</a> &amp;<a class="code hl_variable" href="classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef">car</a>;    <span class="comment">/**&lt; Reference to CarState */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">// TELEMETRY_HPP</span></div>
 <div class="ttc" id="aCarState_8hpp_html"><div class="ttname"><a href="CarState_8hpp.html">CarState.hpp</a></div><div class="ttdoc">Definition of the CarState structure representing the state of the car.</div></div>
-<div class="ttc" id="aclassTelemetry_html"><div class="ttname"><a href="classTelemetry.html">Telemetry</a></div><div class="ttdoc">Telemetry class for managing telemetry data transmission over CAN bus Grabs and sends telemetry frame...</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8hpp_source.html#l00026">Telemetry.hpp:27</a></div></div>
-<div class="ttc" id="aclassTelemetry_html_a24571b8d560d99079a460857669231a1"><div class="ttname"><a href="classTelemetry.html#a24571b8d560d99079a460857669231a1">Telemetry::sendMotor</a></div><div class="ttdeci">void sendMotor()</div><div class="ttdoc">Internal helper to get and send the motor telemetry frame.</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8cpp_source.html#l00034">Telemetry.cpp:34</a></div></div>
-<div class="ttc" id="aclassTelemetry_html_a5a7e2d6b4cde6809039c55ae127160ef"><div class="ttname"><a href="classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef">Telemetry::car</a></div><div class="ttdeci">CarState &amp; car</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8hpp_source.html#l00036">Telemetry.hpp:36</a></div></div>
-<div class="ttc" id="aclassTelemetry_html_a8fea6e56820f19a233237434f32aa511"><div class="ttname"><a href="classTelemetry.html#a8fea6e56820f19a233237434f32aa511">Telemetry::sendPedal</a></div><div class="ttdeci">void sendPedal()</div><div class="ttdoc">Internal helper to get and send the Pedal telemetry frame.</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8cpp_source.html#l00025">Telemetry.cpp:25</a></div></div>
-<div class="ttc" id="aclassTelemetry_html_a9b8b2cf254f25b0133b5f3bafd1b80e1"><div class="ttname"><a href="classTelemetry.html#a9b8b2cf254f25b0133b5f3bafd1b80e1">Telemetry::sendBms</a></div><div class="ttdeci">void sendBms()</div><div class="ttdoc">Internal helper to get and send the BMS telemetry frame.</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8cpp_source.html#l00043">Telemetry.cpp:43</a></div></div>
-<div class="ttc" id="aclassTelemetry_html_ade142dcc49cf5242a92cc82cc0845bb1"><div class="ttname"><a href="classTelemetry.html#ade142dcc49cf5242a92cc82cc0845bb1">Telemetry::mcp2515</a></div><div class="ttdeci">MCP2515 &amp; mcp2515</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8hpp_source.html#l00035">Telemetry.hpp:35</a></div></div>
-<div class="ttc" id="astructCarState_html"><div class="ttname"><a href="structCarState.html">CarState</a></div><div class="ttdoc">Represents the state of the car. Holds telemetry data and status, used as central data sharing struct...</div><div class="ttdef"><b>Definition:</b> <a href="CarState_8hpp_source.html#l00157">CarState.hpp:158</a></div></div>
+<div class="ttc" id="aclassTelemetry_html"><div class="ttname"><a href="classTelemetry.html">Telemetry</a></div><div class="ttdoc">Telemetry class for managing telemetry data transmission over CAN bus Grabs and sends telemetry frame...</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8hpp_source.html#l00028">Telemetry.hpp:29</a></div></div>
+<div class="ttc" id="aclassTelemetry_html_a24571b8d560d99079a460857669231a1"><div class="ttname"><a href="classTelemetry.html#a24571b8d560d99079a460857669231a1">Telemetry::sendMotor</a></div><div class="ttdeci">void sendMotor()</div><div class="ttdoc">Internal helper to get and send the motor telemetry frame.</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8cpp_source.html#l00036">Telemetry.cpp:36</a></div></div>
+<div class="ttc" id="aclassTelemetry_html_a5a7e2d6b4cde6809039c55ae127160ef"><div class="ttname"><a href="classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef">Telemetry::car</a></div><div class="ttdeci">CarState &amp; car</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8hpp_source.html#l00038">Telemetry.hpp:38</a></div></div>
+<div class="ttc" id="aclassTelemetry_html_a8fea6e56820f19a233237434f32aa511"><div class="ttname"><a href="classTelemetry.html#a8fea6e56820f19a233237434f32aa511">Telemetry::sendPedal</a></div><div class="ttdeci">void sendPedal()</div><div class="ttdoc">Internal helper to get and send the Pedal telemetry frame.</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8cpp_source.html#l00027">Telemetry.cpp:27</a></div></div>
+<div class="ttc" id="aclassTelemetry_html_a9b8b2cf254f25b0133b5f3bafd1b80e1"><div class="ttname"><a href="classTelemetry.html#a9b8b2cf254f25b0133b5f3bafd1b80e1">Telemetry::sendBms</a></div><div class="ttdeci">void sendBms()</div><div class="ttdoc">Internal helper to get and send the BMS telemetry frame.</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8cpp_source.html#l00045">Telemetry.cpp:45</a></div></div>
+<div class="ttc" id="aclassTelemetry_html_ade142dcc49cf5242a92cc82cc0845bb1"><div class="ttname"><a href="classTelemetry.html#ade142dcc49cf5242a92cc82cc0845bb1">Telemetry::mcp2515</a></div><div class="ttdeci">MCP2515 &amp; mcp2515</div><div class="ttdef"><b>Definition:</b> <a href="Telemetry_8hpp_source.html#l00037">Telemetry.hpp:37</a></div></div>
+<div class="ttc" id="astructCarState_html"><div class="ttname"><a href="structCarState.html">CarState</a></div><div class="ttdoc">Represents the state of the car. Holds telemetry data and status, used as central data sharing struct...</div><div class="ttdef"><b>Definition:</b> <a href="CarState_8hpp_source.html#l00159">CarState.hpp:160</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

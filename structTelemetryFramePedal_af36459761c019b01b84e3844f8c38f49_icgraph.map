@@ -1,6 +1,6 @@
 <map id="TelemetryFramePedal::toCanFrame" name="TelemetryFramePedal::toCanFrame">
-<area shape="rect" id="node1" title="Converts the TelemetryFramePedal to a CAN frame." alt="" coords="556,5,720,45"/>
-<area shape="rect" id="node2" href="$classTelemetry.html#a8fea6e56820f19a233237434f32aa511" title="Internal helper to get and send the Pedal telemetry frame." alt="" coords="347,13,508,38"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a2e1609fa80a6555982d945314147b005" title=" " alt="" coords="112,13,299,38"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Setup function for initializing the VCU system. Initializes MCP2515s, IO pins, as well as own modules..." alt="" coords="5,13,64,38"/>
+<area shape="rect" id="node1" title="Converts the TelemetryFramePedal to a CAN frame." alt="" coords="552,5,716,50"/>
+<area shape="rect" id="node2" href="$classTelemetry.html#a8fea6e56820f19a233237434f32aa511" title="Internal helper to get and send the Pedal telemetry frame." alt="" coords="344,14,504,42"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a2e1609fa80a6555982d945314147b005" title=" " alt="" coords="111,14,296,42"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Setup function for initializing the VCU system. Initializes MCP2515s, IO pins, as well as own modules..." alt="" coords="5,14,63,42"/>
 </map>

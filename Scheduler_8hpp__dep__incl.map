@@ -1,7 +1,7 @@
 <map id="vehicle_control_unit/lib/Scheduler/Scheduler.hpp" name="vehicle_control_unit/lib/Scheduler/Scheduler.hpp">
-<area shape="rect" id="node1" title="Declaration of the Scheduler class template, for scheduling tasks on multiple MCP2515 instances." alt="" coords="226,5,431,45"/>
-<area shape="rect" id="node2" href="$BMS_8hpp.html" title="Declaration of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="68,93,221,133"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="183,181,336,221"/>
-<area shape="rect" id="node5" href="$Scheduler_8tpp.html" title="Implementation of the Scheduler class template." alt="" coords="297,93,499,133"/>
-<area shape="rect" id="node3" href="$BMS_8cpp.html" title="Implementation of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="5,181,159,221"/>
+<area shape="rect" id="node1" title="Declaration of the Scheduler class template, for scheduling tasks on multiple MCP2515 instances." alt="" coords="225,5,429,50"/>
+<area shape="rect" id="node2" href="$Ams_8hpp.html" title="Declaration of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="68,98,220,143"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="181,191,334,235"/>
+<area shape="rect" id="node5" href="$Scheduler_8tpp.html" title="Implementation of the Scheduler class template." alt="" coords="296,98,497,143"/>
+<area shape="rect" id="node3" href="$Ams_8cpp.html" title="Implementation of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="5,191,158,235"/>
 </map>

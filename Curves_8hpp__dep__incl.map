@@ -1,6 +1,6 @@
 <map id="vehicle_control_unit/include/Curves.hpp" name="vehicle_control_unit/include/Curves.hpp">
-<area shape="rect" id="node1" title="Definition of throttle and brake mapping tables." alt="" coords="95,5,248,45"/>
-<area shape="rect" id="node2" href="$Pedal_8cpp.html" title="Implementation of the Pedal class for handling throttle pedal inputs." alt="" coords="5,181,159,221"/>
-<area shape="rect" id="node3" href="$Pedal_8hpp.html" title="Declaration of the Pedal class for handling throttle and brake pedal inputs." alt="" coords="95,93,248,133"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="196,181,349,221"/>
+<area shape="rect" id="node1" title="Definition of throttle and brake mapping tables." alt="" coords="107,5,259,50"/>
+<area shape="rect" id="node2" href="$Pedal_8cpp.html" title="Implementation of the Pedal class for handling throttle pedal inputs." alt="" coords="5,191,158,235"/>
+<area shape="rect" id="node3" href="$Pedal_8hpp.html" title="Declaration of the Pedal class for handling throttle and brake pedal inputs." alt="" coords="107,98,259,143"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="207,191,359,235"/>
 </map>

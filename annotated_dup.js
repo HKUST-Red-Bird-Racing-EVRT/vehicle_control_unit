@@ -1,7 +1,7 @@
 var annotated_dup =
 [
+    [ "Ams", "classAms.html", "classAms" ],
     [ "AverageFilter", "classAverageFilter.html", "classAverageFilter" ],
-    [ "BMS", "classBMS.html", "classBMS" ],
     [ "CarState", "structCarState.html", "structCarState" ],
     [ "ExponentialFilter", "classExponentialFilter.html", "classExponentialFilter" ],
     [ "Filter", "classFilter.html", "classFilter" ],
@@ -11,7 +11,7 @@ var annotated_dup =
     [ "Scheduler", "classScheduler.html", "classScheduler" ],
     [ "TablePoint", "structTablePoint.html", "structTablePoint" ],
     [ "Telemetry", "classTelemetry.html", "classTelemetry" ],
-    [ "TelemetryFrameBms", "structTelemetryFrameBms.html", "structTelemetryFrameBms" ],
+    [ "TelemetryFrameAms", "structTelemetryFrameAms.html", "structTelemetryFrameAms" ],
     [ "TelemetryFrameMotor", "structTelemetryFrameMotor.html", "structTelemetryFrameMotor" ],
     [ "TelemetryFramePedal", "structTelemetryFramePedal.html", "structTelemetryFramePedal" ]
 ];

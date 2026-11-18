@@ -10,7 +10,7 @@ var classPedal =
     [ "sendCyclicRead", "classPedal.html#aec7ba639c6b2e3596d3ae1d14d3572ea", null ],
     [ "sendFrame", "classPedal.html#a1027941444ce0b3f32ab8991e05c2015", null ],
     [ "update", "classPedal.html#a0ec014fb5ce414deded33ae3db05e231", null ],
-    [ "APPS_3V3_SCALE_MAP", "classPedal.html#a6f52613ea14a705860324a7cd47610c0", null ],
+    [ "APPS_3V3_SCALE_MAP", "classPedal.html#a12f10e100e17f5fda62272fe03804f9b", null ],
     [ "brake_filter", "classPedal.html#aafba982f924e1ec95e605765d719b3f9", null ],
     [ "BRAKE_MAP", "classPedal.html#a441534f673b157a7a268917a1a121b20", null ],
     [ "car", "classPedal.html#a62eed1bcc4b9bb0cc4b1419cd77472da", null ],

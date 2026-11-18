@@ -1,7 +1,7 @@
 var searchData=
 [
   ['can_5finterface_0',['can_interface',['../namespaceDebug__CAN.html#af09d4c579d34dfa0f5fb18114f304203',1,'Debug_CAN']]],
-  ['car_1',['car',['../classBMS.html#abb3de30014ac8e4e94de7e44b623a50d',1,'BMS::car()'],['../classPedal.html#a62eed1bcc4b9bb0cc4b1419cd77472da',1,'Pedal::car()'],['../classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef',1,'Telemetry::car()'],['../main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8',1,'car():&#160;main.cpp']]],
+  ['car_1',['car',['../classAms.html#a4447399c66f4d86381315de9decc2979',1,'Ams::car()'],['../classPedal.html#a62eed1bcc4b9bb0cc4b1419cd77472da',1,'Pedal::car()'],['../classTelemetry.html#a5a7e2d6b4cde6809039c55ae127160ef',1,'Telemetry::car()'],['../main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8',1,'car():&#160;main.cpp']]],
   ['car_5fstatus_2',['car_status',['../structTelemetryFramePedal_1_1StateByteStatus_1_1Bits.html#aee38be468bda33ee83ed5b59fbf8b375',1,'TelemetryFramePedal::StateByteStatus::Bits']]],
   ['count_3',['count',['../classRingBuffer.html#a375926eb439fc06803b497e1a19add6a',1,'RingBuffer']]],
   ['current_5ftime_5fus_4',['CURRENT_TIME_US',['../classScheduler.html#af44f119a382d4db7b9a840ac27fa02c9',1,'Scheduler']]],

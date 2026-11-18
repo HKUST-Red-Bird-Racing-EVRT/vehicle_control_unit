@@ -1,4 +1,4 @@
 <map id="Telemetry::sendBms" name="Telemetry::sendBms">
-<area shape="rect" id="node1" title="Internal helper to get and send the BMS telemetry frame." alt="" coords="5,13,160,38"/>
-<area shape="rect" id="node2" href="$structTelemetryFrameBms.html#a6b03b160b930c3a40a06e99f6e6cb175" title="Converts the TelemetryFrameBms to a CAN frame." alt="" coords="208,5,373,45"/>
+<area shape="rect" id="node1" title="Internal helper to get and send the BMS telemetry frame." alt="" coords="5,14,159,42"/>
+<area shape="rect" id="node2" href="$structTelemetryFrameAms.html#a702df0dcd14381e487d4db76c5fd00bf" title="Converts the TelemetryFrameAms to a CAN frame." alt="" coords="207,5,371,50"/>
 </map>

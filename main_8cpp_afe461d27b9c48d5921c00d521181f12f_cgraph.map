@@ -1,13 +1,11 @@
 <map id="loop" name="loop">
-<area shape="rect" id="node1" title="Main loop function for the VCU system. Handles car state transitions, pipes dataflow between modules." alt="" coords="5,55,56,80"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808" title=" " alt="" coords="135,5,193,31"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a55b57abe9bcb30f6af0fb927f7d576a4" title=" " alt="" coords="104,55,224,80"/>
-<area shape="rect" id="node7" href="$classPedal.html#a0ec014fb5ce414deded33ae3db05e231" title="Updates pedal sensor readings, applies filtering, and checks for faults." alt="" coords="109,108,219,133"/>
-<area shape="rect" id="node4" href="$classBMS.html#a7de82f50c43e50529739213e98b9b634" title="Attempts to start HV. First check BMS is in standby(3) state, then send the HV start command...." alt="" coords="300,51,415,76"/>
-<area shape="rect" id="node5" href="$Debug_8hpp.html#a8e8d6e3de15309922f25c12f4d7cf727" title="Prints a line to the serial console for general debug." alt="" coords="496,51,632,76"/>
-<area shape="rect" id="node6" href="$namespaceDebug__Serial.html#a756fa9286151426012a6f8e178a6c550" title="Prints a string AND a newline to the serial console." alt="" coords="685,51,844,76"/>
-<area shape="rect" id="node8" href="$classExponentialFilter.html#a4128176cf6dbe847a521df4dba8d962d" title="Adds a new sample to the ExponentialFilter. Updates the filtered value using the exponential moving a..." alt="" coords="287,101,427,141"/>
-<area shape="rect" id="node9" href="$classPedal.html#a4025bb96ea422dbba6d3b604a1066bc7" title="Checks for a fault between two pedal sensor readings." alt="" coords="272,165,443,191"/>
-<area shape="rect" id="node10" href="$classLinearInterp.html#a3c1654f4a47bb4db5386e38a8bdd6bc1" title="Performs linear interpolation for the given input value, using the table." alt="" coords="491,140,637,165"/>
-<area shape="rect" id="node11" href="$classLinearInterp.html#a9928dbf5a866f066fa19a3c4794bf71a" title="Returns the input range of the interpolation table (last input &#45; first input)" alt="" coords="491,189,637,215"/>
+<area shape="rect" id="node1" title="Main loop function for the VCU system. Handles car state transitions, pipes dataflow between modules." alt="" coords="5,57,55,85"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808" title=" " alt="" coords="134,5,191,33"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a55b57abe9bcb30f6af0fb927f7d576a4" title=" " alt="" coords="103,57,222,85"/>
+<area shape="rect" id="node5" href="$classPedal.html#a0ec014fb5ce414deded33ae3db05e231" title="Updates pedal sensor readings, applies filtering, and checks for faults." alt="" coords="107,113,218,141"/>
+<area shape="rect" id="node4" href="$classAms.html#ae387001a635dcc213c857dea9d2285eb" title="Attempts to start HV. First check BMS is in standby(3) state, then send the HV start command...." alt="" coords="298,53,412,81"/>
+<area shape="rect" id="node6" href="$classExponentialFilter.html#a4128176cf6dbe847a521df4dba8d962d" title="Adds a new sample to the ExponentialFilter. Updates the filtered value using the exponential moving a..." alt="" coords="286,105,425,150"/>
+<area shape="rect" id="node7" href="$classPedal.html#a4025bb96ea422dbba6d3b604a1066bc7" title="Checks for a fault between two pedal sensor readings." alt="" coords="270,173,440,201"/>
+<area shape="rect" id="node8" href="$classLinearInterp.html#a3c1654f4a47bb4db5386e38a8bdd6bc1" title="Performs linear interpolation for the given input value, using the table." alt="" coords="488,147,634,174"/>
+<area shape="rect" id="node9" href="$classLinearInterp.html#a9928dbf5a866f066fa19a3c4794bf71a" title="Returns the input range of the interpolation table (last input &#45; first input)" alt="" coords="489,199,633,226"/>
 </map>

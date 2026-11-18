@@ -5,5 +5,5 @@ var searchData=
   ['hallsensormsg_2',['HallSensorMsg',['../Enums_8hpp.html#a6b191ababec6777bcc2b83f8dae93629abdfdcbfd73bfe53710664cc39c1b62fe',1,'Enums.hpp']]],
   ['head_3',['head',['../classRingBuffer.html#a8a1af6e4f17e60f3de6a847919a5ff9b',1,'RingBuffer']]],
   ['hv_5fready_4',['hv_ready',['../structTelemetryFramePedal_1_1StateByteStatus_1_1Bits.html#ab000a9c2a77216d2c9f815ffc3ee0200',1,'TelemetryFramePedal::StateByteStatus::Bits']]],
-  ['hvready_5',['hvReady',['../classBMS.html#aeaf842d8a4bdd879d45b75dc6dc05599',1,'BMS']]]
+  ['hvready_5',['hvReady',['../classAms.html#a68ca93524514bc18b14835773af7adc3',1,'Ams']]]
 ];

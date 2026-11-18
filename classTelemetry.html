@@ -126,7 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a24571b8d560d99079a460857669231a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper to get and send the motor telemetry frame.  <br /></td></tr>
 <tr class="separator:a24571b8d560d99079a460857669231a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b8b2cf254f25b0133b5f3bafd1b80e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTelemetry.html#a9b8b2cf254f25b0133b5f3bafd1b80e1">sendBms</a> ()</td></tr>
-<tr class="memdesc:a9b8b2cf254f25b0133b5f3bafd1b80e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper to get and send the <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> telemetry frame.  <br /></td></tr>
+<tr class="memdesc:a9b8b2cf254f25b0133b5f3bafd1b80e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper to get and send the BMS telemetry frame.  <br /></td></tr>
 <tr class="separator:a9b8b2cf254f25b0133b5f3bafd1b80e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -139,7 +139,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classTelemetry.html" title="Telemetry class for managing telemetry data transmission over CAN bus Grabs and sends telemetry frame...">Telemetry</a> class for managing telemetry data transmission over CAN bus Grabs and sends telemetry frames in fixed order based on scheduling logic. </p>
 
-<p class="definition">Definition at line <a class="el" href="Telemetry_8hpp_source.html#l00026">26</a> of file <a class="el" href="Telemetry_8hpp_source.html">Telemetry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Telemetry_8hpp_source.html#l00028">28</a> of file <a class="el" href="Telemetry_8hpp_source.html">Telemetry.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a59bdac66ecc2c1e415229a2855144c4c" name="a59bdac66ecc2c1e415229a2855144c4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a59bdac66ecc2c1e415229a2855144c4c">&#9670;&#160;</a></span>Telemetry()</h2>
@@ -176,7 +176,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Telemetry_8cpp_source.html#l00017">17</a> of file <a class="el" href="Telemetry_8cpp_source.html">Telemetry.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Telemetry_8cpp_source.html#l00019">19</a> of file <a class="el" href="Telemetry_8cpp_source.html">Telemetry.cpp</a>.</p>
 
 </div>
 </div>
@@ -196,23 +196,23 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Internal helper to get and send the <a class="el" href="classBMS.html" title="BMS class for managing the Accumulator (Kclear BMS) via CAN bus.">BMS</a> telemetry frame. </p>
+<p>Internal helper to get and send the BMS telemetry frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="Telemetry_8cpp_source.html#l00043">43</a> of file <a class="el" href="Telemetry_8cpp_source.html">Telemetry.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Telemetry_8cpp_source.html#l00045">45</a> of file <a class="el" href="Telemetry_8cpp_source.html">Telemetry.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CarState_8hpp_source.html#l00161">CarState::bms</a>, <a class="el" href="Telemetry_8hpp_source.html#l00036">car</a>, <a class="el" href="Telemetry_8hpp_source.html#l00035">mcp2515</a>, and <a class="el" href="CarState_8hpp_source.html#l00135">TelemetryFrameBms::toCanFrame()</a>.</p>
+<p class="reference">References <a class="el" href="CarState_8hpp_source.html#l00163">CarState::ams</a>, <a class="el" href="Telemetry_8hpp_source.html#l00038">car</a>, <a class="el" href="Telemetry_8hpp_source.html#l00037">mcp2515</a>, and <a class="el" href="CarState_8hpp_source.html#l00137">TelemetryFrameAms::toCanFrame()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00098">schedulerTelemetryBms()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00102">schedulerTelemetryBms()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a9b8b2cf254f25b0133b5f3bafd1b80e1_cgraph.svg" width="379" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a9b8b2cf254f25b0133b5f3bafd1b80e1_cgraph.svg" width="376" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a9b8b2cf254f25b0133b5f3bafd1b80e1_icgraph.svg" width="499" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a9b8b2cf254f25b0133b5f3bafd1b80e1_icgraph.svg" width="496" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -235,21 +235,21 @@ Here is the caller graph for this function:</div>
 
 <p>Internal helper to get and send the motor telemetry frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="Telemetry_8cpp_source.html#l00034">34</a> of file <a class="el" href="Telemetry_8cpp_source.html">Telemetry.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Telemetry_8cpp_source.html#l00036">36</a> of file <a class="el" href="Telemetry_8cpp_source.html">Telemetry.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Telemetry_8hpp_source.html#l00036">car</a>, <a class="el" href="Telemetry_8hpp_source.html#l00035">mcp2515</a>, <a class="el" href="CarState_8hpp_source.html#l00160">CarState::motor</a>, and <a class="el" href="CarState_8hpp_source.html#l00107">TelemetryFrameMotor::toCanFrame()</a>.</p>
+<p class="reference">References <a class="el" href="Telemetry_8hpp_source.html#l00038">car</a>, <a class="el" href="Telemetry_8hpp_source.html#l00037">mcp2515</a>, <a class="el" href="CarState_8hpp_source.html#l00162">CarState::motor</a>, and <a class="el" href="CarState_8hpp_source.html#l00109">TelemetryFrameMotor::toCanFrame()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00094">schedulerTelemetryMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00098">schedulerTelemetryMotor()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a24571b8d560d99079a460857669231a1_cgraph.svg" width="388" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a24571b8d560d99079a460857669231a1_cgraph.svg" width="387" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a24571b8d560d99079a460857669231a1_icgraph.svg" width="516" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a24571b8d560d99079a460857669231a1_icgraph.svg" width="514" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -272,21 +272,21 @@ Here is the caller graph for this function:</div>
 
 <p>Internal helper to get and send the <a class="el" href="classPedal.html" title="Pedal class for managing throttle and brake pedal inputs. Handles filtering, fault detection,...">Pedal</a> telemetry frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="Telemetry_8cpp_source.html#l00025">25</a> of file <a class="el" href="Telemetry_8cpp_source.html">Telemetry.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Telemetry_8cpp_source.html#l00027">27</a> of file <a class="el" href="Telemetry_8cpp_source.html">Telemetry.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Telemetry_8hpp_source.html#l00036">car</a>, <a class="el" href="Telemetry_8hpp_source.html#l00035">mcp2515</a>, <a class="el" href="CarState_8hpp_source.html#l00159">CarState::pedal</a>, and <a class="el" href="CarState_8hpp_source.html#l00077">TelemetryFramePedal::toCanFrame()</a>.</p>
+<p class="reference">References <a class="el" href="Telemetry_8hpp_source.html#l00038">car</a>, <a class="el" href="Telemetry_8hpp_source.html#l00037">mcp2515</a>, <a class="el" href="CarState_8hpp_source.html#l00161">CarState::pedal</a>, and <a class="el" href="CarState_8hpp_source.html#l00079">TelemetryFramePedal::toCanFrame()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00090">schedulerTelemetryPedal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00094">schedulerTelemetryPedal()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a8fea6e56820f19a233237434f32aa511_cgraph.svg" width="384" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a8fea6e56820f19a233237434f32aa511_cgraph.svg" width="383" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a8fea6e56820f19a233237434f32aa511_icgraph.svg" width="514" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTelemetry_a8fea6e56820f19a233237434f32aa511_icgraph.svg" width="510" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -314,9 +314,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Reference to <a class="el" href="structCarState.html" title="Represents the state of the car. Holds telemetry data and status, used as central data sharing struct...">CarState</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="Telemetry_8hpp_source.html#l00036">36</a> of file <a class="el" href="Telemetry_8hpp_source.html">Telemetry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Telemetry_8hpp_source.html#l00038">38</a> of file <a class="el" href="Telemetry_8hpp_source.html">Telemetry.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Telemetry_8cpp_source.html#l00043">sendBms()</a>, <a class="el" href="Telemetry_8cpp_source.html#l00034">sendMotor()</a>, and <a class="el" href="Telemetry_8cpp_source.html#l00025">sendPedal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Telemetry_8cpp_source.html#l00045">sendBms()</a>, <a class="el" href="Telemetry_8cpp_source.html#l00036">sendMotor()</a>, and <a class="el" href="Telemetry_8cpp_source.html#l00027">sendPedal()</a>.</p>
 
 </div>
 </div>
@@ -341,9 +341,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Reference to MCP2515 for sending CAN messages </p>
 
-<p class="definition">Definition at line <a class="el" href="Telemetry_8hpp_source.html#l00035">35</a> of file <a class="el" href="Telemetry_8hpp_source.html">Telemetry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Telemetry_8hpp_source.html#l00037">37</a> of file <a class="el" href="Telemetry_8hpp_source.html">Telemetry.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Telemetry_8cpp_source.html#l00043">sendBms()</a>, <a class="el" href="Telemetry_8cpp_source.html#l00034">sendMotor()</a>, and <a class="el" href="Telemetry_8cpp_source.html#l00025">sendPedal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Telemetry_8cpp_source.html#l00045">sendBms()</a>, <a class="el" href="Telemetry_8cpp_source.html#l00036">sendMotor()</a>, and <a class="el" href="Telemetry_8cpp_source.html#l00027">sendPedal()</a>.</p>
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 <map id="TelemetryFrameMotor::toCanFrame" name="TelemetryFrameMotor::toCanFrame">
-<area shape="rect" id="node1" title="Converts the TelemetryFrameMotor to a CAN frame." alt="" coords="559,5,725,45"/>
-<area shape="rect" id="node2" href="$classTelemetry.html#a24571b8d560d99079a460857669231a1" title="Internal helper to get and send the motor telemetry frame." alt="" coords="348,13,511,38"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#af749f68ca5ebf490db3de9a27bf7bfc6" title=" " alt="" coords="112,13,300,38"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Setup function for initializing the VCU system. Initializes MCP2515s, IO pins, as well as own modules..." alt="" coords="5,13,64,38"/>
+<area shape="rect" id="node1" title="Converts the TelemetryFrameMotor to a CAN frame." alt="" coords="556,5,722,50"/>
+<area shape="rect" id="node2" href="$classTelemetry.html#a24571b8d560d99079a460857669231a1" title="Internal helper to get and send the motor telemetry frame." alt="" coords="346,14,508,42"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#af749f68ca5ebf490db3de9a27bf7bfc6" title=" " alt="" coords="111,14,298,42"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Setup function for initializing the VCU system. Initializes MCP2515s, IO pins, as well as own modules..." alt="" coords="5,14,63,42"/>
 </map>

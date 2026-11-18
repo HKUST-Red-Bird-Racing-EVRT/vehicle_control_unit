@@ -6,7 +6,7 @@ var CarState_8hpp =
     [ "TelemetryFramePedal::StateByteFaults", "unionTelemetryFramePedal_1_1StateByteFaults.html", "unionTelemetryFramePedal_1_1StateByteFaults" ],
     [ "TelemetryFramePedal::StateByteFaults::Bits", "structTelemetryFramePedal_1_1StateByteFaults_1_1Bits.html", "structTelemetryFramePedal_1_1StateByteFaults_1_1Bits" ],
     [ "TelemetryFrameMotor", "structTelemetryFrameMotor.html", "structTelemetryFrameMotor" ],
-    [ "TelemetryFrameBms", "structTelemetryFrameBms.html", "structTelemetryFrameBms" ],
+    [ "TelemetryFrameAms", "structTelemetryFrameAms.html", "structTelemetryFrameAms" ],
     [ "CarState", "structCarState.html", "structCarState" ],
     [ "TELEMETRY_BMS_MSG", "CarState_8hpp.html#aaf5c87ec2586cde937c51756d9a50025", null ],
     [ "TELEMETRY_MOTOR_MSG", "CarState_8hpp.html#a68020dda3bb0a0cbf219e904f283859c", null ],

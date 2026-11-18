@@ -1,5 +1,5 @@
 <map id="Pedal::checkPedalFault" name="Pedal::checkPedalFault">
-<area shape="rect" id="node1" title="Checks for a fault between two pedal sensor readings." alt="" coords="5,31,176,56"/>
-<area shape="rect" id="node2" href="$classLinearInterp.html#a3c1654f4a47bb4db5386e38a8bdd6bc1" title="Performs linear interpolation for the given input value, using the table." alt="" coords="224,5,371,31"/>
-<area shape="rect" id="node3" href="$classLinearInterp.html#a9928dbf5a866f066fa19a3c4794bf71a" title="Returns the input range of the interpolation table (last input &#45; first input)" alt="" coords="225,55,370,80"/>
+<area shape="rect" id="node1" title="Checks for a fault between two pedal sensor readings." alt="" coords="5,32,176,60"/>
+<area shape="rect" id="node2" href="$classLinearInterp.html#a3c1654f4a47bb4db5386e38a8bdd6bc1" title="Performs linear interpolation for the given input value, using the table." alt="" coords="224,5,369,33"/>
+<area shape="rect" id="node3" href="$classLinearInterp.html#a9928dbf5a866f066fa19a3c4794bf71a" title="Returns the input range of the interpolation table (last input &#45; first input)" alt="" coords="224,57,368,85"/>
 </map>

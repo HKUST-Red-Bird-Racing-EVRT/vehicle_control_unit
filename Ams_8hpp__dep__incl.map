@@ -1,0 +1,5 @@
+<map id="vehicle_control_unit/lib/Ams/Ams.hpp" name="vehicle_control_unit/lib/Ams/Ams.hpp">
+<area shape="rect" id="node1" title="Declaration of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="93,5,246,50"/>
+<area shape="rect" id="node2" href="$Ams_8cpp.html" title="Implementation of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="5,98,158,143"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="181,98,334,143"/>
+</map>

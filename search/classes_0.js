@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['averagefilter_0',['AverageFilter',['../classAverageFilter.html',1,'']]]
+  ['ams_0',['Ams',['../classAms.html',1,'']]],
+  ['averagefilter_1',['AverageFilter',['../classAverageFilter.html',1,'']]]
 ];

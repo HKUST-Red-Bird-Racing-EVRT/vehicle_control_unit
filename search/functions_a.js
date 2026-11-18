@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['pedal_0',['Pedal',['../classPedal.html#a195d92af52ee4f61993c5192302ea454',1,'Pedal']]],
-  ['pedal_1',['pedal',['../main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808',1,'main.cpp']]],
-  ['pedaltorquemapping_2',['pedalTorqueMapping',['../classPedal.html#ae82e0ae8a1a0c6918d43fb27bf8d9d0d',1,'Pedal']]],
-  ['print_3',['print',['../namespaceDebug__Serial.html#aecd80296d8a3c5d2f9c51d623e11ff9f',1,'Debug_Serial']]],
-  ['println_4',['println',['../namespaceDebug__Serial.html#a756fa9286151426012a6f8e178a6c550',1,'Debug_Serial']]],
-  ['push_5',['push',['../classRingBuffer.html#ad30671837bc9ec407735ecedaeabf36c',1,'RingBuffer']]]
+  ['range_0',['range',['../classLinearInterp.html#a9928dbf5a866f066fa19a3c4794bf71a',1,'LinearInterp']]],
+  ['readams_1',['readAms',['../classAms.html#ab69920bebc5738d14291202ced952b15',1,'Ams']]],
+  ['readmotor_2',['readMotor',['../classPedal.html#aa66167fb494c00db7b8a0b8140e85973',1,'Pedal']]],
+  ['removetask_3',['removeTask',['../classScheduler.html#a3d83583589e7251bfcebc0ff852d59c5',1,'Scheduler']]],
+  ['ringbuffer_4',['RingBuffer',['../classRingBuffer.html#a90ee21ba482fcc7fe22942801f75c3ae',1,'RingBuffer']]],
+  ['runtasks_5',['runTasks',['../classScheduler.html#af413dbf9319b061e919a7beb192920c4',1,'Scheduler']]]
 ];

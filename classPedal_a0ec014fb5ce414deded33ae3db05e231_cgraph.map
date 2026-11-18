@@ -1,7 +1,7 @@
 <map id="Pedal::update" name="Pedal::update">
-<area shape="rect" id="node1" title="Updates pedal sensor readings, applies filtering, and checks for faults." alt="" coords="5,42,116,67"/>
-<area shape="rect" id="node2" href="$classExponentialFilter.html#a4128176cf6dbe847a521df4dba8d962d" title="Adds a new sample to the ExponentialFilter. Updates the filtered value using the exponential moving a..." alt="" coords="179,5,319,45"/>
-<area shape="rect" id="node3" href="$classPedal.html#a4025bb96ea422dbba6d3b604a1066bc7" title="Checks for a fault between two pedal sensor readings." alt="" coords="164,70,335,95"/>
-<area shape="rect" id="node4" href="$classLinearInterp.html#a3c1654f4a47bb4db5386e38a8bdd6bc1" title="Performs linear interpolation for the given input value, using the table." alt="" coords="383,45,529,70"/>
-<area shape="rect" id="node5" href="$classLinearInterp.html#a9928dbf5a866f066fa19a3c4794bf71a" title="Returns the input range of the interpolation table (last input &#45; first input)" alt="" coords="383,94,529,119"/>
+<area shape="rect" id="node1" title="Updates pedal sensor readings, applies filtering, and checks for faults." alt="" coords="5,44,116,72"/>
+<area shape="rect" id="node2" href="$classExponentialFilter.html#a4128176cf6dbe847a521df4dba8d962d" title="Adds a new sample to the ExponentialFilter. Updates the filtered value using the exponential moving a..." alt="" coords="179,5,318,50"/>
+<area shape="rect" id="node3" href="$classPedal.html#a4025bb96ea422dbba6d3b604a1066bc7" title="Checks for a fault between two pedal sensor readings." alt="" coords="164,74,334,102"/>
+<area shape="rect" id="node4" href="$classLinearInterp.html#a3c1654f4a47bb4db5386e38a8bdd6bc1" title="Performs linear interpolation for the given input value, using the table." alt="" coords="382,47,527,75"/>
+<area shape="rect" id="node5" href="$classLinearInterp.html#a9928dbf5a866f066fa19a3c4794bf71a" title="Returns the input range of the interpolation table (last input &#45; first input)" alt="" coords="382,99,527,127"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="vehicle_control_unit/lib/SignalProcessing/SignalProcessing.tpp" name="vehicle_control_unit/lib/SignalProcessing/SignalProcessing.tpp">
-<area shape="rect" id="node1" title="Definition of Signal Processing functions." alt="" coords="59,5,220,60"/>
-<area shape="rect" id="node2" href="$SignalProcessing_8hpp.html" title="Declaration of signal processing functions." alt="" coords="57,108,221,163"/>
-<area shape="rect" id="node3" href="$Pedal_8cpp.html" title="Implementation of the Pedal class for handling throttle pedal inputs." alt="" coords="5,299,159,339"/>
-<area shape="rect" id="node4" href="$Pedal_8hpp.html" title="Declaration of the Pedal class for handling throttle and brake pedal inputs." alt="" coords="120,211,273,251"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="183,299,336,339"/>
+<area shape="rect" id="node1" title="Definition of Signal Processing functions." alt="" coords="57,5,218,67"/>
+<area shape="rect" id="node2" href="$SignalProcessing_8hpp.html" title="Declaration of signal processing functions." alt="" coords="56,115,219,177"/>
+<area shape="rect" id="node3" href="$Pedal_8cpp.html" title="Implementation of the Pedal class for handling throttle pedal inputs." alt="" coords="5,317,158,362"/>
+<area shape="rect" id="node4" href="$Pedal_8hpp.html" title="Declaration of the Pedal class for handling throttle and brake pedal inputs." alt="" coords="119,225,271,269"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="181,317,334,362"/>
 </map>

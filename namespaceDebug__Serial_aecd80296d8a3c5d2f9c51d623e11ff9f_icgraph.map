@@ -1,4 +1,4 @@
 <map id="Debug_Serial::print" name="Debug_Serial::print">
-<area shape="rect" id="node1" title="Prints a string to the serial console." alt="" coords="172,5,319,31"/>
-<area shape="rect" id="node2" href="$Debug_8hpp.html#a9d60671317b513353287b53444954a4b" title="Prints a general debug message to the serial console." alt="" coords="5,5,124,31"/>
+<area shape="rect" id="node1" title="Prints a string to the serial console." alt="" coords="172,5,317,33"/>
+<area shape="rect" id="node2" href="$Debug_8hpp.html#a9d60671317b513353287b53444954a4b" title="Prints a general debug message to the serial console." alt="" coords="5,5,124,33"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['use_5fvcu_5fv3_5f2_0',['USE_VCU_V3_2',['../BoardConfig_8h.html#ab5f01e60435bf450fa7ba7072cd25e9d',1,'BoardConfig.h']]]
+  ['use_5fvcu_5fv3_5f4_0',['USE_VCU_V3_4',['../BoardConfig_8h.html#a1917937b5ea8331e5db5094efa4c94f8',1,'BoardConfig.h']]]
 ];

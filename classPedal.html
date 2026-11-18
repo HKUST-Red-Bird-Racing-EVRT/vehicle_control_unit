@@ -190,8 +190,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a5f4ba934e57009aa760e4b10a946f552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a441534f673b157a7a268917a1a121b20"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classLinearInterp.html">LinearInterp</a>&lt; uint16_t, int16_t, int32_t, 5 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPedal.html#a441534f673b157a7a268917a1a121b20">BRAKE_MAP</a> {<a class="el" href="Curves_8hpp.html#aa9235baa5785862eb452871ed359355a">BRAKE_TABLE</a>}</td></tr>
 <tr class="separator:a441534f673b157a7a268917a1a121b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f52613ea14a705860324a7cd47610c0"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classLinearInterp.html">LinearInterp</a>&lt; uint16_t, uint16_t, uint32_t, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPedal.html#a6f52613ea14a705860324a7cd47610c0">APPS_3V3_SCALE_MAP</a> {<a class="el" href="Curves_8hpp.html#adac8b3a21f7ecfb6700361ba6130e210">APPS_3V3_SCALE_TABLE</a>}</td></tr>
-<tr class="separator:a6f52613ea14a705860324a7cd47610c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f10e100e17f5fda62272fe03804f9b"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classLinearInterp.html">LinearInterp</a>&lt; uint16_t, uint16_t, uint32_t, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPedal.html#a12f10e100e17f5fda62272fe03804f9b">APPS_3V3_SCALE_MAP</a> {<a class="el" href="Curves_8hpp.html#a7319b955b5bc8bd900d393f63c05c11f">APPS_3V3_SCALE_TABLE</a>}</td></tr>
+<tr class="separator:a12f10e100e17f5fda62272fe03804f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee50582bc518967542f5015046c51a6"><td class="memItemLeft" align="right" valign="top">static constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPedal.html#abee50582bc518967542f5015046c51a6">MOTOR_SEND</a> = 0x201</td></tr>
 <tr class="separator:abee50582bc518967542f5015046c51a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6508d34b5f953e1be3753df02a19ada0"><td class="memItemLeft" align="right" valign="top">static constexpr canid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPedal.html#a6508d34b5f953e1be3753df02a19ada0">MOTOR_READ</a> = 0x181</td></tr>
@@ -210,7 +210,7 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classPedal.html" title="Pedal class for managing throttle and brake pedal inputs. Handles filtering, fault detection,...">Pedal</a> class for managing throttle and brake pedal inputs. Handles filtering, fault detection, and CAN frame updates. </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00067">67</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00070">70</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a195d92af52ee4f61993c5192302ea454" name="a195d92af52ee4f61993c5192302ea454"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a195d92af52ee4f61993c5192302ea454">&#9670;&#160;</a></span>Pedal()</h2>
@@ -254,7 +254,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00034">34</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00037">37</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
 </div>
 </div>
@@ -283,15 +283,15 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00270">270</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00273">273</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Pedal_8hpp_source.html#l00080">motor_can</a>, and <a class="el" href="Pedal_8hpp_source.html#l00117">MOTOR_READ</a>.</p>
+<p class="reference">References <a class="el" href="Pedal_8hpp_source.html#l00083">motor_can</a>, and <a class="el" href="Pedal_8hpp_source.html#l00120">MOTOR_READ</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00072">initMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00075">initMotor()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a2ef64ef89c257cc2840425c662f7ad14_icgraph.svg" width="467" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a2ef64ef89c257cc2840425c662f7ad14_icgraph.svg" width="464" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -325,21 +325,21 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>true if the difference exceeds the threshold (fault detected), false otherwise. </dd></dl>
 <p>&lt; MAX_DELTA is floor of 10% of APPS_5V valid range, later comparison will give rounding room</p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00237">237</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00240">240</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CarState_8hpp_source.html#l00027">TelemetryFramePedal::apps_3v3</a>, <a class="el" href="Pedal_8hpp_source.html#l00114">APPS_3V3_SCALE_MAP</a>, <a class="el" href="CarState_8hpp_source.html#l00026">TelemetryFramePedal::apps_5v</a>, <a class="el" href="Curves_8hpp_source.html#l00066">APPS_5V_PERCENT_TABLE</a>, <a class="el" href="Pedal_8hpp_source.html#l00079">car</a>, <a class="el" href="Interp_8hpp_source.html#l00045">LinearInterp&lt; Tin, Tout, Tmid, size &gt;::interp()</a>, <a class="el" href="CarState_8hpp_source.html#l00159">CarState::pedal</a>, <a class="el" href="Interp_8hpp_source.html#l00083">LinearInterp&lt; Tin, Tout, Tmid, size &gt;::range()</a>, and <a class="el" href="Pedal_8hpp_source.html#l00112">THROTTLE_MAP</a>.</p>
+<p class="reference">References <a class="el" href="CarState_8hpp_source.html#l00029">TelemetryFramePedal::apps_3v3</a>, <a class="el" href="Pedal_8hpp_source.html#l00117">APPS_3V3_SCALE_MAP</a>, <a class="el" href="CarState_8hpp_source.html#l00028">TelemetryFramePedal::apps_5v</a>, <a class="el" href="Curves_8hpp_source.html#l00067">APPS_5V_PERCENT_TABLE</a>, <a class="el" href="Pedal_8hpp_source.html#l00082">car</a>, <a class="el" href="Interp_8hpp_source.html#l00045">LinearInterp&lt; Tin, Tout, Tmid, size &gt;::interp()</a>, <a class="el" href="CarState_8hpp_source.html#l00161">CarState::pedal</a>, <a class="el" href="Interp_8hpp_source.html#l00085">LinearInterp&lt; Tin, Tout, Tmid, size &gt;::range()</a>, and <a class="el" href="Pedal_8hpp_source.html#l00115">THROTTLE_MAP</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00099">update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00102">update()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a4025bb96ea422dbba6d3b604a1066bc7_cgraph.svg" width="376" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a4025bb96ea422dbba6d3b604a1066bc7_cgraph.svg" width="375" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a4025bb96ea422dbba6d3b604a1066bc7_icgraph.svg" width="439" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a4025bb96ea422dbba6d3b604a1066bc7_icgraph.svg" width="438" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -362,15 +362,15 @@ Here is the caller graph for this function:</div>
 
 <p>Initializes the CAN filters for reading motor data. Call after constructing the <a class="el" href="classPedal.html" title="Pedal class for managing throttle and brake pedal inputs. Handles filtering, fault detection,...">Pedal</a> object and the MCP2515 object it references to ensure motor data is being read correctly. This function will block until the filter is set correctly on the MCP2515. If it never succeed, the program will be stuck here. Consider that when we can't even set the filter on the MCP2515, we probably can't communicate with the motor controller at all, so being stuck here is acceptable since the car won't be drivable without motor communication anyway. </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00052">52</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00055">55</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Pedal_8hpp_source.html#l00080">motor_can</a>, and <a class="el" href="Pedal_8hpp_source.html#l00117">MOTOR_READ</a>.</p>
+<p class="reference">References <a class="el" href="Pedal_8hpp_source.html#l00083">motor_can</a>, and <a class="el" href="Pedal_8hpp_source.html#l00120">MOTOR_READ</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a581705d03a96b7d66407e0b23f941775_icgraph.svg" width="238" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a581705d03a96b7d66407e0b23f941775_icgraph.svg" width="236" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -395,21 +395,21 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>true if both motor speed and error data are being successfully read, false otherwise, can be used for looping </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classPedal.html#a581705d03a96b7d66407e0b23f941775" title="Initializes the CAN filters for reading motor data. Call after constructing the Pedal object and the ...">initFilter</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00072">72</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00075">75</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Pedal_8cpp_source.html#l00270">checkCyclicRead()</a>, <a class="el" href="Pedal_8hpp_source.html#l00125">ERR_PERIOD</a>, <a class="el" href="Pedal_8hpp_source.html#l00085">got_error</a>, <a class="el" href="Pedal_8hpp_source.html#l00084">got_speed</a>, <a class="el" href="Pedal_8hpp_source.html#l00124">RPM_PERIOD</a>, <a class="el" href="Pedal_8cpp_source.html#l00258">sendCyclicRead()</a>, <a class="el" href="Pedal_8hpp_source.html#l00121">SPEED_IST</a>, and <a class="el" href="Pedal_8hpp_source.html#l00122">WARN_ERR</a>.</p>
+<p class="reference">References <a class="el" href="Pedal_8cpp_source.html#l00273">checkCyclicRead()</a>, <a class="el" href="Pedal_8hpp_source.html#l00128">ERR_PERIOD</a>, <a class="el" href="Pedal_8hpp_source.html#l00088">got_error</a>, <a class="el" href="Pedal_8hpp_source.html#l00087">got_speed</a>, <a class="el" href="Pedal_8hpp_source.html#l00127">RPM_PERIOD</a>, <a class="el" href="Pedal_8cpp_source.html#l00261">sendCyclicRead()</a>, <a class="el" href="Pedal_8hpp_source.html#l00124">SPEED_IST</a>, and <a class="el" href="Pedal_8hpp_source.html#l00125">WARN_ERR</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a2b2dd6f7471c0d84b312fab22ad2d0a6_cgraph.svg" width="360" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a2b2dd6f7471c0d84b312fab22ad2d0a6_cgraph.svg" width="359" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a2b2dd6f7471c0d84b312fab22ad2d0a6_icgraph.svg" width="243" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a2b2dd6f7471c0d84b312fab22ad2d0a6_icgraph.svg" width="240" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -473,15 +473,15 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Mapped torque value in the signed range of -TORQUE_MAX to TORQUE_MAX. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00196">196</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00199">199</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="Pedal_8hpp_source.html#l00113">BRAKE_MAP</a>, <a class="el" href="Pedal_8hpp_source.html#l00079">car</a>, <a class="el" href="Interp_8hpp_source.html#l00045">LinearInterp&lt; Tin, Tout, Tmid, size &gt;::interp()</a>, <a class="el" href="Pedal_8hpp_source.html#l00059">PedalConstants::MIN_REGEN_RPM_VAL</a>, <a class="el" href="CarState_8hpp_source.html#l00043">TelemetryFramePedal::StateByteStatus::Bits::motor_no_read</a>, <a class="el" href="CarState_8hpp_source.html#l00159">CarState::pedal</a>, <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, <a class="el" href="Pedal_8hpp_source.html#l00028">REGEN_ENABLED</a>, <a class="el" href="CarState_8hpp_source.html#l00044">TelemetryFramePedal::StateByteStatus::Bits::screenshot</a>, <a class="el" href="Interp_8hpp_source.html#l00074">LinearInterp&lt; Tin, Tout, Tmid, size &gt;::start()</a>, <a class="el" href="CarState_8hpp_source.html#l00070">TelemetryFramePedal::status</a>, and <a class="el" href="Pedal_8hpp_source.html#l00112">THROTTLE_MAP</a>.</p>
+<p class="reference">References <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="Pedal_8hpp_source.html#l00116">BRAKE_MAP</a>, <a class="el" href="Pedal_8hpp_source.html#l00082">car</a>, <a class="el" href="Interp_8hpp_source.html#l00045">LinearInterp&lt; Tin, Tout, Tmid, size &gt;::interp()</a>, <a class="el" href="Pedal_8hpp_source.html#l00062">PedalConstants::MIN_REGEN_RPM_VAL</a>, <a class="el" href="CarState_8hpp_source.html#l00045">TelemetryFramePedal::StateByteStatus::Bits::motor_no_read</a>, <a class="el" href="CarState_8hpp_source.html#l00161">CarState::pedal</a>, <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, <a class="el" href="Pedal_8hpp_source.html#l00031">REGEN_ENABLED</a>, <a class="el" href="CarState_8hpp_source.html#l00046">TelemetryFramePedal::StateByteStatus::Bits::screenshot</a>, <a class="el" href="Interp_8hpp_source.html#l00076">LinearInterp&lt; Tin, Tout, Tmid, size &gt;::start()</a>, <a class="el" href="CarState_8hpp_source.html#l00072">TelemetryFramePedal::status</a>, and <a class="el" href="Pedal_8hpp_source.html#l00115">THROTTLE_MAP</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_ae82e0ae8a1a0c6918d43fb27bf8d9d0d_cgraph.svg" width="407" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_ae82e0ae8a1a0c6918d43fb27bf8d9d0d_cgraph.svg" width="404" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -510,15 +510,15 @@ Here is the caller graph for this function:</div>
 
 <p>Reads motor data from the CAN bus and updates the <a class="el" href="structCarState.html" title="Represents the state of the car. Holds telemetry data and status, used as central data sharing struct...">CarState</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00286">286</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00289">289</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="Pedal_8hpp_source.html#l00079">car</a>, <a class="el" href="Pedal_8hpp_source.html#l00082">last_motor_read_millis</a>, <a class="el" href="Pedal_8hpp_source.html#l00036">MAX_MOTOR_READ_MILLIS</a>, <a class="el" href="CarState_8hpp_source.html#l00163">CarState::millis</a>, <a class="el" href="CarState_8hpp_source.html#l00160">CarState::motor</a>, <a class="el" href="Pedal_8hpp_source.html#l00080">motor_can</a>, <a class="el" href="CarState_8hpp_source.html#l00100">TelemetryFrameMotor::motor_error</a>, <a class="el" href="CarState_8hpp_source.html#l00043">TelemetryFramePedal::StateByteStatus::Bits::motor_no_read</a>, <a class="el" href="Pedal_8hpp_source.html#l00117">MOTOR_READ</a>, <a class="el" href="CarState_8hpp_source.html#l00099">TelemetryFrameMotor::motor_rpm</a>, <a class="el" href="CarState_8hpp_source.html#l00101">TelemetryFrameMotor::motor_warn</a>, <a class="el" href="CarState_8hpp_source.html#l00159">CarState::pedal</a>, <a class="el" href="Pedal_8hpp_source.html#l00121">SPEED_IST</a>, <a class="el" href="CarState_8hpp_source.html#l00070">TelemetryFramePedal::status</a>, and <a class="el" href="Pedal_8hpp_source.html#l00122">WARN_ERR</a>.</p>
+<p class="reference">References <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="Pedal_8hpp_source.html#l00082">car</a>, <a class="el" href="Pedal_8hpp_source.html#l00085">last_motor_read_millis</a>, <a class="el" href="Pedal_8hpp_source.html#l00039">MAX_MOTOR_READ_MILLIS</a>, <a class="el" href="CarState_8hpp_source.html#l00165">CarState::millis</a>, <a class="el" href="CarState_8hpp_source.html#l00162">CarState::motor</a>, <a class="el" href="Pedal_8hpp_source.html#l00083">motor_can</a>, <a class="el" href="CarState_8hpp_source.html#l00102">TelemetryFrameMotor::motor_error</a>, <a class="el" href="CarState_8hpp_source.html#l00045">TelemetryFramePedal::StateByteStatus::Bits::motor_no_read</a>, <a class="el" href="Pedal_8hpp_source.html#l00120">MOTOR_READ</a>, <a class="el" href="CarState_8hpp_source.html#l00101">TelemetryFrameMotor::motor_rpm</a>, <a class="el" href="CarState_8hpp_source.html#l00103">TelemetryFrameMotor::motor_warn</a>, <a class="el" href="CarState_8hpp_source.html#l00161">CarState::pedal</a>, <a class="el" href="Pedal_8hpp_source.html#l00124">SPEED_IST</a>, <a class="el" href="CarState_8hpp_source.html#l00072">TelemetryFramePedal::status</a>, and <a class="el" href="Pedal_8hpp_source.html#l00125">WARN_ERR</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00078">schedulerMotorRead()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00082">schedulerMotorRead()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_aa66167fb494c00db7b8a0b8140e85973_icgraph.svg" width="455" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_aa66167fb494c00db7b8a0b8140e85973_icgraph.svg" width="452" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -572,15 +572,15 @@ Here is the caller graph for this function:</div>
 <p>&lt; data, sub ID</p>
 <p>&lt; data, read period in ms</p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00258">258</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00261">261</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Pedal_8hpp_source.html#l00080">motor_can</a>, <a class="el" href="Pedal_8hpp_source.html#l00116">MOTOR_SEND</a>, and <a class="el" href="Pedal_8hpp_source.html#l00119">REGID_READ</a>.</p>
+<p class="reference">References <a class="el" href="Pedal_8hpp_source.html#l00083">motor_can</a>, <a class="el" href="Pedal_8hpp_source.html#l00119">MOTOR_SEND</a>, and <a class="el" href="Pedal_8hpp_source.html#l00122">REGID_READ</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00072">initMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00075">initMotor()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_aec7ba639c6b2e3596d3ae1d14d3572ea_icgraph.svg" width="460" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_aec7ba639c6b2e3596d3ae1d14d3572ea_icgraph.svg" width="458" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -603,21 +603,21 @@ Here is the caller graph for this function:</div>
 
 <p>Sends the appropriate CAN frame to the motor based on pedal and car state. </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00156">156</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00159">159</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CarState_8hpp_source.html#l00027">TelemetryFramePedal::apps_3v3</a>, <a class="el" href="CarState_8hpp_source.html#l00026">TelemetryFramePedal::apps_5v</a>, <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="CarState_8hpp_source.html#l00028">TelemetryFramePedal::brake</a>, <a class="el" href="Pedal_8hpp_source.html#l00110">brake_filter</a>, <a class="el" href="Pedal_8hpp_source.html#l00079">car</a>, <a class="el" href="CarState_8hpp_source.html#l00039">TelemetryFramePedal::StateByteStatus::Bits::car_status</a>, <a class="el" href="Pedal_8hpp_source.html#l00030">FLIP_MOTOR_DIR</a>, <a class="el" href="CarState_8hpp_source.html#l00045">TelemetryFramePedal::StateByteStatus::Bits::force_stop</a>, <a class="el" href="SignalProcessing_8tpp_source.html#l00095">ExponentialFilter&lt; TypeInput, TypeMid, OLD_RATIO, NEW_RATIO &gt;::getFiltered()</a>, <a class="el" href="CarState_8hpp_source.html#l00160">CarState::motor</a>, <a class="el" href="Pedal_8hpp_source.html#l00080">motor_can</a>, <a class="el" href="CarState_8hpp_source.html#l00099">TelemetryFrameMotor::motor_rpm</a>, <a class="el" href="CarState_8hpp_source.html#l00159">CarState::pedal</a>, <a class="el" href="Pedal_8hpp_source.html#l00108">pedal1_filter</a>, <a class="el" href="Pedal_8hpp_source.html#l00109">pedal2_filter</a>, <a class="el" href="Pedal_8hpp_source.html#l00076">pedal_final</a>, <a class="el" href="Pedal_8cpp_source.html#l00196">pedalTorqueMapping()</a>, <a class="el" href="CarState_8hpp_source.html#l00070">TelemetryFramePedal::status</a>, <a class="el" href="Pedal_8hpp_source.html#l00090">stop_frame</a>, <a class="el" href="Pedal_8hpp_source.html#l00100">torque_msg</a>, and <a class="el" href="CarState_8hpp_source.html#l00098">TelemetryFrameMotor::torque_val</a>.</p>
+<p class="reference">References <a class="el" href="CarState_8hpp_source.html#l00029">TelemetryFramePedal::apps_3v3</a>, <a class="el" href="CarState_8hpp_source.html#l00028">TelemetryFramePedal::apps_5v</a>, <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="CarState_8hpp_source.html#l00030">TelemetryFramePedal::brake</a>, <a class="el" href="Pedal_8hpp_source.html#l00113">brake_filter</a>, <a class="el" href="Pedal_8hpp_source.html#l00082">car</a>, <a class="el" href="CarState_8hpp_source.html#l00041">TelemetryFramePedal::StateByteStatus::Bits::car_status</a>, <a class="el" href="Pedal_8hpp_source.html#l00033">FLIP_MOTOR_DIR</a>, <a class="el" href="CarState_8hpp_source.html#l00047">TelemetryFramePedal::StateByteStatus::Bits::force_stop</a>, <a class="el" href="SignalProcessing_8tpp_source.html#l00097">ExponentialFilter&lt; TypeInput, TypeMid, OLD_RATIO, NEW_RATIO &gt;::getFiltered()</a>, <a class="el" href="CarState_8hpp_source.html#l00162">CarState::motor</a>, <a class="el" href="Pedal_8hpp_source.html#l00083">motor_can</a>, <a class="el" href="CarState_8hpp_source.html#l00101">TelemetryFrameMotor::motor_rpm</a>, <a class="el" href="CarState_8hpp_source.html#l00161">CarState::pedal</a>, <a class="el" href="Pedal_8hpp_source.html#l00111">pedal1_filter</a>, <a class="el" href="Pedal_8hpp_source.html#l00112">pedal2_filter</a>, <a class="el" href="Pedal_8hpp_source.html#l00079">pedal_final</a>, <a class="el" href="Pedal_8cpp_source.html#l00199">pedalTorqueMapping()</a>, <a class="el" href="CarState_8hpp_source.html#l00072">TelemetryFramePedal::status</a>, <a class="el" href="Pedal_8hpp_source.html#l00093">stop_frame</a>, <a class="el" href="Pedal_8hpp_source.html#l00103">torque_msg</a>, and <a class="el" href="CarState_8hpp_source.html#l00100">TelemetryFrameMotor::torque_val</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00082">schedulerPedalSend()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00086">schedulerPedalSend()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a1027941444ce0b3f32ab8991e05c2015_cgraph.svg" width="594" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a1027941444ce0b3f32ab8991e05c2015_cgraph.svg" width="590" height="159"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a1027941444ce0b3f32ab8991e05c2015_icgraph.svg" width="458" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a1027941444ce0b3f32ab8991e05c2015_icgraph.svg" width="454" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -666,29 +666,29 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00099">99</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8cpp_source.html#l00102">102</a> of file <a class="el" href="Pedal_8cpp_source.html">Pedal.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SignalProcessing_8tpp_source.html#l00081">ExponentialFilter&lt; TypeInput, TypeMid, OLD_RATIO, NEW_RATIO &gt;::addSample()</a>, <a class="el" href="CarState_8hpp_source.html#l00061">TelemetryFramePedal::StateByteFaults::Bits::apps_3v3_high</a>, <a class="el" href="CarState_8hpp_source.html#l00060">TelemetryFramePedal::StateByteFaults::Bits::apps_3v3_low</a>, <a class="el" href="Curves_8hpp_source.html#l00021">APPS_3V3_MAX</a>, <a class="el" href="Curves_8hpp_source.html#l00020">APPS_3V3_MIN</a>, <a class="el" href="CarState_8hpp_source.html#l00059">TelemetryFramePedal::StateByteFaults::Bits::apps_5v_high</a>, <a class="el" href="CarState_8hpp_source.html#l00058">TelemetryFramePedal::StateByteFaults::Bits::apps_5v_low</a>, <a class="el" href="Curves_8hpp_source.html#l00018">APPS_5V_MAX</a>, <a class="el" href="Curves_8hpp_source.html#l00017">APPS_5V_MIN</a>, <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="unionTelemetryFramePedal_1_1StateByteFaults.html#af936a4f6990e8717b7d2f153800c4a8b">TelemetryFramePedal::StateByteFaults::bits</a>, <a class="el" href="Pedal_8hpp_source.html#l00110">brake_filter</a>, <a class="el" href="CarState_8hpp_source.html#l00063">TelemetryFramePedal::StateByteFaults::Bits::brake_high</a>, <a class="el" href="CarState_8hpp_source.html#l00062">TelemetryFramePedal::StateByteFaults::Bits::brake_low</a>, <a class="el" href="Curves_8hpp_source.html#l00043">brake_max</a>, <a class="el" href="Curves_8hpp_source.html#l00042">brake_min</a>, <a class="el" href="CarState_8hpp_source.html#l00051">TelemetryFramePedal::StateByteFaults::byte</a>, <a class="el" href="Pedal_8hpp_source.html#l00079">car</a>, <a class="el" href="Pedal_8cpp_source.html#l00237">checkPedalFault()</a>, <a class="el" href="CarState_8hpp_source.html#l00056">TelemetryFramePedal::StateByteFaults::Bits::fault_active</a>, <a class="el" href="Pedal_8hpp_source.html#l00034">FAULT_CHECK_HEX</a>, <a class="el" href="CarState_8hpp_source.html#l00057">TelemetryFramePedal::StateByteFaults::Bits::fault_exceeded</a>, <a class="el" href="Pedal_8hpp_source.html#l00081">fault_start_millis</a>, <a class="el" href="CarState_8hpp_source.html#l00071">TelemetryFramePedal::faults</a>, <a class="el" href="CarState_8hpp_source.html#l00045">TelemetryFramePedal::StateByteStatus::Bits::force_stop</a>, <a class="el" href="CarState_8hpp_source.html#l00163">CarState::millis</a>, <a class="el" href="CarState_8hpp_source.html#l00159">CarState::pedal</a>, <a class="el" href="Pedal_8hpp_source.html#l00108">pedal1_filter</a>, <a class="el" href="Pedal_8hpp_source.html#l00109">pedal2_filter</a>, and <a class="el" href="CarState_8hpp_source.html#l00070">TelemetryFramePedal::status</a>.</p>
+<p class="reference">References <a class="el" href="SignalProcessing_8tpp_source.html#l00083">ExponentialFilter&lt; TypeInput, TypeMid, OLD_RATIO, NEW_RATIO &gt;::addSample()</a>, <a class="el" href="CarState_8hpp_source.html#l00063">TelemetryFramePedal::StateByteFaults::Bits::apps_3v3_high</a>, <a class="el" href="CarState_8hpp_source.html#l00062">TelemetryFramePedal::StateByteFaults::Bits::apps_3v3_low</a>, <a class="el" href="Curves_8hpp_source.html#l00023">APPS_3V3_MAX</a>, <a class="el" href="Curves_8hpp_source.html#l00022">APPS_3V3_MIN</a>, <a class="el" href="CarState_8hpp_source.html#l00061">TelemetryFramePedal::StateByteFaults::Bits::apps_5v_high</a>, <a class="el" href="CarState_8hpp_source.html#l00060">TelemetryFramePedal::StateByteFaults::Bits::apps_5v_low</a>, <a class="el" href="Curves_8hpp_source.html#l00020">APPS_5V_MAX</a>, <a class="el" href="Curves_8hpp_source.html#l00019">APPS_5V_MIN</a>, <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="unionTelemetryFramePedal_1_1StateByteFaults.html#af936a4f6990e8717b7d2f153800c4a8b">TelemetryFramePedal::StateByteFaults::bits</a>, <a class="el" href="Pedal_8hpp_source.html#l00113">brake_filter</a>, <a class="el" href="CarState_8hpp_source.html#l00065">TelemetryFramePedal::StateByteFaults::Bits::brake_high</a>, <a class="el" href="CarState_8hpp_source.html#l00064">TelemetryFramePedal::StateByteFaults::Bits::brake_low</a>, <a class="el" href="Curves_8hpp_source.html#l00045">brake_max</a>, <a class="el" href="Curves_8hpp_source.html#l00044">brake_min</a>, <a class="el" href="CarState_8hpp_source.html#l00053">TelemetryFramePedal::StateByteFaults::byte</a>, <a class="el" href="Pedal_8hpp_source.html#l00082">car</a>, <a class="el" href="Pedal_8cpp_source.html#l00240">checkPedalFault()</a>, <a class="el" href="CarState_8hpp_source.html#l00058">TelemetryFramePedal::StateByteFaults::Bits::fault_active</a>, <a class="el" href="Pedal_8hpp_source.html#l00037">FAULT_CHECK_HEX</a>, <a class="el" href="CarState_8hpp_source.html#l00059">TelemetryFramePedal::StateByteFaults::Bits::fault_exceeded</a>, <a class="el" href="Pedal_8hpp_source.html#l00084">fault_start_millis</a>, <a class="el" href="CarState_8hpp_source.html#l00073">TelemetryFramePedal::faults</a>, <a class="el" href="CarState_8hpp_source.html#l00047">TelemetryFramePedal::StateByteStatus::Bits::force_stop</a>, <a class="el" href="CarState_8hpp_source.html#l00165">CarState::millis</a>, <a class="el" href="CarState_8hpp_source.html#l00161">CarState::pedal</a>, <a class="el" href="Pedal_8hpp_source.html#l00111">pedal1_filter</a>, <a class="el" href="Pedal_8hpp_source.html#l00112">pedal2_filter</a>, and <a class="el" href="CarState_8hpp_source.html#l00072">TelemetryFramePedal::status</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a0ec014fb5ce414deded33ae3db05e231_cgraph.svg" width="535" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a0ec014fb5ce414deded33ae3db05e231_cgraph.svg" width="534" height="132"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a0ec014fb5ce414deded33ae3db05e231_icgraph.svg" width="220" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPedal_a0ec014fb5ce414deded33ae3db05e231_icgraph.svg" width="219" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6f52613ea14a705860324a7cd47610c0" name="a6f52613ea14a705860324a7cd47610c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f52613ea14a705860324a7cd47610c0">&#9670;&#160;</a></span>APPS_3V3_SCALE_MAP</h2>
+<a id="a12f10e100e17f5fda62272fe03804f9b" name="a12f10e100e17f5fda62272fe03804f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f10e100e17f5fda62272fe03804f9b">&#9670;&#160;</a></span>APPS_3V3_SCALE_MAP</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -697,7 +697,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classLinearInterp.html">LinearInterp</a>&lt;uint16_t, uint16_t, uint32_t, 3&gt; Pedal::APPS_3V3_SCALE_MAP {<a class="el" href="Curves_8hpp.html#adac8b3a21f7ecfb6700361ba6130e210">APPS_3V3_SCALE_TABLE</a>}</td>
+          <td class="memname">constexpr <a class="el" href="classLinearInterp.html">LinearInterp</a>&lt;uint16_t, uint16_t, uint32_t, 2&gt; Pedal::APPS_3V3_SCALE_MAP {<a class="el" href="Curves_8hpp.html#a7319b955b5bc8bd900d393f63c05c11f">APPS_3V3_SCALE_TABLE</a>}</td>
         </tr>
       </table>
   </td>
@@ -708,9 +708,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Interpolation map for APPS_3V3-&gt;APPS_5V </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00114">114</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00117">117</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00237">checkPedalFault()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00240">checkPedalFault()</a>.</p>
 
 </div>
 </div>
@@ -735,9 +735,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p><a class="el" href="classFilter.html" title="Abstract Base Class for signal filters. Defines the interface for adding samples and retrieving filte...">Filter</a> for brake sensor input </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00110">110</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00113">113</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00099">update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00102">update()</a>.</p>
 
 </div>
 </div>
@@ -762,9 +762,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Interpolation map for brake torque </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00113">113</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00116">116</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00196">pedalTorqueMapping()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00199">pedalTorqueMapping()</a>.</p>
 
 </div>
 </div>
@@ -789,9 +789,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Reference to <a class="el" href="structCarState.html" title="Represents the state of the car. Holds telemetry data and status, used as central data sharing struct...">CarState</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00079">79</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00082">82</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00237">checkPedalFault()</a>, <a class="el" href="Pedal_8cpp_source.html#l00196">pedalTorqueMapping()</a>, <a class="el" href="Pedal_8cpp_source.html#l00286">readMotor()</a>, <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00099">update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00240">checkPedalFault()</a>, <a class="el" href="Pedal_8cpp_source.html#l00199">pedalTorqueMapping()</a>, <a class="el" href="Pedal_8cpp_source.html#l00289">readMotor()</a>, <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00102">update()</a>.</p>
 
 </div>
 </div>
@@ -816,9 +816,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Period of reading motor errors in ms, set to 20ms to get 10ms reads alongside rpm </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00125">125</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00128">128</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00072">initMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00075">initMotor()</a>.</p>
 
 </div>
 </div>
@@ -843,9 +843,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Timestamp for when a fault started </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00081">81</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00084">84</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00099">update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00102">update()</a>.</p>
 
 </div>
 </div>
@@ -870,9 +870,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Flag indicating if motor error data has been successfully read </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00085">85</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00088">88</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00072">initMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00075">initMotor()</a>.</p>
 
 </div>
 </div>
@@ -897,9 +897,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Flag indicating if motor speed data has been successfully read </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00084">84</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00087">87</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00072">initMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00075">initMotor()</a>.</p>
 
 </div>
 </div>
@@ -924,9 +924,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Timestamp for the last motor data read </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00082">82</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00085">85</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00286">readMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00289">readMotor()</a>.</p>
 
 </div>
 </div>
@@ -951,9 +951,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Reference to MCP2515 for sending CAN messages </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00080">80</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00083">83</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00270">checkCyclicRead()</a>, <a class="el" href="Pedal_8cpp_source.html#l00052">initFilter()</a>, <a class="el" href="Pedal_8cpp_source.html#l00286">readMotor()</a>, <a class="el" href="Pedal_8cpp_source.html#l00258">sendCyclicRead()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00273">checkCyclicRead()</a>, <a class="el" href="Pedal_8cpp_source.html#l00055">initFilter()</a>, <a class="el" href="Pedal_8cpp_source.html#l00289">readMotor()</a>, <a class="el" href="Pedal_8cpp_source.html#l00261">sendCyclicRead()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>.</p>
 
 </div>
 </div>
@@ -978,9 +978,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Motor read CAN ID </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00117">117</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00120">120</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00270">checkCyclicRead()</a>, <a class="el" href="Pedal_8cpp_source.html#l00052">initFilter()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00286">readMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00273">checkCyclicRead()</a>, <a class="el" href="Pedal_8cpp_source.html#l00055">initFilter()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00289">readMotor()</a>.</p>
 
 </div>
 </div>
@@ -1005,9 +1005,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Motor send CAN ID </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00116">116</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00119">119</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00258">sendCyclicRead()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00261">sendCyclicRead()</a>.</p>
 
 </div>
 </div>
@@ -1032,9 +1032,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p><a class="el" href="classFilter.html" title="Abstract Base Class for signal filters. Defines the interface for adding samples and retrieving filte...">Filter</a> for first pedal sensor input </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00108">108</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00111">111</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00099">update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00102">update()</a>.</p>
 
 </div>
 </div>
@@ -1059,9 +1059,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p><a class="el" href="classFilter.html" title="Abstract Base Class for signal filters. Defines the interface for adding samples and retrieving filte...">Filter</a> for second pedal sensor input </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00109">109</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00112">112</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00099">update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00102">update()</a>.</p>
 
 </div>
 </div>
@@ -1078,9 +1078,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Final pedal value is taken directly from apps_5v, see initializer </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00076">76</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00079">79</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>.</p>
 
 </div>
 </div>
@@ -1105,9 +1105,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Register ID for reading motor data </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00119">119</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00122">122</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00258">sendCyclicRead()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00261">sendCyclicRead()</a>.</p>
 
 </div>
 </div>
@@ -1132,9 +1132,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Period of reading motor data in ms, set to 20ms to get 10ms reads alongside errors </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00124">124</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00127">127</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00072">initMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00075">initMotor()</a>.</p>
 
 </div>
 </div>
@@ -1159,9 +1159,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Register ID for "actual speed value" </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00121">121</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00124">124</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00072">initMotor()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00286">readMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00075">initMotor()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00289">readMotor()</a>.</p>
 
 </div>
 </div>
@@ -1190,13 +1190,13 @@ Here is the caller graph for this function:</div>
 <div class="line">        0x90,       </div>
 <div class="line">        0x00,       </div>
 <div class="line">        0x00}</div>
-<div class="ttc" id="aclassPedal_html_abee50582bc518967542f5015046c51a6"><div class="ttname"><a href="classPedal.html#abee50582bc518967542f5015046c51a6">Pedal::MOTOR_SEND</a></div><div class="ttdeci">static constexpr canid_t MOTOR_SEND</div><div class="ttdef"><b>Definition:</b> <a href="Pedal_8hpp_source.html#l00116">Pedal.hpp:116</a></div></div>
+<div class="ttc" id="aclassPedal_html_abee50582bc518967542f5015046c51a6"><div class="ttname"><a href="classPedal.html#abee50582bc518967542f5015046c51a6">Pedal::MOTOR_SEND</a></div><div class="ttdeci">static constexpr canid_t MOTOR_SEND</div><div class="ttdef"><b>Definition:</b> <a href="Pedal_8hpp_source.html#l00119">Pedal.hpp:119</a></div></div>
 </div><!-- fragment -->
 <p>CAN frame to stop the motor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00090">90</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00093">93</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>.</p>
 
 </div>
 </div>
@@ -1221,9 +1221,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Interpolation map for throttle torque </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00112">112</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00115">115</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00237">checkPedalFault()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00196">pedalTorqueMapping()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00240">checkPedalFault()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00199">pedalTorqueMapping()</a>.</p>
 
 </div>
 </div>
@@ -1255,9 +1255,9 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p>CAN frame for torque command. </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00100">100</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00103">103</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00156">sendFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00159">sendFrame()</a>.</p>
 
 </div>
 </div>
@@ -1282,9 +1282,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Register ID for warnings and errors </p>
 
-<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00122">122</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pedal_8hpp_source.html#l00125">125</a> of file <a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00072">initMotor()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00286">readMotor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Pedal_8cpp_source.html#l00075">initMotor()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00289">readMotor()</a>.</p>
 
 </div>
 </div>

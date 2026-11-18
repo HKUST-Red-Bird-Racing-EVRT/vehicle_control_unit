@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['checkcyclicread_0',['checkCyclicRead',['../classPedal.html#a2ef64ef89c257cc2840425c662f7ad14',1,'Pedal']]],
-  ['checkhv_1',['checkHv',['../classBMS.html#a7de82f50c43e50529739213e98b9b634',1,'BMS']]],
-  ['checkpedalfault_2',['checkPedalFault',['../classPedal.html#a4025bb96ea422dbba6d3b604a1066bc7',1,'Pedal']]],
-  ['cyclesneeded_3',['cyclesNeeded',['../classScheduler.html#a9e44ac674f314b307d08a42456cb6c8a',1,'Scheduler']]]
+  ['dbg_5fgeneral_0',['DBG_GENERAL',['../Debug_8hpp.html#a9d60671317b513353287b53444954a4b',1,'Debug.hpp']]],
+  ['dbg_5fgeneral_5fcan_1',['DBG_GENERAL_CAN',['../Debug_8hpp.html#a1c68ee33aecd3c1599e349752c4b37ca',1,'Debug.hpp']]],
+  ['dbgln_5fgeneral_2',['DBGLN_GENERAL',['../Debug_8hpp.html#a8e8d6e3de15309922f25c12f4d7cf727',1,'Debug.hpp']]]
 ];

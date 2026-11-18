@@ -1,6 +1,6 @@
 <map id="Filter&lt; TypeInput, TypeMid &gt;" name="Filter&lt; TypeInput, TypeMid &gt;">
-<area shape="rect" id="node1" title="Abstract Base Class for signal filters. Defines the interface for adding samples and retrieving filte..." alt="" coords="214,5,351,112"/>
-<area shape="rect" id="node2" href="$classExponentialFilter.html" title=" " alt="" coords="5,167,163,289"/>
-<area shape="rect" id="node3" href="$classAverageFilter.html" title="Filter with simple moving average algorithm." alt="" coords="187,160,378,296"/>
-<area shape="rect" id="node4" href="$classExponentialFilter.html" title="Filter with exponential moving average algorithm." alt="" coords="402,160,601,296"/>
+<area shape="rect" id="node1" title="Abstract Base Class for signal filters. Defines the interface for adding samples and retrieving filte..." alt="" coords="213,5,349,124"/>
+<area shape="rect" id="node2" href="$classExponentialFilter.html" title=" " alt="" coords="5,180,162,316"/>
+<area shape="rect" id="node3" href="$classAverageFilter.html" title="Filter with simple moving average algorithm." alt="" coords="186,172,376,324"/>
+<area shape="rect" id="node4" href="$classExponentialFilter.html" title="Filter with exponential moving average algorithm." alt="" coords="399,172,597,324"/>
 </map>

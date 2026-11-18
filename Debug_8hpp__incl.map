@@ -1,7 +1,7 @@
 <map id="vehicle_control_unit/lib/Debug/Debug.hpp" name="vehicle_control_unit/lib/Debug/Debug.hpp">
-<area shape="rect" id="node1" title="Debugging macros and functions for serial and CAN output." alt="" coords="62,5,225,45"/>
-<area shape="rect" id="node2" href="$Enums_8hpp.html" title="Enumeration definitions for the VCU." alt="" coords="37,93,132,119"/>
-<area shape="rect" id="node5" title=" " alt="" coords="156,93,251,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,167,76,192"/>
-<area shape="rect" id="node4" title=" " alt="" coords="100,167,157,192"/>
+<area shape="rect" id="node1" title="Debugging macros and functions for serial and CAN output." alt="" coords="62,5,224,50"/>
+<area shape="rect" id="node2" href="$Enums_8hpp.html" title="Enumeration definitions for the VCU." alt="" coords="38,98,131,126"/>
+<area shape="rect" id="node5" title=" " alt="" coords="155,98,248,126"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,174,76,201"/>
+<area shape="rect" id="node4" title=" " alt="" coords="100,174,157,201"/>
 </map>

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['scheduler_0',['scheduler',['../main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc',1,'main.cpp']]],
-  ['scheduler_1',['Scheduler',['../classScheduler.html#a299319973d96b26de8de719dca8822fd',1,'Scheduler::Scheduler()=delete'],['../classScheduler.html#a062196239232a8dc67ad82f40dc76c1c',1,'Scheduler::Scheduler(uint32_t period_us_, uint32_t spin_threshold_us_, unsigned long(*const current_time_us)())'],['../classScheduler.html',1,'Scheduler&lt; NUM_TASKS, NUM_MCP2515 &gt;']]],
+  ['scheduler_0',['Scheduler',['../classScheduler.html',1,'Scheduler&lt; NUM_TASKS, NUM_MCP2515 &gt;'],['../classScheduler.html#a299319973d96b26de8de719dca8822fd',1,'Scheduler::Scheduler()=delete'],['../classScheduler.html#a062196239232a8dc67ad82f40dc76c1c',1,'Scheduler::Scheduler(uint32_t period_us_, uint32_t spin_threshold_us_, unsigned long(*const current_time_us)())']]],
+  ['scheduler_1',['scheduler',['../main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc',1,'main.cpp']]],
   ['scheduler_2ehpp_2',['Scheduler.hpp',['../Scheduler_8hpp.html',1,'']]],
   ['scheduler_2etpp_3',['Scheduler.tpp',['../Scheduler_8tpp.html',1,'']]],
   ['scheduler_5fbms_4',['scheduler_bms',['../main_8cpp.html#a55b57abe9bcb30f6af0fb927f7d576a4',1,'main.cpp']]],
@@ -24,17 +24,14 @@ var searchData=
   ['spin_5fus_21',['SPIN_US',['../classScheduler.html#af0ce9306430ae59a0f5ef1b2a90215db',1,'Scheduler']]],
   ['stacarchangemsg_22',['StaCarChangeMsg',['../Enums_8hpp.html#a6b191ababec6777bcc2b83f8dae93629a548849b295cbe86aa2cd37908fb51b4e',1,'Enums.hpp']]],
   ['start_23',['start',['../classLinearInterp.html#ade361a63c34c53564a1bd9e8ae5b6c4b',1,'LinearInterp']]],
-  ['start_5fhv_5fmsg_24',['start_hv_msg',['../BMS_8hpp.html#a33b9a47cfce939f8cfa0b9a4a7ccfa55',1,'BMS.hpp']]],
-  ['started_25',['Started',['../Enums_8hpp.html#af9f10f99b9e1fe09756feb57c6520cd8a8428552d86c0d262a542a528af490afa',1,'Enums.hpp']]],
-  ['startin_26',['Startin',['../Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4bea2db90abd5f808b6532d43373f1759f84',1,'Enums.hpp']]],
-  ['starting_27',['Starting',['../Enums_8hpp.html#af9f10f99b9e1fe09756feb57c6520cd8ac2efe4bbd13e6cb0db293e72884273c0',1,'Enums.hpp']]],
-  ['state_5funknown_28',['state_unknown',['../structTelemetryFramePedal_1_1StateByteStatus_1_1Bits.html#a22cdf748ad0fad55b25fdb85e43f5f85',1,'TelemetryFramePedal::StateByteStatus::Bits']]],
-  ['statebytefaults_29',['StateByteFaults',['../unionTelemetryFramePedal_1_1StateByteFaults.html',1,'TelemetryFramePedal']]],
-  ['statebytestatus_30',['StateByteStatus',['../unionTelemetryFramePedal_1_1StateByteStatus.html',1,'TelemetryFramePedal']]],
-  ['status_31',['status',['../structTelemetryFramePedal.html#a4f24c347d3d4b9641c7880947385f258',1,'TelemetryFramePedal']]],
-  ['status_5fmillis_32',['status_millis',['../structCarState.html#abc863b4689f45ff6e1b21c5ca7918fa8',1,'CarState']]],
-  ['statuscanid_33',['StatusCanId',['../Enums_8hpp.html#a6b191ababec6777bcc2b83f8dae93629',1,'Enums.hpp']]],
-  ['stop_5fframe_34',['stop_frame',['../classPedal.html#a85f0168c8a81fa64e1e311f9250e9f19',1,'Pedal']]],
-  ['stop_5fhv_5fmsg_35',['stop_hv_msg',['../BMS_8hpp.html#a67578567cbc8901452e6d3b277f376ca',1,'BMS.hpp']]],
-  ['synchronize_36',['synchronize',['../classScheduler.html#a4c5eaffcb5f1b4f2c1e82ba99a54f963',1,'Scheduler']]]
+  ['start_5fhv_5fmsg_24',['start_hv_msg',['../Ams_8hpp.html#a33b9a47cfce939f8cfa0b9a4a7ccfa55',1,'Ams.hpp']]],
+  ['startin_25',['Startin',['../Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4bea2db90abd5f808b6532d43373f1759f84',1,'Enums.hpp']]],
+  ['state_5funknown_26',['state_unknown',['../structTelemetryFramePedal_1_1StateByteStatus_1_1Bits.html#a22cdf748ad0fad55b25fdb85e43f5f85',1,'TelemetryFramePedal::StateByteStatus::Bits']]],
+  ['statebytefaults_27',['StateByteFaults',['../unionTelemetryFramePedal_1_1StateByteFaults.html',1,'TelemetryFramePedal']]],
+  ['statebytestatus_28',['StateByteStatus',['../unionTelemetryFramePedal_1_1StateByteStatus.html',1,'TelemetryFramePedal']]],
+  ['status_29',['status',['../structTelemetryFramePedal.html#a4f24c347d3d4b9641c7880947385f258',1,'TelemetryFramePedal']]],
+  ['status_5fmillis_30',['status_millis',['../structCarState.html#abc863b4689f45ff6e1b21c5ca7918fa8',1,'CarState']]],
+  ['statuscanid_31',['StatusCanId',['../Enums_8hpp.html#a6b191ababec6777bcc2b83f8dae93629',1,'Enums.hpp']]],
+  ['stop_5fframe_32',['stop_frame',['../classPedal.html#a85f0168c8a81fa64e1e311f9250e9f19',1,'Pedal']]],
+  ['synchronize_33',['synchronize',['../classScheduler.html#a4c5eaffcb5f1b4f2c1e82ba99a54f963',1,'Scheduler']]]
 ];

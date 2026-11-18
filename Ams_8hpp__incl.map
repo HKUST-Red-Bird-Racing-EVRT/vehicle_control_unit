@@ -1,0 +1,10 @@
+<map id="vehicle_control_unit/lib/Ams/Ams.hpp" name="vehicle_control_unit/lib/Ams/Ams.hpp">
+<area shape="rect" id="node1" title="Declaration of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="144,5,296,50"/>
+<area shape="rect" id="node2" href="$Scheduler_8hpp.html" title="Declaration of the Scheduler class template, for scheduling tasks on multiple MCP2515 instances." alt="" coords="48,98,160,126"/>
+<area shape="rect" id="node7" href="$CarState_8hpp.html" title="Definition of the CarState structure representing the state of the car." alt="" coords="190,174,295,201"/>
+<area shape="rect" id="node8" title=" " alt="" coords="257,98,351,126"/>
+<area shape="rect" id="node3" href="$Enums_8hpp.html" title="Enumeration definitions for the VCU." alt="" coords="105,249,199,277"/>
+<area shape="rect" id="node6" href="$Scheduler_8tpp.html" title="Implementation of the Scheduler class template." alt="" coords="5,174,115,201"/>
+<area shape="rect" id="node4" title=" " alt="" coords="240,325,310,353"/>
+<area shape="rect" id="node5" title=" " alt="" coords="146,325,203,353"/>
+</map>

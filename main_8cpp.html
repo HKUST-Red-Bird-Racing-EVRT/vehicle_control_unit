@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="BoardConfig_8h_source.html">BoardConfig.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Pedal_8hpp_source.html">Pedal.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BMS_8hpp_source.html">BMS.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Ams_8hpp_source.html">Ams.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Enums_8hpp_source.html">Enums.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CarState_8hpp_source.html">CarState.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Scheduler_8hpp_source.html">Scheduler.hpp</a>&quot;</code><br />
@@ -127,15 +127,15 @@ Include dependency graph for main.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a6770590dae448c8096d1851aac19aa56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6770590dae448c8096d1851aac19aa56">mcp2515_DL</a>&#160;&#160;&#160;<a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a></td></tr>
+<tr class="memitem:a6770590dae448c8096d1851aac19aa56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6770590dae448c8096d1851aac19aa56">mcp2515_DL</a>&#160;&#160;&#160;<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a></td></tr>
 <tr class="separator:a6770590dae448c8096d1851aac19aa56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9215d3772fc8e03a4ccd56fe9c7b5fc5"><td class="memItemLeft" align="right" valign="top">MCP2515&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a> (<a class="el" href="BoardConfig_8h.html#a65b24582a92e368f91aca95b4dbe5847">CS_CAN_MOTOR</a>)</td></tr>
 <tr class="separator:a9215d3772fc8e03a4ccd56fe9c7b5fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a926cc13a4f62a65d28fd845a00bfd779"><td class="memItemLeft" align="right" valign="top">MCP2515&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a> (<a class="el" href="BoardConfig_8h.html#ab476064511df004d8a67875afbd3521b">CS_CAN_BMS</a>)</td></tr>
-<tr class="separator:a926cc13a4f62a65d28fd845a00bfd779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8b350f3ef251e3f25732b08d0e71285"><td class="memItemLeft" align="right" valign="top">MCP2515&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab8b350f3ef251e3f25732b08d0e71285">mcp2515_BMS</a> (<a class="el" href="BoardConfig_8h.html#a38ebdaa69eef015447bc7227d17a64cf">CS_CAN_AMS</a>)</td></tr>
+<tr class="separator:ab8b350f3ef251e3f25732b08d0e71285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95581c94a7dc4a68f61fa24f06cc90d1"><td class="memItemLeft" align="right" valign="top">MCP2515&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a95581c94a7dc4a68f61fa24f06cc90d1">mcp2515_DL</a> (<a class="el" href="BoardConfig_8h.html#a661f70456357c09fff639665b5e89852">CS_CAN_DL</a>)</td></tr>
 <tr class="separator:a95581c94a7dc4a68f61fa24f06cc90d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18e4d34069ea83a60c271f6633a2e808"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPedal.html">Pedal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal</a> (<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>, car.pedal.apps_5v)</td></tr>
@@ -171,7 +171,7 @@ Variables</h2></td></tr>
 <tr class="separator:ab31c3e7c8bfd2740573b89eb4a2b1d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa82c7cb82034ed6919b0a66d33aaf35d"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa82c7cb82034ed6919b0a66d33aaf35d">NUM_MCP</a> = 3</td></tr>
 <tr class="separator:aa82c7cb82034ed6919b0a66d33aaf35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39f18c330e82b1bb457acf12ff206e28"><td class="memItemLeft" align="right" valign="top">MCP2515&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a39f18c330e82b1bb457acf12ff206e28">MCPS</a> [<a class="el" href="main_8cpp.html#aa82c7cb82034ed6919b0a66d33aaf35d">NUM_MCP</a>] = {<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a>, <a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a> }</td></tr>
+<tr class="memitem:a39f18c330e82b1bb457acf12ff206e28"><td class="memItemLeft" align="right" valign="top">MCP2515&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a39f18c330e82b1bb457acf12ff206e28">MCPS</a> [<a class="el" href="main_8cpp.html#aa82c7cb82034ed6919b0a66d33aaf35d">NUM_MCP</a>] = {<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a>, <a class="el" href="main_8cpp.html#ab8b350f3ef251e3f25732b08d0e71285">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a> }</td></tr>
 <tr class="separator:a39f18c330e82b1bb457acf12ff206e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6977c8d9a85d7eecbf236ebc38dcd8b"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae6977c8d9a85d7eecbf236ebc38dcd8b">BUSSIN_MILLIS</a> = 2000</td></tr>
 <tr class="separator:ae6977c8d9a85d7eecbf236ebc38dcd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,18 +184,18 @@ Variables</h2></td></tr>
 <tr class="memitem:ab5d80ba1651714c705b8b516e541d9d8"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structCarState.html">CarState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a></td></tr>
 <tr class="memdesc:ab5d80ba1651714c705b8b516e541d9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global car state structure.  <br /></td></tr>
 <tr class="separator:ab5d80ba1651714c705b8b516e541d9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3f382b3698110b33ae3911fe44fb4b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBMS.html">BMS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab3f382b3698110b33ae3911fe44fb4b8">bms</a> (<a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>)</td></tr>
-<tr class="separator:ab3f382b3698110b33ae3911fe44fb4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99b433a194ab30bc080dccbcfa90a1b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTelemetry.html">Telemetry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a99b433a194ab30bc080dccbcfa90a1b9">telem</a> (<a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>)</td></tr>
-<tr class="separator:a99b433a194ab30bc080dccbcfa90a1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef6f7d1cabe7653d25e464714414f31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAms.html">Ams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9ef6f7d1cabe7653d25e464714414f31">ams</a> (<a class="el" href="main_8cpp.html#ab8b350f3ef251e3f25732b08d0e71285">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>)</td></tr>
+<tr class="separator:a9ef6f7d1cabe7653d25e464714414f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9450744043495ec0c2134d1af930cf56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTelemetry.html">Telemetry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9450744043495ec0c2134d1af930cf56">telem</a> (<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>)</td></tr>
+<tr class="separator:a9450744043495ec0c2134d1af930cf56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7cedd8cb749765bdaa70bf5c65b5fdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScheduler.html">Scheduler</a>&lt; 3, <a class="el" href="main_8cpp.html#aa82c7cb82034ed6919b0a66d33aaf35d">NUM_MCP</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc">scheduler</a> (10000, 500, *micros)</td></tr>
 <tr class="separator:af7cedd8cb749765bdaa70bf5c65b5fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main VCU program entry point. </p>
-<dl class="section author"><dt>Author</dt><dd>Planeson, Chiho, Red Bird Racing </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>2.2.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2026-02-25 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Planeson (<a href="#" onclick="location.href='mai'+'lto:'+'car'+'so'+'n.c'+'pk'+'@pr'+'ot'+'on.'+'me'; return false;">carso<span class="obfuscator">.nosp@m.</span>n.cp<span class="obfuscator">.nosp@m.</span>k@pro<span class="obfuscator">.nosp@m.</span>ton.<span class="obfuscator">.nosp@m.</span>me</a>), Oscar (<a href="#" onclick="location.href='mai'+'lto:'+'osc'+'ar'+'ckh'+'08'+'18@'+'gm'+'ail'+'.c'+'om'; return false;">oscar<span class="obfuscator">.nosp@m.</span>ckh0<span class="obfuscator">.nosp@m.</span>818@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a>), Chiho (<a href="#" onclick="location.href='mai'+'lto:'+'nga'+'nc'+'hih'+'on'+'@gm'+'ai'+'l.c'+'om'; return false;">nganc<span class="obfuscator">.nosp@m.</span>hiho<span class="obfuscator">.nosp@m.</span>n@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.3 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-10 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -206,12 +206,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define mcp2515_DL&#160;&#160;&#160;<a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a></td>
+          <td class="memname">#define mcp2515_DL&#160;&#160;&#160;<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00049">49</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00053">53</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -233,20 +233,20 @@ Variables</h2></td></tr>
 
 <p>Main loop function for the VCU system. Handles car state transitions, pipes dataflow between modules. </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00191">191</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00205">205</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BoardConfig_8h_source.html#l00043">APPS_3V3</a>, <a class="el" href="BoardConfig_8h_source.html#l00042">APPS_5V</a>, <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="Enums_8hpp.html#a098a5b38d959b3584152e8c220708721add6062746674eeca66ba94025ef8b36a">Bms</a>, <a class="el" href="main_8cpp_source.html#l00055">BMS_OVERRIDE_MILLIS</a>, <a class="el" href="CarState_8hpp_source.html#l00028">TelemetryFramePedal::brake</a>, <a class="el" href="BoardConfig_8h_source.html#l00044">BRAKE_IN</a>, <a class="el" href="BoardConfig_8h_source.html#l00048">BRAKE_LIGHT</a>, <a class="el" href="main_8cpp_source.html#l00059">brake_pressed</a>, <a class="el" href="main_8cpp_source.html#l00057">BRAKE_THRESHOLD</a>, <a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4beaa32bd7680a27710456129ab432b0b637">Bussin</a>, <a class="el" href="main_8cpp_source.html#l00054">BUSSIN_MILLIS</a>, <a class="el" href="BoardConfig_8h_source.html#l00058">BUTTON_ACTIVE</a>, <a class="el" href="BoardConfig_8h_source.html#l00055">BUZZER</a>, <a class="el" href="main_8cpp_source.html#l00065">car</a>, <a class="el" href="CarState_8hpp_source.html#l00039">TelemetryFramePedal::StateByteStatus::Bits::car_status</a>, <a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4beaf2c6151d6c0d99f3666129b97e2100f5">Drive</a>, <a class="el" href="BoardConfig_8h_source.html#l00052">DRIVE_MODE_BTN</a>, <a class="el" href="CarState_8hpp_source.html#l00045">TelemetryFramePedal::StateByteStatus::Bits::force_stop</a>, <a class="el" href="BoardConfig_8h_source.html#l00051">FRG</a>, <a class="el" href="BoardConfig_8h_source.html#l00045">HALL_SENSOR</a>, <a class="el" href="CarState_8hpp_source.html#l00029">TelemetryFramePedal::hall_sensor</a>, <a class="el" href="CarState_8hpp_source.html#l00041">TelemetryFramePedal::StateByteStatus::Bits::hv_ready</a>, <a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4bea95b19f7739b0b7ea7d6b07586be54f36">Init</a>, <a class="el" href="CarState_8hpp_source.html#l00163">CarState::millis</a>, <a class="el" href="CarState_8hpp_source.html#l00159">CarState::pedal</a>, <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, <a class="el" href="Pedal_8hpp_source.html#l00076">Pedal::pedal_final</a>, <a class="el" href="main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc">scheduler</a>, <a class="el" href="main_8cpp_source.html#l00086">scheduler_bms()</a>, <a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4bea2db90abd5f808b6532d43373f1759f84">Startin</a>, <a class="el" href="CarState_8hpp_source.html#l00070">TelemetryFramePedal::status</a>, <a class="el" href="CarState_8hpp_source.html#l00162">CarState::status_millis</a>, <a class="el" href="Curves_8hpp_source.html#l00089">THROTTLE_TABLE</a>, and <a class="el" href="Pedal_8cpp_source.html#l00099">Pedal::update()</a>.</p>
+<p class="reference">References <a class="el" href="BoardConfig_8h_source.html#l00057">APPS_3V3</a>, <a class="el" href="BoardConfig_8h_source.html#l00056">APPS_5V</a>, <a class="el" href="unionTelemetryFramePedal_1_1StateByteStatus.html#a93af34efbc86fc96ba1bb69fad21bf13">TelemetryFramePedal::StateByteStatus::bits</a>, <a class="el" href="Enums_8hpp.html#a098a5b38d959b3584152e8c220708721add6062746674eeca66ba94025ef8b36a">Bms</a>, <a class="el" href="main_8cpp_source.html#l00059">BMS_OVERRIDE_MILLIS</a>, <a class="el" href="CarState_8hpp_source.html#l00030">TelemetryFramePedal::brake</a>, <a class="el" href="BoardConfig_8h_source.html#l00058">BRAKE_IN</a>, <a class="el" href="BoardConfig_8h_source.html#l00063">BRAKE_LIGHT</a>, <a class="el" href="main_8cpp_source.html#l00063">brake_pressed</a>, <a class="el" href="main_8cpp_source.html#l00061">BRAKE_THRESHOLD</a>, <a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4beaa32bd7680a27710456129ab432b0b637">Bussin</a>, <a class="el" href="main_8cpp_source.html#l00058">BUSSIN_MILLIS</a>, <a class="el" href="BoardConfig_8h_source.html#l00073">BUTTON_ACTIVE</a>, <a class="el" href="BoardConfig_8h_source.html#l00070">BUZZER</a>, <a class="el" href="main_8cpp_source.html#l00069">car</a>, <a class="el" href="CarState_8hpp_source.html#l00041">TelemetryFramePedal::StateByteStatus::Bits::car_status</a>, <a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4beaf2c6151d6c0d99f3666129b97e2100f5">Drive</a>, <a class="el" href="BoardConfig_8h_source.html#l00067">DRIVE_MODE_BTN</a>, <a class="el" href="CarState_8hpp_source.html#l00047">TelemetryFramePedal::StateByteStatus::Bits::force_stop</a>, <a class="el" href="BoardConfig_8h_source.html#l00066">FRG</a>, <a class="el" href="BoardConfig_8h_source.html#l00059">HALL_SENSOR</a>, <a class="el" href="CarState_8hpp_source.html#l00031">TelemetryFramePedal::hall_sensor</a>, <a class="el" href="CarState_8hpp_source.html#l00043">TelemetryFramePedal::StateByteStatus::Bits::hv_ready</a>, <a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4bea95b19f7739b0b7ea7d6b07586be54f36">Init</a>, <a class="el" href="CarState_8hpp_source.html#l00165">CarState::millis</a>, <a class="el" href="CarState_8hpp_source.html#l00161">CarState::pedal</a>, <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, <a class="el" href="Pedal_8hpp_source.html#l00079">Pedal::pedal_final</a>, <a class="el" href="main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc">scheduler</a>, <a class="el" href="main_8cpp_source.html#l00090">scheduler_bms()</a>, <a class="el" href="Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4bea2db90abd5f808b6532d43373f1759f84">Startin</a>, <a class="el" href="CarState_8hpp_source.html#l00072">TelemetryFramePedal::status</a>, <a class="el" href="CarState_8hpp_source.html#l00164">CarState::status_millis</a>, <a class="el" href="Curves_8hpp_source.html#l00090">THROTTLE_TABLE</a>, and <a class="el" href="Pedal_8cpp_source.html#l00102">Pedal::update()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.svg" width="100%" height="465"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.svg" width="639" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a926cc13a4f62a65d28fd845a00bfd779" name="a926cc13a4f62a65d28fd845a00bfd779"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a926cc13a4f62a65d28fd845a00bfd779">&#9670;&#160;</a></span>mcp2515_BMS()</h2>
+<a id="ab8b350f3ef251e3f25732b08d0e71285" name="ab8b350f3ef251e3f25732b08d0e71285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8b350f3ef251e3f25732b08d0e71285">&#9670;&#160;</a></span>mcp2515_BMS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,7 +254,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">MCP2515 mcp2515_BMS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="BoardConfig_8h.html#ab476064511df004d8a67875afbd3521b">CS_CAN_BMS</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="BoardConfig_8h.html#a38ebdaa69eef015447bc7227d17a64cf">CS_CAN_AMS</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -331,11 +331,11 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>, <a class="el" href="Pedal_8cpp_source.html#l00196">Pedal::pedalTorqueMapping()</a>, <a class="el" href="main_8cpp_source.html#l00078">schedulerMotorRead()</a>, <a class="el" href="main_8cpp_source.html#l00082">schedulerPedalSend()</a>, and <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>, <a class="el" href="Pedal_8cpp_source.html#l00199">Pedal::pedalTorqueMapping()</a>, <a class="el" href="main_8cpp_source.html#l00082">schedulerMotorRead()</a>, <a class="el" href="main_8cpp_source.html#l00086">schedulerPedalSend()</a>, and <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a18e4d34069ea83a60c271f6633a2e808_icgraph.svg" width="100%" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a18e4d34069ea83a60c271f6633a2e808_icgraph.svg" width="100%" height="482"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -356,21 +356,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00086">86</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00090">90</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="main_8cpp.html#ab3f382b3698110b33ae3911fe44fb4b8">bms</a>, and <a class="el" href="BMS_8cpp_source.html#l00062">BMS::checkHv()</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp.html#a9ef6f7d1cabe7653d25e464714414f31">ams</a>, and <a class="el" href="Ams_8cpp_source.html#l00048">Ams::checkHv()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a55b57abe9bcb30f6af0fb927f7d576a4_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a55b57abe9bcb30f6af0fb927f7d576a4_cgraph.svg" width="292" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a55b57abe9bcb30f6af0fb927f7d576a4_icgraph.svg" width="230" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a55b57abe9bcb30f6af0fb927f7d576a4_icgraph.svg" width="228" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -391,21 +391,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00078">78</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00082">82</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00286">Pedal::readMotor()</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00289">Pedal::readMotor()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a4849579a51ba5515a1140dda7c80ed61_cgraph.svg" width="348" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a4849579a51ba5515a1140dda7c80ed61_cgraph.svg" width="347" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a4849579a51ba5515a1140dda7c80ed61_icgraph.svg" width="274" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a4849579a51ba5515a1140dda7c80ed61_icgraph.svg" width="272" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -426,21 +426,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00082">82</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00086">86</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00156">Pedal::sendFrame()</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, and <a class="el" href="Pedal_8cpp_source.html#l00159">Pedal::sendFrame()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a35850a25a9bfe403bb5f5d4c4796ad41_cgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a35850a25a9bfe403bb5f5d4c4796ad41_cgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a35850a25a9bfe403bb5f5d4c4796ad41_icgraph.svg" width="271" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a35850a25a9bfe403bb5f5d4c4796ad41_icgraph.svg" width="268" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -461,21 +461,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00098">98</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00102">102</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Telemetry_8cpp_source.html#l00043">Telemetry::sendBms()</a>, and <a class="el" href="main_8cpp.html#a99b433a194ab30bc080dccbcfa90a1b9">telem</a>.</p>
+<p class="reference">References <a class="el" href="Telemetry_8cpp_source.html#l00045">Telemetry::sendBms()</a>, and <a class="el" href="main_8cpp.html#a9450744043495ec0c2134d1af930cf56">telem</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a6ce4f6f8e1e47dc50c24b0240f7390c4_cgraph.svg" width="606" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a6ce4f6f8e1e47dc50c24b0240f7390c4_cgraph.svg" width="603" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a6ce4f6f8e1e47dc50c24b0240f7390c4_icgraph.svg" width="296" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a6ce4f6f8e1e47dc50c24b0240f7390c4_icgraph.svg" width="295" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -496,21 +496,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00094">94</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00098">98</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Telemetry_8cpp_source.html#l00034">Telemetry::sendMotor()</a>, and <a class="el" href="main_8cpp.html#a99b433a194ab30bc080dccbcfa90a1b9">telem</a>.</p>
+<p class="reference">References <a class="el" href="Telemetry_8cpp_source.html#l00036">Telemetry::sendMotor()</a>, and <a class="el" href="main_8cpp.html#a9450744043495ec0c2134d1af930cf56">telem</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_af749f68ca5ebf490db3de9a27bf7bfc6_cgraph.svg" width="624" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_af749f68ca5ebf490db3de9a27bf7bfc6_cgraph.svg" width="622" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_af749f68ca5ebf490db3de9a27bf7bfc6_icgraph.svg" width="306" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_af749f68ca5ebf490db3de9a27bf7bfc6_icgraph.svg" width="304" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -531,21 +531,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00090">90</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00094">94</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Telemetry_8cpp_source.html#l00025">Telemetry::sendPedal()</a>, and <a class="el" href="main_8cpp.html#a99b433a194ab30bc080dccbcfa90a1b9">telem</a>.</p>
+<p class="reference">References <a class="el" href="Telemetry_8cpp_source.html#l00027">Telemetry::sendPedal()</a>, and <a class="el" href="main_8cpp.html#a9450744043495ec0c2134d1af930cf56">telem</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a2e1609fa80a6555982d945314147b005_cgraph.svg" width="619" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a2e1609fa80a6555982d945314147b005_cgraph.svg" width="616" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a2e1609fa80a6555982d945314147b005_icgraph.svg" width="304" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a2e1609fa80a6555982d945314147b005_icgraph.svg" width="302" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -568,9 +568,9 @@ Here is the caller graph for this function:</div>
 
 <p>Setup function for initializing the VCU system. Initializes MCP2515s, IO pins, as well as own modules such as <a class="el" href="classPedal.html" title="Pedal class for managing throttle and brake pedal inputs. Handles filtering, fault detection,...">Pedal</a> and Debug. </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00113">113</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00117">117</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="main_8cpp.html#ab3f382b3698110b33ae3911fe44fb4b8">bms</a>, <a class="el" href="BoardConfig_8h_source.html#l00205">CAN_RATE</a>, <a class="el" href="Enums_8hpp.html#a098a5b38d959b3584152e8c220708721a0bdd69d9652961d7e30c4c13d1418a4e">Datalogger</a>, <a class="el" href="Debug_8hpp_source.html#l00056">DBGLN_GENERAL()</a>, <a class="el" href="BMS_8cpp_source.html#l00045">BMS::initFilter()</a>, <a class="el" href="Pedal_8cpp_source.html#l00052">Pedal::initFilter()</a>, <a class="el" href="Debug__serial_8cpp_source.html#l00018">Debug_Serial::initialize()</a>, <a class="el" href="Debug__can_8cpp_source.html#l00026">Debug_CAN::initialize()</a>, <a class="el" href="Pedal_8cpp_source.html#l00072">Pedal::initMotor()</a>, <a class="el" href="main_8cpp_source.html#l00037">INPUT_COUNT</a>, <a class="el" href="BoardConfig_8h_source.html#l00061">MCP2515_CRYSTAL_FREQ</a>, <a class="el" href="main_8cpp_source.html#l00049">mcp2515_DL</a>, <a class="el" href="main_8cpp_source.html#l00052">MCPS</a>, <a class="el" href="Enums_8hpp.html#a098a5b38d959b3584152e8c220708721ab33538179f5661a86cbe327a1793e199">Motor</a>, <a class="el" href="main_8cpp_source.html#l00051">NUM_MCP</a>, <a class="el" href="BoardConfig_8h_source.html#l00031">OUT_4</a>, <a class="el" href="BoardConfig_8h_source.html#l00032">OUT_5</a>, <a class="el" href="BoardConfig_8h_source.html#l00033">OUT_6</a>, <a class="el" href="BoardConfig_8h_source.html#l00034">OUT_7</a>, <a class="el" href="main_8cpp_source.html#l00038">OUTPUT_COUNT</a>, <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, <a class="el" href="main_8cpp_source.html#l00039">pins_in</a>, <a class="el" href="main_8cpp_source.html#l00040">pins_out</a>, <a class="el" href="main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc">scheduler</a>, <a class="el" href="main_8cpp_source.html#l00078">schedulerMotorRead()</a>, <a class="el" href="main_8cpp_source.html#l00082">schedulerPedalSend()</a>, <a class="el" href="main_8cpp_source.html#l00098">schedulerTelemetryBms()</a>, <a class="el" href="main_8cpp_source.html#l00094">schedulerTelemetryMotor()</a>, and <a class="el" href="main_8cpp_source.html#l00090">schedulerTelemetryPedal()</a>.</p>
+<p class="reference">References <a class="el" href="BoardConfig_8h_source.html#l00256">CAN_RATE</a>, <a class="el" href="Enums_8hpp.html#a098a5b38d959b3584152e8c220708721a0bdd69d9652961d7e30c4c13d1418a4e">Datalogger</a>, <a class="el" href="Debug_8hpp_source.html#l00056">DBGLN_GENERAL()</a>, <a class="el" href="Pedal_8cpp_source.html#l00055">Pedal::initFilter()</a>, <a class="el" href="Debug__serial_8cpp_source.html#l00018">Debug_Serial::initialize()</a>, <a class="el" href="Debug__can_8cpp_source.html#l00026">Debug_CAN::initialize()</a>, <a class="el" href="Pedal_8cpp_source.html#l00075">Pedal::initMotor()</a>, <a class="el" href="main_8cpp_source.html#l00041">INPUT_COUNT</a>, <a class="el" href="BoardConfig_8h_source.html#l00076">MCP2515_CRYSTAL_FREQ</a>, <a class="el" href="main_8cpp_source.html#l00053">mcp2515_DL</a>, <a class="el" href="main_8cpp_source.html#l00056">MCPS</a>, <a class="el" href="Enums_8hpp.html#a098a5b38d959b3584152e8c220708721ab33538179f5661a86cbe327a1793e199">Motor</a>, <a class="el" href="main_8cpp_source.html#l00055">NUM_MCP</a>, <a class="el" href="BoardConfig_8h_source.html#l00039">OUT_4</a>, <a class="el" href="main_8cpp_source.html#l00042">OUTPUT_COUNT</a>, <a class="el" href="main_8cpp.html#a18e4d34069ea83a60c271f6633a2e808">pedal()</a>, <a class="el" href="main_8cpp_source.html#l00043">pins_in</a>, <a class="el" href="main_8cpp_source.html#l00044">pins_out</a>, <a class="el" href="main_8cpp.html#af7cedd8cb749765bdaa70bf5c65b5fdc">scheduler</a>, <a class="el" href="main_8cpp_source.html#l00082">schedulerMotorRead()</a>, <a class="el" href="main_8cpp_source.html#l00086">schedulerPedalSend()</a>, <a class="el" href="main_8cpp_source.html#l00102">schedulerTelemetryBms()</a>, <a class="el" href="main_8cpp_source.html#l00098">schedulerTelemetryMotor()</a>, and <a class="el" href="main_8cpp_source.html#l00094">schedulerTelemetryPedal()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -581,16 +581,16 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ab3f382b3698110b33ae3911fe44fb4b8" name="ab3f382b3698110b33ae3911fe44fb4b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3f382b3698110b33ae3911fe44fb4b8">&#9670;&#160;</a></span>bms</h2>
+<a id="a9ef6f7d1cabe7653d25e464714414f31" name="a9ef6f7d1cabe7653d25e464714414f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef6f7d1cabe7653d25e464714414f31">&#9670;&#160;</a></span>ams</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classBMS.html">BMS</a> bms(<a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>) </td>
+          <td class="memname"><a class="el" href="classAms.html">Ams</a> ams(<a class="el" href="main_8cpp.html#ab8b350f3ef251e3f25732b08d0e71285">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>) </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#ab8b350f3ef251e3f25732b08d0e71285">mcp2515_BMS</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -607,7 +607,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00086">scheduler_bms()</a>, and <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00090">scheduler_bms()</a>.</p>
 
 </div>
 </div>
@@ -631,9 +631,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00055">55</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>.</p>
 
 </div>
 </div>
@@ -649,9 +649,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00063">63</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>.</p>
 
 </div>
 </div>
@@ -675,9 +675,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00057">57</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00061">61</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>.</p>
 
 </div>
 </div>
@@ -701,9 +701,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00054">54</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00058">58</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>.</p>
 
 </div>
 </div>
@@ -729,9 +729,9 @@ Here is the call graph for this function:</div>
 <p>Global car state structure. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structCarState.html" title="Represents the state of the car. Holds telemetry data and status, used as central data sharing struct...">CarState</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00065">65</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00069">69</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>.</p>
 
 </div>
 </div>
@@ -755,9 +755,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00037">37</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00041">41</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 
 </div>
 </div>
@@ -768,14 +768,14 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MCP2515 MCPS[<a class="el" href="main_8cpp.html#aa82c7cb82034ed6919b0a66d33aaf35d">NUM_MCP</a>] = {<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a>, <a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a> }</td>
+          <td class="memname">MCP2515 MCPS[<a class="el" href="main_8cpp.html#aa82c7cb82034ed6919b0a66d33aaf35d">NUM_MCP</a>] = {<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a>, <a class="el" href="main_8cpp.html#ab8b350f3ef251e3f25732b08d0e71285">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a> }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00052">52</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00056">56</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 
 </div>
 </div>
@@ -799,9 +799,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00051">51</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00055">55</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 
 </div>
 </div>
@@ -825,9 +825,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00038">38</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00042">42</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 
 </div>
 </div>
@@ -851,9 +851,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00039">39</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00043">43</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 
 </div>
 </div>
@@ -877,9 +877,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00040">40</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00044">44</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 
 </div>
 </div>
@@ -915,20 +915,20 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00191">loop()</a>, and <a class="el" href="main_8cpp_source.html#l00113">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00205">loop()</a>, and <a class="el" href="main_8cpp_source.html#l00117">setup()</a>.</p>
 
 </div>
 </div>
-<a id="a99b433a194ab30bc080dccbcfa90a1b9" name="a99b433a194ab30bc080dccbcfa90a1b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99b433a194ab30bc080dccbcfa90a1b9">&#9670;&#160;</a></span>telem</h2>
+<a id="a9450744043495ec0c2134d1af930cf56" name="a9450744043495ec0c2134d1af930cf56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9450744043495ec0c2134d1af930cf56">&#9670;&#160;</a></span>telem</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classTelemetry.html">Telemetry</a> telem(<a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>) </td>
+          <td class="memname"><a class="el" href="classTelemetry.html">Telemetry</a> telem(<a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a>, <a class="el" href="main_8cpp.html#ab5d80ba1651714c705b8b516e541d9d8">car</a>) </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="main_8cpp.html#a926cc13a4f62a65d28fd845a00bfd779">mcp2515_BMS</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5">mcp2515_motor</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -945,7 +945,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00098">schedulerTelemetryBms()</a>, <a class="el" href="main_8cpp_source.html#l00094">schedulerTelemetryMotor()</a>, and <a class="el" href="main_8cpp_source.html#l00090">schedulerTelemetryPedal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00102">schedulerTelemetryBms()</a>, <a class="el" href="main_8cpp_source.html#l00098">schedulerTelemetryMotor()</a>, and <a class="el" href="main_8cpp_source.html#l00094">schedulerTelemetryPedal()</a>.</p>
 
 </div>
 </div>

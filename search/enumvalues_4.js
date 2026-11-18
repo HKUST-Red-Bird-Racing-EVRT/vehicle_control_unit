@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_0',['Init',['../Enums_8hpp.html#a58f8cbaf767061986ce7afe35238e4bea95b19f7739b0b7ea7d6b07586be54f36',1,'Enums.hpp']]]
+  ['hallsensormsg_0',['HallSensorMsg',['../Enums_8hpp.html#a6b191ababec6777bcc2b83f8dae93629abdfdcbfd73bfe53710664cc39c1b62fe',1,'Enums.hpp']]]
 ];

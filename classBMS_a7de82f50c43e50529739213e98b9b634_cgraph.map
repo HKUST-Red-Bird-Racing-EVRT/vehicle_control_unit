@@ -1,5 +1,0 @@
-<map id="BMS::checkHv" name="BMS::checkHv">
-<area shape="rect" id="node1" title="Attempts to start HV. First check BMS is in standby(3) state, then send the HV start command...." alt="" coords="5,5,120,31"/>
-<area shape="rect" id="node2" href="$Debug_8hpp.html#a8e8d6e3de15309922f25c12f4d7cf727" title="Prints a line to the serial console for general debug." alt="" coords="168,5,304,31"/>
-<area shape="rect" id="node3" href="$namespaceDebug__Serial.html#a756fa9286151426012a6f8e178a6c550" title="Prints a string AND a newline to the serial console." alt="" coords="352,5,511,31"/>
-</map>

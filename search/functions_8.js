@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['linearinterp_0',['LinearInterp',['../classLinearInterp.html#a45153c62e0b76bbcb7edc6ab205cf879',1,'LinearInterp::LinearInterp()=delete'],['../classLinearInterp.html#a889aaf1a88ab071815c751f56bae278f',1,'LinearInterp::LinearInterp(const TablePoint&lt; Tin, Tout &gt;(&amp;table_)[size])']]],
-  ['loop_1',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]]
+  ['mcp2515_5fbms_0',['mcp2515_BMS',['../main_8cpp.html#ab8b350f3ef251e3f25732b08d0e71285',1,'main.cpp']]],
+  ['mcp2515_5fdl_1',['mcp2515_DL',['../main_8cpp.html#a95581c94a7dc4a68f61fa24f06cc90d1',1,'main.cpp']]],
+  ['mcp2515_5fmotor_2',['mcp2515_motor',['../main_8cpp.html#a9215d3772fc8e03a4ccd56fe9c7b5fc5',1,'main.cpp']]]
 ];

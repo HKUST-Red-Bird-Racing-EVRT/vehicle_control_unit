@@ -1,10 +1,10 @@
 <map id="vehicle_control_unit/include/CarState.hpp" name="vehicle_control_unit/include/CarState.hpp">
-<area shape="rect" id="node1" title="Definition of the CarState structure representing the state of the car." alt="" coords="275,5,436,45"/>
-<area shape="rect" id="node2" href="$BMS_8cpp.html" title="Implementation of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="5,181,159,221"/>
-<area shape="rect" id="node3" href="$BMS_8hpp.html" title="Declaration of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="93,93,247,133"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="208,181,361,221"/>
-<area shape="rect" id="node5" href="$Pedal_8cpp.html" title="Implementation of the Pedal class for handling throttle pedal inputs." alt="" coords="641,181,795,221"/>
-<area shape="rect" id="node6" href="$Pedal_8hpp.html" title="Declaration of the Pedal class for handling throttle and brake pedal inputs." alt="" coords="553,93,707,133"/>
-<area shape="rect" id="node7" href="$Telemetry_8hpp.html" title="Declaration of the Telemetry class for sending telemetry data over CAN bus." alt="" coords="323,93,529,133"/>
-<area shape="rect" id="node8" href="$Telemetry_8cpp.html" title="Implementation of the Telemetry class for sending telemetry data over CAN bus." alt="" coords="386,181,591,221"/>
+<area shape="rect" id="node1" title="Definition of the CarState structure representing the state of the car." alt="" coords="272,5,432,50"/>
+<area shape="rect" id="node2" href="$Ams_8cpp.html" title="Implementation of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="5,191,158,235"/>
+<area shape="rect" id="node3" href="$Ams_8hpp.html" title="Declaration of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="93,98,246,143"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="207,191,359,235"/>
+<area shape="rect" id="node5" href="$Pedal_8cpp.html" title="Implementation of the Pedal class for handling throttle pedal inputs." alt="" coords="637,191,790,235"/>
+<area shape="rect" id="node6" href="$Pedal_8hpp.html" title="Declaration of the Pedal class for handling throttle and brake pedal inputs." alt="" coords="549,98,702,143"/>
+<area shape="rect" id="node7" href="$Telemetry_8hpp.html" title="Declaration of the Telemetry class for sending telemetry data over CAN bus." alt="" coords="320,98,526,143"/>
+<area shape="rect" id="node8" href="$Telemetry_8cpp.html" title="Implementation of the Telemetry class for sending telemetry data over CAN bus." alt="" coords="383,191,588,235"/>
 </map>

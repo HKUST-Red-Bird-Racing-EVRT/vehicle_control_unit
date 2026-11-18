@@ -1,7 +1,7 @@
 <map id="vehicle_control_unit/lib/Scheduler/Scheduler.tpp" name="vehicle_control_unit/lib/Scheduler/Scheduler.tpp">
-<area shape="rect" id="node1" title="Implementation of the Scheduler class template." alt="" coords="101,5,303,45"/>
-<area shape="rect" id="node2" href="$Scheduler_8hpp.html" title="Declaration of the Scheduler class template, for scheduling tasks on multiple MCP2515 instances." alt="" coords="99,93,305,133"/>
-<area shape="rect" id="node3" href="$BMS_8hpp.html" title="Declaration of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="68,181,221,221"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="183,269,336,309"/>
-<area shape="rect" id="node4" href="$BMS_8cpp.html" title="Implementation of the BMS class for managing the Accumulator (Kclear BMS) via CAN bus." alt="" coords="5,269,159,309"/>
+<area shape="rect" id="node1" title="Implementation of the Scheduler class template." alt="" coords="100,5,301,50"/>
+<area shape="rect" id="node2" href="$Scheduler_8hpp.html" title="Declaration of the Scheduler class template, for scheduling tasks on multiple MCP2515 instances." alt="" coords="98,98,302,143"/>
+<area shape="rect" id="node3" href="$Ams_8hpp.html" title="Declaration of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="68,191,220,235"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="Main VCU program entry point." alt="" coords="181,283,334,328"/>
+<area shape="rect" id="node4" href="$Ams_8cpp.html" title="Implementation of the Ams class for managing the Accumulator Management System (AMS) via CANbus." alt="" coords="5,283,158,328"/>
 </map>

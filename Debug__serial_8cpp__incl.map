@@ -1,8 +1,8 @@
 <map id="vehicle_control_unit/lib/Debug/Debug_serial.cpp" name="vehicle_control_unit/lib/Debug/Debug_serial.cpp">
-<area shape="rect" id="node1" title="Implementation of the Debug_Serial namespace for serial debugging functions." alt="" coords="23,5,227,45"/>
-<area shape="rect" id="node2" href="$Debug__serial_8hpp.html" title="Declaration of the Debug_Serial namespace for serial debugging functions." alt="" coords="5,93,140,119"/>
-<area shape="rect" id="node4" href="$Enums_8hpp.html" title="Enumeration definitions for the VCU." alt="" coords="131,167,225,192"/>
-<area shape="rect" id="node3" title=" " alt="" coords="23,167,107,192"/>
-<area shape="rect" id="node5" title=" " alt="" coords="99,240,169,265"/>
-<area shape="rect" id="node6" title=" " alt="" coords="193,240,251,265"/>
+<area shape="rect" id="node1" title="Implementation of the Debug_Serial namespace for serial debugging functions." alt="" coords="23,5,226,50"/>
+<area shape="rect" id="node2" href="$Debug__serial_8hpp.html" title="Declaration of the Debug_Serial namespace for serial debugging functions." alt="" coords="5,98,140,126"/>
+<area shape="rect" id="node4" href="$Enums_8hpp.html" title="Enumeration definitions for the VCU." alt="" coords="130,174,223,201"/>
+<area shape="rect" id="node3" title=" " alt="" coords="23,174,106,201"/>
+<area shape="rect" id="node5" title=" " alt="" coords="97,249,168,277"/>
+<area shape="rect" id="node6" title=" " alt="" coords="192,249,249,277"/>
 </map>
